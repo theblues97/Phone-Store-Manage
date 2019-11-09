@@ -172,8 +172,9 @@ namespace PhoneStore
             LoadBillList();
         }
 
-        private void hoaĐơnBaoHanhToolStripMenuItem_Click(object sender, EventArgs e)
+        private void hoaĐơnSuaChuaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
         }
 
         private void thôngKêKhachHangToolStripMenuItem_Click(object sender, EventArgs e)
@@ -248,5 +249,7 @@ namespace PhoneStore
         {
             pnlBillList.Visible = true;
         }
+
+
     }
 }

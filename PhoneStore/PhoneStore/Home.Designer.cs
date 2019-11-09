@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbbColors = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbbBrand = new System.Windows.Forms.ComboBox();
@@ -59,7 +59,7 @@
             this.thôngKêBanHangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngKêKhachHangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hoaĐơnBaoHanhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hoaĐơnSuaChuaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hoaĐơnBanHangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hoaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsMenu = new System.Windows.Forms.MenuStrip();
@@ -184,35 +184,35 @@
             this.dgvPhones.AllowUserToAddRows = false;
             this.dgvPhones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPhones.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPhones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPhones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPhones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPhones.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPhones.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPhones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPhones.Location = new System.Drawing.Point(0, 0);
             this.dgvPhones.Name = "dgvPhones";
             this.dgvPhones.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPhones.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPhones.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPhones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPhones.Size = new System.Drawing.Size(642, 378);
             this.dgvPhones.TabIndex = 0;
@@ -424,11 +424,12 @@
             this.thôngKêToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.thôngKêToolStripMenuItem.Text = "Thống kê";
             // 
-            // hoaĐơnBaoHanhToolStripMenuItem
+            // hoaĐơnSuaChuaToolStripMenuItem
             // 
-            this.hoaĐơnBaoHanhToolStripMenuItem.Name = "hoaĐơnBaoHanhToolStripMenuItem";
-            this.hoaĐơnBaoHanhToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.hoaĐơnBaoHanhToolStripMenuItem.Text = "Hóa đơn bảo hành";
+            this.hoaĐơnSuaChuaToolStripMenuItem.Name = "hoaĐơnSuaChuaToolStripMenuItem";
+            this.hoaĐơnSuaChuaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hoaĐơnSuaChuaToolStripMenuItem.Text = "Hóa đơn sửa chữa";
+            this.hoaĐơnSuaChuaToolStripMenuItem.Click += new System.EventHandler(this.hoaĐơnSuaChuaToolStripMenuItem_Click);
             // 
             // hoaĐơnBanHangToolStripMenuItem
             // 
@@ -441,7 +442,7 @@
             // 
             this.hoaĐơnToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hoaĐơnBanHangToolStripMenuItem,
-            this.hoaĐơnBaoHanhToolStripMenuItem});
+            this.hoaĐơnSuaChuaToolStripMenuItem});
             this.hoaĐơnToolStripMenuItem.Name = "hoaĐơnToolStripMenuItem";
             this.hoaĐơnToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.hoaĐơnToolStripMenuItem.Text = "Hóa đơn";
@@ -1020,7 +1021,7 @@
         private System.Windows.Forms.ToolStripMenuItem thôngKêBanHangToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thôngKêKhachHangToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thôngKêToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hoaĐơnBaoHanhToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hoaĐơnSuaChuaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hoaĐơnBanHangToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hoaĐơnToolStripMenuItem;
         private System.Windows.Forms.MenuStrip mnsMenu;
