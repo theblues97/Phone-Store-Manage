@@ -393,8 +393,9 @@
             // thôngTinTaiKhoanToolStripMenuItem
             // 
             this.thôngTinTaiKhoanToolStripMenuItem.Name = "thôngTinTaiKhoanToolStripMenuItem";
-            this.thôngTinTaiKhoanToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.thôngTinTaiKhoanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.thôngTinTaiKhoanToolStripMenuItem.Text = "Thông tin tài khoản";
+            this.thôngTinTaiKhoanToolStripMenuItem.Click += new System.EventHandler(this.thôngTinTaiKhoanToolStripMenuItem_Click);
             // 
             // thôngKêĐiênThoaiToolStripMenuItem
             // 
@@ -474,13 +475,13 @@
             // quanLyTaiKhoanToolStripMenuItem
             // 
             this.quanLyTaiKhoanToolStripMenuItem.Name = "quanLyTaiKhoanToolStripMenuItem";
-            this.quanLyTaiKhoanToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.quanLyTaiKhoanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.quanLyTaiKhoanToolStripMenuItem.Text = "Quản lý tài khoản";
             // 
             // quanLyHơpĐôngToolStripMenuItem
             // 
             this.quanLyHơpĐôngToolStripMenuItem.Name = "quanLyHơpĐôngToolStripMenuItem";
-            this.quanLyHơpĐôngToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.quanLyHơpĐôngToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.quanLyHơpĐôngToolStripMenuItem.Text = "Quản lý hợp đồng";
             // 
             // điênThoaiToolStripMenuItem

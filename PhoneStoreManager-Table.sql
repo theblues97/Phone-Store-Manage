@@ -10,13 +10,12 @@ go
 use PhoneStoreManage;
 go
 
-drop table if exists CauHinh;
-drop table if exists BaoHanh;
+drop table if exists SuaChua;
 drop table if exists ChitietHoadon;
 drop table if exists HoaDon;
+drop table if exists CauHinh;
 drop table if exists DienThoai;
 drop table if exists MauDienThoai;
-drop table if exists DongDienThoai;
 drop table if exists HangDienThoai;
 drop table if exists NhanVien;
 drop table if exists HopDong;
@@ -27,7 +26,7 @@ go
 
 create table Account
 (
-	Username nvarchar(50),
+	Username nvarchar(50) primary key not null,
 	Password nvarchar(50)
 );
 
@@ -64,6 +63,7 @@ create table NhanVien
 	NgaySinh date,
 	SoDienThoai nvarchar(50),
 	Luong int,
+	Email nvarchar(50),
 	DiaChi nvarchar(50),
 	MaCV int not null,
 	MaHopDong int not null,
@@ -100,7 +100,8 @@ create table DienThoai
 
 create table CauHinh
 (
-	MaMDT int not null,
+	--MaCH int primary key not null,
+	MaMDT int primary key not null,
 	DisResolution nvarchar(50),
 	DisSize nvarchar(50),
 	CamMain nvarchar(250),
@@ -127,6 +128,7 @@ create table HoaDon
 
 create table ChiTietHoadon
 (
+	MaCTHD int primary key not null,
 	MaHD int not null,
 	MaDT int not null,
 	foreign key (MaHD) references HoaDon(MaHD),
@@ -136,13 +138,16 @@ create table ChiTietHoadon
 create table SuaChua
 (
 	MaSC int primary key not null,
+	TenDienThoai nvarchar(50),
 	NgayNhan date,
-	NoiDung nvarchar(250),
 	PhiSC int,
-	MaHD int not null,
-	foreign key (MaHD) REFERENCES HoaDon(MaHD)	
+	NoiDung nvarchar(250),
+	MaHD int,
+	foreign key (MaHD) REFERENCES HoaDon(MaHD)
 );
 go
+
+---------------------------------------------------------
 
 drop trigger if exists trg_UpdatePhones;
 drop trigger if exists trg_UpdateBills;
@@ -176,7 +181,9 @@ end
 go
 
 drop proc if exists pro_SearchPhones
+drop proc if exists pro_AddWarrantys
 go
+
 create procedure pro_SearchPhones
 @key nvarchar(50)
 as
@@ -184,14 +191,3 @@ begin
 	select mdt.TenDT, mdt.MaMDT, dt.Mau, dt.SoLuong, dt.Gia, mdt.KM from MauDienThoai mdt, DienThoai dt
 	where CHARINDEX(@key,mdt.TenDT) != 0 and mdt.MaMDT = dt.MaMDT;
 end
-
-exec pro_SearchPhones @key = "pro";
-
-------------------------------------
-
-select hd.MaHD, sum(Gia) as [TongTien] from DienThoai dt, HoaDon hd, ChiTietHoadon chd 
-where dt.MaDT = chd.MaDT and hd.MaHD = chd.MaHD group by hd.MaHD 
-
-select * from DienThoai;
-select * from ChiTietHoadon;
-select * from HoaDon;

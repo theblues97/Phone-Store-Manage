@@ -174,7 +174,8 @@ namespace PhoneStore
 
         private void hoaĐơnSuaChuaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Warrantys warrantys = new Warrantys();
+            warrantys.Show();
         }
 
         private void thôngKêKhachHangToolStripMenuItem_Click(object sender, EventArgs e)
@@ -194,7 +195,8 @@ namespace PhoneStore
 
         private void thôngTinTaiKhoanToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Accounts accounts = new Accounts();
+            accounts.Show();
         }
 
         private void quanLyTaiKhoanToolStripMenuItem_Click(object sender, EventArgs e)
@@ -249,7 +251,5 @@ namespace PhoneStore
         {
             pnlBillList.Visible = true;
         }
-
-
     }
 }
