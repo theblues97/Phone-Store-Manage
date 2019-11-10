@@ -42,7 +42,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnSelectCustomer = new System.Windows.Forms.Button();
-            this.btnPhoneNumFill = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.txtPhoneNum = new System.Windows.Forms.TextBox();
             this.txtCustomer = new System.Windows.Forms.TextBox();
@@ -134,9 +133,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(498, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 25);
+            this.label1.Size = new System.Drawing.Size(196, 25);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Hóa đơn sửa chữa";
+            this.label1.Text = "Thông tin tài khoản";
             // 
             // button2
             // 
@@ -165,7 +164,7 @@
             this.textBox3.Location = new System.Drawing.Point(137, 263);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(259, 20);
+            this.textBox3.Size = new System.Drawing.Size(99, 20);
             this.textBox3.TabIndex = 31;
             // 
             // pnlCustomerArea
@@ -177,7 +176,6 @@
             this.pnlCustomerArea.Controls.Add(this.label2);
             this.pnlCustomerArea.Controls.Add(this.textBox1);
             this.pnlCustomerArea.Controls.Add(this.btnSelectCustomer);
-            this.pnlCustomerArea.Controls.Add(this.btnPhoneNumFill);
             this.pnlCustomerArea.Controls.Add(this.label13);
             this.pnlCustomerArea.Controls.Add(this.txtPhoneNum);
             this.pnlCustomerArea.Controls.Add(this.txtCustomer);
@@ -191,9 +189,9 @@
             this.pnlCustomerArea.Controls.Add(this.datBirth);
             this.pnlCustomerArea.Controls.Add(this.radMale);
             this.pnlCustomerArea.Controls.Add(this.radFemale);
-            this.pnlCustomerArea.Location = new System.Drawing.Point(3, 3);
+            this.pnlCustomerArea.Location = new System.Drawing.Point(0, 0);
             this.pnlCustomerArea.Name = "pnlCustomerArea";
-            this.pnlCustomerArea.Size = new System.Drawing.Size(500, 519);
+            this.pnlCustomerArea.Size = new System.Drawing.Size(503, 554);
             this.pnlCustomerArea.TabIndex = 16;
             // 
             // label3
@@ -212,7 +210,7 @@
             this.textBox2.Location = new System.Drawing.Point(137, 218);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(259, 20);
+            this.textBox2.Size = new System.Drawing.Size(159, 20);
             this.textBox2.TabIndex = 29;
             // 
             // label2
@@ -231,7 +229,7 @@
             this.textBox1.Location = new System.Drawing.Point(137, 178);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(259, 20);
+            this.textBox1.Size = new System.Drawing.Size(159, 20);
             this.textBox1.TabIndex = 27;
             // 
             // btnSelectCustomer
@@ -243,16 +241,6 @@
             this.btnSelectCustomer.TabIndex = 20;
             this.btnSelectCustomer.Text = "Lưu";
             this.btnSelectCustomer.UseVisualStyleBackColor = true;
-            // 
-            // btnPhoneNumFill
-            // 
-            this.btnPhoneNumFill.Location = new System.Drawing.Point(397, 10);
-            this.btnPhoneNumFill.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnPhoneNumFill.Name = "btnPhoneNumFill";
-            this.btnPhoneNumFill.Size = new System.Drawing.Size(40, 32);
-            this.btnPhoneNumFill.TabIndex = 11;
-            this.btnPhoneNumFill.Text = "Fill";
-            this.btnPhoneNumFill.UseVisualStyleBackColor = true;
             // 
             // label13
             // 
@@ -270,7 +258,7 @@
             this.txtPhoneNum.Location = new System.Drawing.Point(132, 15);
             this.txtPhoneNum.Multiline = true;
             this.txtPhoneNum.Name = "txtPhoneNum";
-            this.txtPhoneNum.Size = new System.Drawing.Size(259, 20);
+            this.txtPhoneNum.Size = new System.Drawing.Size(104, 20);
             this.txtPhoneNum.TabIndex = 10;
             // 
             // txtCustomer
@@ -279,7 +267,7 @@
             this.txtCustomer.Location = new System.Drawing.Point(132, 55);
             this.txtCustomer.Multiline = true;
             this.txtCustomer.Name = "txtCustomer";
-            this.txtCustomer.Size = new System.Drawing.Size(259, 20);
+            this.txtCustomer.Size = new System.Drawing.Size(164, 20);
             this.txtCustomer.TabIndex = 12;
             // 
             // txtAdress
@@ -327,7 +315,7 @@
             this.txtEmail.Location = new System.Drawing.Point(137, 309);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(259, 20);
+            this.txtEmail.Size = new System.Drawing.Size(159, 20);
             this.txtEmail.TabIndex = 16;
             // 
             // label11
@@ -386,7 +374,7 @@
             this.panel1.Controls.Add(this.pnlCustomerArea);
             this.panel1.Location = new System.Drawing.Point(3, 80);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1178, 554);
+            this.panel1.Size = new System.Drawing.Size(1037, 554);
             this.panel1.TabIndex = 6;
             // 
             // panel2
@@ -397,7 +385,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 24);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1184, 637);
+            this.panel2.Size = new System.Drawing.Size(1043, 637);
             this.panel2.TabIndex = 49;
             // 
             // pnlToolMenu
@@ -409,7 +397,7 @@
             this.pnlToolMenu.Controls.Add(this.btnAddOrder);
             this.pnlToolMenu.Location = new System.Drawing.Point(3, 37);
             this.pnlToolMenu.Name = "pnlToolMenu";
-            this.pnlToolMenu.Size = new System.Drawing.Size(1178, 40);
+            this.pnlToolMenu.Size = new System.Drawing.Size(1037, 40);
             this.pnlToolMenu.TabIndex = 2;
             // 
             // thôngKêKhachHangToolStripMenuItem1
@@ -449,7 +437,7 @@
             this.khachHangToolStripMenuItem});
             this.mnsMenu.Location = new System.Drawing.Point(0, 0);
             this.mnsMenu.Name = "mnsMenu";
-            this.mnsMenu.Size = new System.Drawing.Size(1184, 24);
+            this.mnsMenu.Size = new System.Drawing.Size(1043, 24);
             this.mnsMenu.TabIndex = 48;
             this.mnsMenu.Text = "menuStrip1";
             // 
@@ -549,7 +537,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.ClientSize = new System.Drawing.Size(1043, 661);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.mnsMenu);
             this.Name = "Accounts";
@@ -583,7 +571,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnSelectCustomer;
-        private System.Windows.Forms.Button btnPhoneNumFill;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtPhoneNum;
         private System.Windows.Forms.TextBox txtCustomer;
