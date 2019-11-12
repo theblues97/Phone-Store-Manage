@@ -4,30 +4,20 @@ go
 use PhoneStoreManage;
 go
 
-delete from CauHinh;
-delete from SuaChua;
+--delete from CauHinh;
+--delete from SuaChua;
 delete from ChitietHoadon;
 delete from HoaDon;
 delete from DienThoai;
 delete from MauDienThoai;
 delete from HangDienThoai;
+delete from Account;
 delete from NhanVien;
 delete from HopDong;
 delete from KhachHang;
 delete from ChucVu;
-delete from Account;
 go
 
-
-insert into Account values('admin','123456');
-insert into Account values('manager1','123456');
-insert into Account values('manager2','123456');
-insert into Account values('manager3','123456');
-insert into Account values('employee1','123456');
-insert into Account values('employee2','123456');
-insert into Account values('employee3','123456');
-insert into Account values('employee4','123456');
-insert into Account values('employee5','123456');
 
 insert into ChucVu values('1',N'Administrator');
 insert into ChucVu values('2',N'Quản lý');
@@ -54,7 +44,7 @@ insert into KhachHang values('18',N'Hoàng Mai Lan',N'Nữ','1993-12-19','0971
 insert into KhachHang values('19',N'Đặng Bạch Liên',N'Nữ','1993-06-01','0984181728','liendb@gmail.com',N'Quảng Ninh');
 insert into KhachHang values('20',N'Phạm Anh Thái',N'Nam','1994-03-30','0909400994','thaipa@gmail.com',N'Hòa Bình');
 
-insert into HopDong values('1',N'Toàn thời gian','2017-01-01','2022-01-01');
+insert into HopDong values('1',N'Toàn thời gian','2019-11-1','9998-12-31');
 insert into HopDong values('2',N'Bán thời gian','2019-03-01','2019-06-01');
 insert into HopDong values('3',N'Toàn thời gian','2018-09-01','2023-09-01');
 insert into HopDong values('4',N'Toàn thời gian','2019-11-01','2024-11-01');
@@ -65,7 +55,7 @@ insert into HopDong values('8',N'Toàn thời gian','2018-03-01','2023-03-01')
 insert into HopDong values('9',N'Bán thời gian','2019-04-01','2019-07-01');
 insert into HopDong values('10',N'Toàn thời gian','2017-07-01','2022-07-01');
 
-insert into NhanVien values('1',N'Ngô Thanh Thế',N'Nam','1988-06-07','0955946127','1000000','thent@gmail.com',N'Hà Tĩnh','2','1');
+insert into NhanVien values('1',N'Administrator',N'Nam','2019-11-11','0793517964','1','khainq97@gmail.com',N'Đắk Lắk','1','1');
 insert into NhanVien values('2',N'Bùi Trung Nghĩa',N'Nam','1982-11-22','0998902604','15000000','nghiabt@gmail.com',N'Hải Dương','2','3');
 insert into NhanVien values('3',N'Nguyễn Thanh Dương',N'Nữ','1993-07-13','0975633288','6200000','duongnt@gmail.com',N'Quảng Nam','3','2');
 insert into NhanVien values('4',N'Hồ Ái Linh',N'Nữ','1994-03-25','092214303','9000000','linhha@gmail.com',N'Tây Ninh','3','4');
@@ -74,7 +64,16 @@ insert into NhanVien values('6',N'Nguyễn Minh Triết',N'Nam','1995-09-27','
 insert into NhanVien values('7',N'Trần Thành Trung',N'Nam','1987-02-01','0901816968','82000000','trungtt@gmail.com',N'Bắc Cạn','3','7');
 insert into NhanVien values('8',N'Đặng Thái Sơn',N'Nam','1985-09-15','0937015631','9200000','sondt@gmail.com',N'Hồ Chí Minh','3','8');
 insert into NhanVien values('9',N'Bùi Bích Ngân',N'Nữ','1990-05-18','0924861008','5800000','nganbb@gmail.com',N'Vĩnh Long','3','9');
-insert into NhanVien values('10','@gmail.com',N'Lê Thành Công',N'Nam','1996-09-02','0923302286','8800000','conglt@gmail.com',N'Cà Mau','3','10');
+insert into NhanVien values('10',N'Lê Thành Công',N'Nam','1996-09-02','0923302286','8800000','conglt@gmail.com',N'Cà Mau','3','10');
+
+insert into Account values('admin','12345678','1');
+insert into Account values('manager1','123456','2');
+insert into Account values('manager2','123456','3');
+insert into Account values('employee1','123456','4');
+insert into Account values('employee2','123456','5');
+insert into Account values('employee3','123456','6');
+insert into Account values('employee4','123456','7');
+insert into Account values('employee5','123456','8');
 
 insert into HangDienThoai values('1','Apple');
 insert into HangDienThoai values('2','Samsung');
@@ -129,28 +128,28 @@ insert into DienThoai values('28',N'Trắng','10','5490000','14');
 insert into DienThoai values('29',N'Đen','10','5390000','15');
 insert into DienThoai values('30',N'Trắng','10','5390000','15');
 
-insert into CauHinh values('1','2K+ (1440 x 3040 Pixels)','6.1"',N'Chính 12 MP & Phụ 12 MP, 16 MP',N'Exynos 9820 2 nhân 2.7 GHz, 2 nhân 2.3 GHz và 4 nhân 1.9 GHz','8 GB','128 GB','Li-ion 3400 mAh');
-insert into CauHinh values('2','2K+ (1440 x 3040 Pixels)','6.4"',N'Chính 12 MP & Phụ 12 MP, 16 MP',N'Exynos 9820 2 nhân 2.7 GHz, 2 nhân 2.3 GHz và 4 nhân 1.9 GHz','8 GB','128 GB','Li-ion 4100 mAh');
-insert into CauHinh values('3','Full HD+ (1080 x 2280 Pixels)','6.3"',N'Chính 12 MP & Phụ 12 MP, 16 MP',N'Exynos 9825 2 nhân 2.73 GHz, 2 nhân 2.4 GHz & 4 nhân 1.9 GHz','8 GB','256 GB','Li-ion 3500 mAh');
-insert into CauHinh values('4','1242 x 2688 Pixels','6.5"',N'Chính 12 MP & Phụ 12 MP',N'Apple A12 Bionic 2 nhân 2.5 GHz Vortex & 4 nhân 1.6 GHz Tempest','4 GB','64 GB','Li-ion 3174 mAh');
-insert into CauHinh values('5','1125 x 2436 Pixels','5.8"',N'3 Camera 12 MP',N'Apple A13 Bionic 6 nhân','4 GB','256 GB','Li-ion 3046mAh');
-insert into CauHinh values('6','1242 x 2688 Pixels','6.5"',N'3 Camera 12 MP',N'Apple A13 Bionic 6 nhân','4 GB','256 GB','Li-ion 3969 mAh');
-insert into CauHinh values('7','Full HD+ (1080 x 2340 Pixels)','6.5"',N'Chính 48 MP & Phụ 5 MP',N'MediaTek Helio P70 4 nhân 2.1 GHz Cortex-A73 & 4 nhân 2.0 GHz Cortex-A53','6 GB','128 GB','Li-ion 4000 mAh');
-insert into CauHinh values('8','Full HD+ (1080 x 2400 Pixels)','6.55"',N'Chính 48 MP & Phụ 13 MP, 8 MP, 2 MP',N'Snapdragon 730G 2 nhân 2.2 Ghz & 6 nhân 1.8 Ghz','8 GB','256 GB','Li-ion 4000 mAh');
-insert into CauHinh values('9','Full HD+ (1080 x 2340 Pixels)','6.6"',N'Chính 48 MP & Phụ 13 MP, 8 MP',N'Snapdragon 855 1 nhân 2.84 GHz, 3 nhân 2.42 GHz & 4 nhân 1.8 GHz','8 GB','	256 GB','Li-ion 4065 mAh');
-insert into CauHinh values('10','Full HD+ (1080 x 2340 Pixels)','6.3"',N'Chính 48 MP & Phụ 8 MP, 2 MP, 2 MP',N'Qualcomm Snapdragon 665 4 nhân 2.0 GHz và 4 nhân 1.8 GHz','4 GB','64 GB','Li-ion 4000 mAh');
-insert into CauHinh values('11','Full HD+ (1080 x 2340 Pixels)','6.39"',N'Chính 48 MP & Phụ 13 MP, 8 MP',N'Snapdragon 730 2 nhân 2.2 Ghz & 6 nhân 1.8 Ghz','6 GB','64 GB','Li-ion 4000 mAh');
-insert into CauHinh values('12','HD+ (720 x 1440 Pixels)','5.45"',N'12 MP',N'Qualcomm Snapdragon 439 8 nhân 1.95 Ghz','2 GB','32 GB','Li-ion 4000 mAh');
-insert into CauHinh values('13','Full HD+ (1080 x 2340 Pixels)','6.47"',N'Chính 40 MP & Phụ 20 MP, 8 MP, TOF 3D',N'Hisilicon Kirin 980 2 nhân 2.6 GHz Cortex A76 & 2 nhân 1.92 GHz Cortex A76 & 4 nhân 1.8 GHz Cortex A55','8 GB','256 GB','Li-ion 4200 mAh');
-insert into CauHinh values('14','Full HD+ (1080 x 2340 Pixels)','6.59"',N'Chính 16 MP & Phụ 8 MP, 2 MP',N'HiSilicon Kirin 710F 4 nhân 2.2 GHz Cortex-A73 & 4 nhân 1.7 GHz Cortex-A53','4 GB','128 GB','Li-ion 4000 mAh');
-insert into CauHinh values('15','Full HD+ (1080 x 2340 Pixels)','6.3"',N'Chính 16 MP & Phụ 2 MP',N'HiSilicon Kirin 710 4 nhân 2.2 GHz Cortex-A73 & 4 nhân 1.7 GHz Cortex-A53','4 GB','128 GB','Li-ion 3340 mAh');
+--insert into CauHinh values('1','2K+ (1440 x 3040 Pixels)','6.1"',N'Chính 12 MP & Phụ 12 MP, 16 MP',N'Exynos 9820 2 nhân 2.7 GHz, 2 nhân 2.3 GHz và 4 nhân 1.9 GHz','8 GB','128 GB','Li-ion 3400 mAh');
+--insert into CauHinh values('2','2K+ (1440 x 3040 Pixels)','6.4"',N'Chính 12 MP & Phụ 12 MP, 16 MP',N'Exynos 9820 2 nhân 2.7 GHz, 2 nhân 2.3 GHz và 4 nhân 1.9 GHz','8 GB','128 GB','Li-ion 4100 mAh');
+--insert into CauHinh values('3','Full HD+ (1080 x 2280 Pixels)','6.3"',N'Chính 12 MP & Phụ 12 MP, 16 MP',N'Exynos 9825 2 nhân 2.73 GHz, 2 nhân 2.4 GHz & 4 nhân 1.9 GHz','8 GB','256 GB','Li-ion 3500 mAh');
+--insert into CauHinh values('4','1242 x 2688 Pixels','6.5"',N'Chính 12 MP & Phụ 12 MP',N'Apple A12 Bionic 2 nhân 2.5 GHz Vortex & 4 nhân 1.6 GHz Tempest','4 GB','64 GB','Li-ion 3174 mAh');
+--insert into CauHinh values('5','1125 x 2436 Pixels','5.8"',N'3 Camera 12 MP',N'Apple A13 Bionic 6 nhân','4 GB','256 GB','Li-ion 3046mAh');
+--insert into CauHinh values('6','1242 x 2688 Pixels','6.5"',N'3 Camera 12 MP',N'Apple A13 Bionic 6 nhân','4 GB','256 GB','Li-ion 3969 mAh');
+--insert into CauHinh values('7','Full HD+ (1080 x 2340 Pixels)','6.5"',N'Chính 48 MP & Phụ 5 MP',N'MediaTek Helio P70 4 nhân 2.1 GHz Cortex-A73 & 4 nhân 2.0 GHz Cortex-A53','6 GB','128 GB','Li-ion 4000 mAh');
+--insert into CauHinh values('8','Full HD+ (1080 x 2400 Pixels)','6.55"',N'Chính 48 MP & Phụ 13 MP, 8 MP, 2 MP',N'Snapdragon 730G 2 nhân 2.2 Ghz & 6 nhân 1.8 Ghz','8 GB','256 GB','Li-ion 4000 mAh');
+--insert into CauHinh values('9','Full HD+ (1080 x 2340 Pixels)','6.6"',N'Chính 48 MP & Phụ 13 MP, 8 MP',N'Snapdragon 855 1 nhân 2.84 GHz, 3 nhân 2.42 GHz & 4 nhân 1.8 GHz','8 GB','	256 GB','Li-ion 4065 mAh');
+--insert into CauHinh values('10','Full HD+ (1080 x 2340 Pixels)','6.3"',N'Chính 48 MP & Phụ 8 MP, 2 MP, 2 MP',N'Qualcomm Snapdragon 665 4 nhân 2.0 GHz và 4 nhân 1.8 GHz','4 GB','64 GB','Li-ion 4000 mAh');
+--insert into CauHinh values('11','Full HD+ (1080 x 2340 Pixels)','6.39"',N'Chính 48 MP & Phụ 13 MP, 8 MP',N'Snapdragon 730 2 nhân 2.2 Ghz & 6 nhân 1.8 Ghz','6 GB','64 GB','Li-ion 4000 mAh');
+--insert into CauHinh values('12','HD+ (720 x 1440 Pixels)','5.45"',N'12 MP',N'Qualcomm Snapdragon 439 8 nhân 1.95 Ghz','2 GB','32 GB','Li-ion 4000 mAh');
+--insert into CauHinh values('13','Full HD+ (1080 x 2340 Pixels)','6.47"',N'Chính 40 MP & Phụ 20 MP, 8 MP, TOF 3D',N'Hisilicon Kirin 980 2 nhân 2.6 GHz Cortex A76 & 2 nhân 1.92 GHz Cortex A76 & 4 nhân 1.8 GHz Cortex A55','8 GB','256 GB','Li-ion 4200 mAh');
+--insert into CauHinh values('14','Full HD+ (1080 x 2340 Pixels)','6.59"',N'Chính 16 MP & Phụ 8 MP, 2 MP',N'HiSilicon Kirin 710F 4 nhân 2.2 GHz Cortex-A73 & 4 nhân 1.7 GHz Cortex-A53','4 GB','128 GB','Li-ion 4000 mAh');
+--insert into CauHinh values('15','Full HD+ (1080 x 2340 Pixels)','6.3"',N'Chính 16 MP & Phụ 2 MP',N'HiSilicon Kirin 710 4 nhân 2.2 GHz Cortex-A73 & 4 nhân 1.7 GHz Cortex-A53','4 GB','128 GB','Li-ion 3340 mAh');
 
-insert into HoaDon values('1','1','3','2019-02-27','2019-08-27',N'Mua tại cửa hàng',N'Thanh toán trực tiếp',0);
-insert into HoaDon values('2','4','4','2019-02-28','2019-02-28',N'Mua tại của hàng',N'Thanh toán bằng thẻ',0);
-insert into HoaDon values('3','5','3','2019-03-02','2019-09-02',N'Giao tại hàng nhà',N'Thanh toán bằng thẻ',0);
-insert into HoaDon values('4','11','5','2019-04-11','2019-06-11',N'Mua tại cửa hàng',N'Thanh toán trực tiếp',0);
-insert into HoaDon values('5','12','5','2019-02-13','2019-02-13',N'Mua tại cửa hàng',N'Thanh toán bằng thẻ',0);
-insert into HoaDon values('6','9','6','2019-05-24','2019-05-24',N'Mua tại cửa hàng',N'Thanh toán trực tiếp',0);
+insert into HoaDon values('1','1','3','2019-02-27','2019-08-27',N'Mua tại cửa hàng',N'Thanh toán trực tiếp','0');
+insert into HoaDon values('2','4','4','2019-02-28','2019-02-28',N'Mua tại của hàng',N'Thanh toán bằng thẻ','0');
+insert into HoaDon values('3','5','3','2019-03-02','2019-09-02',N'Giao tại hàng nhà',N'Thanh toán bằng thẻ','0');
+insert into HoaDon values('4','11','5','2019-04-11','2019-06-11',N'Mua tại cửa hàng',N'Thanh toán trực tiếp','0');
+insert into HoaDon values('5','12','5','2019-02-13','2019-02-13',N'Mua tại cửa hàng',N'Thanh toán bằng thẻ','0');
+insert into HoaDon values('6','9','6','2019-05-24','2019-05-24',N'Mua tại cửa hàng',N'Thanh toán trực tiếp','0');
 
 insert into ChiTietHoadon values('1','1','2');
 insert into ChiTietHoadon values('2','1','29');
@@ -159,7 +158,4 @@ insert into ChiTietHoadon values('4','3','1');
 insert into ChiTietHoadon values('5','4','21');
 insert into ChiTietHoadon values('6','5','16');
 insert into ChiTietHoadon values('7','6','28');
-
-insert into SuaChua values('1',N'','2019-10-15','0', N'Lỗi màn hình','6');
-insert into SuaChua values('2',N'','2019-12-13','0',N'Lỗi loa');
 go

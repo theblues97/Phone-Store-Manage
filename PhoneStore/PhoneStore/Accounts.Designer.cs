@@ -55,8 +55,9 @@
             this.datBirth = new System.Windows.Forms.DateTimePicker();
             this.radMale = new System.Windows.Forms.RadioButton();
             this.radFemale = new System.Windows.Forms.RadioButton();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pnlToolMenu = new System.Windows.Forms.Panel();
             this.thôngKêKhachHangToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.quanLyKhachHangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,8 +78,9 @@
             this.điênThoaiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quanLyĐiênThoaiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlCustomerArea.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.pnlToolMenu.SuspendLayout();
             this.mnsMenu.SuspendLayout();
             this.SuspendLayout();
@@ -131,7 +133,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(498, 9);
+            this.label1.Location = new System.Drawing.Point(419, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(196, 25);
             this.label1.TabIndex = 5;
@@ -152,7 +154,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(49, 266);
+            this.label4.Location = new System.Drawing.Point(44, 261);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 15);
             this.label4.TabIndex = 32;
@@ -161,7 +163,7 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(137, 263);
+            this.textBox3.Location = new System.Drawing.Point(132, 258);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(99, 20);
@@ -189,16 +191,16 @@
             this.pnlCustomerArea.Controls.Add(this.datBirth);
             this.pnlCustomerArea.Controls.Add(this.radMale);
             this.pnlCustomerArea.Controls.Add(this.radFemale);
-            this.pnlCustomerArea.Location = new System.Drawing.Point(0, 0);
+            this.pnlCustomerArea.Location = new System.Drawing.Point(6, 6);
             this.pnlCustomerArea.Name = "pnlCustomerArea";
-            this.pnlCustomerArea.Size = new System.Drawing.Size(503, 554);
+            this.pnlCustomerArea.Size = new System.Drawing.Size(503, 518);
             this.pnlCustomerArea.TabIndex = 16;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(49, 221);
+            this.label3.Location = new System.Drawing.Point(41, 221);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 15);
             this.label3.TabIndex = 30;
@@ -207,7 +209,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(137, 218);
+            this.textBox2.Location = new System.Drawing.Point(132, 218);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(159, 20);
@@ -217,7 +219,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(49, 181);
+            this.label2.Location = new System.Drawing.Point(42, 181);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 15);
             this.label2.TabIndex = 28;
@@ -226,7 +228,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(137, 178);
+            this.textBox1.Location = new System.Drawing.Point(132, 178);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(159, 20);
@@ -273,7 +275,7 @@
             // txtAdress
             // 
             this.txtAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAdress.Location = new System.Drawing.Point(137, 349);
+            this.txtAdress.Location = new System.Drawing.Point(132, 337);
             this.txtAdress.Multiline = true;
             this.txtAdress.Name = "txtAdress";
             this.txtAdress.Size = new System.Drawing.Size(259, 40);
@@ -293,7 +295,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(49, 354);
+            this.label9.Location = new System.Drawing.Point(42, 340);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(45, 15);
             this.label9.TabIndex = 26;
@@ -312,7 +314,7 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(137, 309);
+            this.txtEmail.Location = new System.Drawing.Point(132, 297);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(159, 20);
@@ -332,7 +334,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(49, 314);
+            this.label12.Location = new System.Drawing.Point(41, 300);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(86, 15);
             this.label12.TabIndex = 24;
@@ -369,17 +371,9 @@
             this.radFemale.Text = "Nữ";
             this.radFemale.UseVisualStyleBackColor = true;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.pnlCustomerArea);
-            this.panel1.Location = new System.Drawing.Point(3, 80);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1037, 554);
-            this.panel1.TabIndex = 6;
-            // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Controls.Add(this.tabControl1);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pnlToolMenu);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -387,6 +381,26 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1043, 637);
             this.panel2.TabIndex = 49;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Location = new System.Drawing.Point(3, 81);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1040, 556);
+            this.tabControl1.TabIndex = 6;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.pnlCustomerArea);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1032, 530);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Thông tin cá nhân";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // pnlToolMenu
             // 
@@ -544,9 +558,10 @@
             this.Text = "Accounts";
             this.pnlCustomerArea.ResumeLayout(false);
             this.pnlCustomerArea.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.pnlToolMenu.ResumeLayout(false);
             this.mnsMenu.ResumeLayout(false);
             this.mnsMenu.PerformLayout();
@@ -584,7 +599,6 @@
         private System.Windows.Forms.DateTimePicker datBirth;
         private System.Windows.Forms.RadioButton radMale;
         private System.Windows.Forms.RadioButton radFemale;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnlToolMenu;
         private System.Windows.Forms.ToolStripMenuItem thôngKêKhachHangToolStripMenuItem1;
@@ -605,5 +619,7 @@
         private System.Windows.Forms.ToolStripMenuItem quanLyHơpĐôngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem điênThoaiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quanLyĐiênThoaiToolStripMenuItem;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
     }
 }

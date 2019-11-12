@@ -1,4 +1,4 @@
-use master;
+﻿use master;
 go
 
 drop database if exists PhoneStoreManage;
@@ -23,12 +23,6 @@ drop table if exists KhachHang;
 drop table if exists ChucVu;
 drop table if exists Account;
 go
-
-create table Account
-(
-	Username nvarchar(50) primary key not null,
-	Password nvarchar(50)
-);
 
 create table ChucVu
 (
@@ -71,6 +65,14 @@ create table NhanVien
 	foreign key (MaCV) references ChucVu(MaCV) 
 );
 
+create table Account
+(
+	Username nvarchar(50) primary key not null,
+	Password nvarchar(50),
+	MaNV int,
+	foreign key (MaNV) references NhanVien(MaNV)
+);
+
 create table HangDienThoai
 (
 	MaHDT int primary key not null,
@@ -98,19 +100,19 @@ create table DienThoai
 	foreign key (MaMDT) references MauDienThoai(MaMDT)
 );
 
-create table CauHinh
-(
-	--MaCH int primary key not null,
-	MaMDT int primary key not null,
-	DisResolution nvarchar(50),
-	DisSize nvarchar(50),
-	CamMain nvarchar(250),
-	Cpu nvarchar(250),
-	Ram nvarchar(50),
-	Rom nvarchar(50),  
-	Pin nvarchar(50)
-	foreign key (MaMDT) references MauDienThoai(MaMDT)
-);
+--create table CauHinh
+--(
+--	--MaCH int primary key not null,
+--	MaMDT int primary key not null,
+--	DisResolution nvarchar(50),
+--	DisSize nvarchar(50),
+--	CamMain nvarchar(250),
+--	Cpu nvarchar(250),
+--	Ram nvarchar(50),
+--	Rom nvarchar(50),  
+--	Pin nvarchar(50)
+--	foreign key (MaMDT) references MauDienThoai(MaMDT)
+--);
 
 create table HoaDon
 (
@@ -141,9 +143,14 @@ create table SuaChua
 	TenDienThoai nvarchar(50),
 	NgayNhan date,
 	PhiSC int,
+	PTThanhToan nvarchar(50),
 	NoiDung nvarchar(250),
+	MaKH int not null,
+	MaNV int not null,
 	MaHD int,
-	foreign key (MaHD) REFERENCES HoaDon(MaHD)
+	foreign key (MaHD) REFERENCES HoaDon(MaHD),
+	foreign key (MaKH) REFERENCES  KhachHang(MaKH),
+	foreign key (MaNV) REFERENCES  NhanVien(MaNV)
 );
 go
 
@@ -181,7 +188,7 @@ end
 go
 
 drop proc if exists pro_SearchPhones
-drop proc if exists pro_AddWarrantys
+drop proc if exists pro_CreateWarrantys
 go
 
 create procedure pro_SearchPhones
@@ -191,3 +198,24 @@ begin
 	select mdt.TenDT, mdt.MaMDT, dt.Mau, dt.SoLuong, dt.Gia, mdt.KM from MauDienThoai mdt, DienThoai dt
 	where CHARINDEX(@key,mdt.TenDT) != 0 and mdt.MaMDT = dt.MaMDT;
 end
+go
+
+create procedure pro_CreateWarrantys
+	@MaSC int,
+	@TenDienThoai nvarchar(50),
+	@NgayNhan date,
+	@PhiSC int,
+	@PTThanhToan nvarchar(50),
+	@NoiDung nvarchar(250),
+	@MaKH int,
+	@MaNV int,
+	@MaHD int
+as
+begin
+	select @MaKH = hd.MaKH, @MaNV = hd.MaNV from HoaDon hd where hd.MaHD = @MaHD
+	insert into SuaChua values(@MaSC, @TenDienThoai, @NgayNhan, @PhiSC, @PTThanhToan, @NoiDung, @MaKH, @MaNV, @MaHD)
+end
+go
+
+exec pro_CreateWarrantys 1, 'Huawei Nova 3i', '2019-10-15', '0', N'Thanh toán trực tiếp', N'Thay màn hình', '','','2';
+exec pro_CreateWarrantys 2, 'Samsung Galaxy S10+', '2019-10-15', '13000000', N'Thanh toán trực tiếp', N'Thay màn hình', '10','9',null;
