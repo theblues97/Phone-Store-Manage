@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.thôngTinTaiKhoanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngKêĐiênThoaiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngKêBanHangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,11 +52,21 @@
             this.pnlSalebills = new System.Windows.Forms.Panel();
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.pnlCustomerArea = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.label27 = new System.Windows.Forms.Label();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.label26 = new System.Windows.Forms.Label();
             this.cbbPayMethod = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.cbbBuyMethod = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.pnlCustomerArea = new System.Windows.Forms.Panel();
             this.btnSelectCustomer = new System.Windows.Forms.Button();
             this.btnPhoneNumFill = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
@@ -74,6 +84,7 @@
             this.radFemale = new System.Windows.Forms.RadioButton();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.pnlBillPhoneArea = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.dgvBillPhones = new System.Windows.Forms.DataGridView();
             this.label15 = new System.Windows.Forms.Label();
             this.lblTotalMoney = new System.Windows.Forms.Label();
@@ -109,21 +120,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnAddOrder = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label26 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.label27 = new System.Windows.Forms.Label();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label28 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.mnsMenu.SuspendLayout();
             this.pnlSalebills.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.pnlCustomerArea.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.pnlBillPhoneArea.SuspendLayout();
@@ -131,7 +132,6 @@
             this.pnlPhoneArea.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhones)).BeginInit();
             this.pnlToolMenu.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // thôngTinTaiKhoanToolStripMenuItem
@@ -305,27 +305,109 @@
             this.tabPage2.Text = "Thông tin hóa đơn";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // pnlCustomerArea
+            // panel1
             // 
-            this.pnlCustomerArea.Controls.Add(this.btnSelectCustomer);
-            this.pnlCustomerArea.Controls.Add(this.btnPhoneNumFill);
-            this.pnlCustomerArea.Controls.Add(this.label13);
-            this.pnlCustomerArea.Controls.Add(this.txtPhoneNum);
-            this.pnlCustomerArea.Controls.Add(this.txtCustomer);
-            this.pnlCustomerArea.Controls.Add(this.txtAdress);
-            this.pnlCustomerArea.Controls.Add(this.label8);
-            this.pnlCustomerArea.Controls.Add(this.label9);
-            this.pnlCustomerArea.Controls.Add(this.label10);
-            this.pnlCustomerArea.Controls.Add(this.txtEmail);
-            this.pnlCustomerArea.Controls.Add(this.label11);
-            this.pnlCustomerArea.Controls.Add(this.label12);
-            this.pnlCustomerArea.Controls.Add(this.datBirth);
-            this.pnlCustomerArea.Controls.Add(this.radMale);
-            this.pnlCustomerArea.Controls.Add(this.radFemale);
-            this.pnlCustomerArea.Location = new System.Drawing.Point(6, 6);
-            this.pnlCustomerArea.Name = "pnlCustomerArea";
-            this.pnlCustomerArea.Size = new System.Drawing.Size(508, 472);
-            this.pnlCustomerArea.TabIndex = 15;
+            this.panel1.Controls.Add(this.textBox8);
+            this.panel1.Controls.Add(this.label29);
+            this.panel1.Controls.Add(this.textBox7);
+            this.panel1.Controls.Add(this.label28);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.dateTimePicker4);
+            this.panel1.Controls.Add(this.label27);
+            this.panel1.Controls.Add(this.dateTimePicker3);
+            this.panel1.Controls.Add(this.label26);
+            this.panel1.Controls.Add(this.cbbPayMethod);
+            this.panel1.Controls.Add(this.label20);
+            this.panel1.Controls.Add(this.cbbBuyMethod);
+            this.panel1.Controls.Add(this.label21);
+            this.panel1.Location = new System.Drawing.Point(520, 7);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(506, 471);
+            this.panel1.TabIndex = 16;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.Location = new System.Drawing.Point(166, 81);
+            this.textBox8.Multiline = true;
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(175, 20);
+            this.textBox8.TabIndex = 36;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(66, 84);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(84, 15);
+            this.label29.TabIndex = 37;
+            this.label29.Text = "Tên nhân viên";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(166, 41);
+            this.textBox7.Multiline = true;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(104, 20);
+            this.textBox7.TabIndex = 27;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(66, 44);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(81, 15);
+            this.label28.TabIndex = 28;
+            this.label28.Text = "Mã nhân viên";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(392, 420);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(88, 34);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "Chọn";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker4.Location = new System.Drawing.Point(166, 163);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(104, 21);
+            this.dateTimePicker4.TabIndex = 35;
+            this.dateTimePicker4.Value = new System.DateTime(2020, 11, 11, 0, 0, 0, 0);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(66, 168);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(85, 15);
+            this.label27.TabIndex = 34;
+            this.label27.Text = "Hạn bảo hành";
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker3.Location = new System.Drawing.Point(166, 120);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(104, 21);
+            this.dateTimePicker3.TabIndex = 27;
+            this.dateTimePicker3.Value = new System.DateTime(2019, 11, 11, 0, 0, 0, 0);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(66, 126);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(63, 15);
+            this.label26.TabIndex = 32;
+            this.label26.Text = "Ngày mua";
             // 
             // cbbPayMethod
             // 
@@ -339,6 +421,16 @@
             this.cbbPayMethod.Name = "cbbPayMethod";
             this.cbbPayMethod.Size = new System.Drawing.Size(145, 23);
             this.cbbPayMethod.TabIndex = 19;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(66, 208);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(80, 15);
+            this.label20.TabIndex = 29;
+            this.label20.Text = "P.t mua hàng";
             // 
             // cbbBuyMethod
             // 
@@ -363,15 +455,27 @@
             this.label21.TabIndex = 31;
             this.label21.Text = "P.t thanh toán";
             // 
-            // label20
+            // pnlCustomerArea
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(66, 208);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(80, 15);
-            this.label20.TabIndex = 29;
-            this.label20.Text = "P.t mua hàng";
+            this.pnlCustomerArea.Controls.Add(this.btnSelectCustomer);
+            this.pnlCustomerArea.Controls.Add(this.btnPhoneNumFill);
+            this.pnlCustomerArea.Controls.Add(this.label13);
+            this.pnlCustomerArea.Controls.Add(this.txtPhoneNum);
+            this.pnlCustomerArea.Controls.Add(this.txtCustomer);
+            this.pnlCustomerArea.Controls.Add(this.txtAdress);
+            this.pnlCustomerArea.Controls.Add(this.label8);
+            this.pnlCustomerArea.Controls.Add(this.label9);
+            this.pnlCustomerArea.Controls.Add(this.label10);
+            this.pnlCustomerArea.Controls.Add(this.txtEmail);
+            this.pnlCustomerArea.Controls.Add(this.label11);
+            this.pnlCustomerArea.Controls.Add(this.label12);
+            this.pnlCustomerArea.Controls.Add(this.datBirth);
+            this.pnlCustomerArea.Controls.Add(this.radMale);
+            this.pnlCustomerArea.Controls.Add(this.radFemale);
+            this.pnlCustomerArea.Location = new System.Drawing.Point(6, 6);
+            this.pnlCustomerArea.Name = "pnlCustomerArea";
+            this.pnlCustomerArea.Size = new System.Drawing.Size(508, 472);
+            this.pnlCustomerArea.TabIndex = 15;
             // 
             // btnSelectCustomer
             // 
@@ -398,7 +502,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(45, 47);
+            this.label13.Location = new System.Drawing.Point(45, 45);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(79, 15);
             this.label13.TabIndex = 22;
@@ -435,7 +539,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(45, 87);
+            this.label8.Location = new System.Drawing.Point(45, 85);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 15);
             this.label8.TabIndex = 15;
@@ -445,7 +549,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(45, 244);
+            this.label9.Location = new System.Drawing.Point(45, 242);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(45, 15);
             this.label9.TabIndex = 26;
@@ -455,7 +559,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(45, 128);
+            this.label10.Location = new System.Drawing.Point(45, 126);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(61, 15);
             this.label10.TabIndex = 16;
@@ -484,7 +588,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(45, 204);
+            this.label12.Location = new System.Drawing.Point(45, 202);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(39, 15);
             this.label12.TabIndex = 24;
@@ -553,6 +657,16 @@
             this.pnlBillPhoneArea.Name = "pnlBillPhoneArea";
             this.pnlBillPhoneArea.Size = new System.Drawing.Size(514, 489);
             this.pnlBillPhoneArea.TabIndex = 50;
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(411, 442);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(88, 34);
+            this.button4.TabIndex = 40;
+            this.button4.Text = "Tạo";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // dgvBillPhones
             // 
@@ -698,14 +812,14 @@
             this.dgvPhones.AllowUserToAddRows = false;
             this.dgvPhones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPhones.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPhones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPhones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvPhones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPhones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TenHang,
@@ -714,25 +828,25 @@
             this.Mau,
             this.Soluong,
             this.Gia});
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPhones.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPhones.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgvPhones.Location = new System.Drawing.Point(3, 46);
             this.dgvPhones.Name = "dgvPhones";
             this.dgvPhones.ReadOnly = true;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPhones.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPhones.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvPhones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPhones.Size = new System.Drawing.Size(508, 378);
             this.dgvPhones.TabIndex = 0;
@@ -925,120 +1039,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Hóa đơn bán hàng";
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.textBox8);
-            this.panel1.Controls.Add(this.label29);
-            this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.label28);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.dateTimePicker4);
-            this.panel1.Controls.Add(this.label27);
-            this.panel1.Controls.Add(this.dateTimePicker3);
-            this.panel1.Controls.Add(this.label26);
-            this.panel1.Controls.Add(this.cbbPayMethod);
-            this.panel1.Controls.Add(this.label20);
-            this.panel1.Controls.Add(this.cbbBuyMethod);
-            this.panel1.Controls.Add(this.label21);
-            this.panel1.Location = new System.Drawing.Point(520, 7);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(506, 471);
-            this.panel1.TabIndex = 16;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(66, 126);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(63, 15);
-            this.label26.TabIndex = 32;
-            this.label26.Text = "Ngày mua";
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(166, 120);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(104, 21);
-            this.dateTimePicker3.TabIndex = 27;
-            this.dateTimePicker3.Value = new System.DateTime(2019, 11, 11, 0, 0, 0, 0);
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(66, 168);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(85, 15);
-            this.label27.TabIndex = 34;
-            this.label27.Text = "Hạn bảo hành";
-            // 
-            // dateTimePicker4
-            // 
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker4.Location = new System.Drawing.Point(166, 163);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(104, 21);
-            this.dateTimePicker4.TabIndex = 35;
-            this.dateTimePicker4.Value = new System.DateTime(2020, 11, 11, 0, 0, 0, 0);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(392, 420);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 34);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Chọn";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(66, 44);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(81, 15);
-            this.label28.TabIndex = 28;
-            this.label28.Text = "Mã nhân viên";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(166, 41);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(104, 20);
-            this.textBox7.TabIndex = 27;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(166, 81);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(175, 20);
-            this.textBox8.TabIndex = 36;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(66, 84);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(84, 15);
-            this.label29.TabIndex = 37;
-            this.label29.Text = "Tên nhân viên";
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(411, 442);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(88, 34);
-            this.button4.TabIndex = 40;
-            this.button4.Text = "Tạo";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1054,6 +1054,8 @@
             this.pnlSalebills.PerformLayout();
             this.tabMain.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.pnlCustomerArea.ResumeLayout(false);
             this.pnlCustomerArea.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -1064,8 +1066,6 @@
             this.pnlPhoneArea.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhones)).EndInit();
             this.pnlToolMenu.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -141,35 +141,12 @@ namespace PhoneStore
                 }
             }
         }
-
-        void LoadBillList()
-        {
-            using (var ctx = new PhoneStoreManageEntities())
-            {
-                var query = from q in ctx.HoaDons
-                            select new
-                            {
-                                MaHD = q.MaHD,
-                                MaKH = q.MaKH,
-                                MaNV = q.MaNV,
-                                NgayMua = q.NgayMua,
-                                HanBaoHanh = q.HanBH,
-                                PTMuaHang = q.PTMuaHang,
-                                PTThanhToan = q.PTThanhToan,
-                                TongTien = q.Tongtien
-                            };
-                dgvBillList.DataSource = query.ToList();
-                dgvBillList.Refresh();
-            }
-        }
         #endregion
 
         #region Events
         private void hoaĐơnBanHangToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnlSalebills.Visible = true;
-            pnlBillList.Visible = true;
-            LoadBillList();
         }
 
         private void hoaĐơnSuaChuaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -195,7 +172,7 @@ namespace PhoneStore
 
         private void thôngTinTaiKhoanToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Accounts accounts = new Accounts();
+            Informations accounts = new Informations();
             accounts.Show();
         }
 
@@ -249,7 +226,6 @@ namespace PhoneStore
 
         private void btnList_Click(object sender, EventArgs e)
         {
-            pnlBillList.Visible = true;
         }
     }
 }

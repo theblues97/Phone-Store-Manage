@@ -16,5 +16,25 @@ namespace PhoneStore
         {
             InitializeComponent();
         }
+        void LoadBillList()
+        {
+            using (var ctx = new PhoneStoreManageEntities())
+            {
+                var query = from q in ctx.HoaDons
+                            select new
+                            {
+                                MaHD = q.MaHD,
+                                MaKH = q.MaKH,
+                                MaNV = q.MaNV,
+                                NgayMua = q.NgayMua,
+                                HanBaoHanh = q.HanBH,
+                                PTMuaHang = q.PTMuaHang,
+                                PTThanhToan = q.PTThanhToan,
+                                TongTien = q.Tongtien
+                            };
+                dgvBillList.DataSource = query.ToList();
+                dgvBillList.Refresh();
+            }
+        }
     }
 }

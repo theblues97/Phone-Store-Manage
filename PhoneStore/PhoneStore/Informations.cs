@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PhoneStore
 {
-    public partial class Accounts : Form
+    public partial class Informations : Form
     {
-        public Accounts()
+        public Informations()
         {
             InitializeComponent();
         }
