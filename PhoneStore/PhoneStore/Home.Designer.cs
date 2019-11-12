@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.thôngTinTaiKhoanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngKêĐiênThoaiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngKêBanHangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,21 +53,20 @@
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtEmployeeName = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtEmployeeID = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.btnSelect = new System.Windows.Forms.Button();
+            this.datWarranty = new System.Windows.Forms.DateTimePicker();
             this.label27 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.datBuy = new System.Windows.Forms.DateTimePicker();
             this.label26 = new System.Windows.Forms.Label();
             this.cbbPayMethod = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.cbbBuyMethod = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.pnlCustomerArea = new System.Windows.Forms.Panel();
-            this.btnSelectCustomer = new System.Windows.Forms.Button();
             this.btnPhoneNumFill = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.txtPhoneNum = new System.Windows.Forms.TextBox();
@@ -100,12 +99,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pnlPhoneArea = new System.Windows.Forms.Panel();
             this.dgvPhones = new System.Windows.Forms.DataGridView();
-            this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaMauDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbbColors = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbbBrand = new System.Windows.Forms.ComboBox();
@@ -120,6 +113,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnAddOrder = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.lblUsernames = new System.Windows.Forms.Label();
             this.mnsMenu.SuspendLayout();
             this.pnlSalebills.SuspendLayout();
             this.tabMain.SuspendLayout();
@@ -307,14 +302,14 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox8);
+            this.panel1.Controls.Add(this.txtEmployeeName);
             this.panel1.Controls.Add(this.label29);
-            this.panel1.Controls.Add(this.textBox7);
+            this.panel1.Controls.Add(this.txtEmployeeID);
             this.panel1.Controls.Add(this.label28);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.dateTimePicker4);
+            this.panel1.Controls.Add(this.btnSelect);
+            this.panel1.Controls.Add(this.datWarranty);
             this.panel1.Controls.Add(this.label27);
-            this.panel1.Controls.Add(this.dateTimePicker3);
+            this.panel1.Controls.Add(this.datBuy);
             this.panel1.Controls.Add(this.label26);
             this.panel1.Controls.Add(this.cbbPayMethod);
             this.panel1.Controls.Add(this.label20);
@@ -325,14 +320,14 @@
             this.panel1.Size = new System.Drawing.Size(506, 471);
             this.panel1.TabIndex = 16;
             // 
-            // textBox8
+            // txtEmployeeName
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(166, 81);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(175, 20);
-            this.textBox8.TabIndex = 36;
+            this.txtEmployeeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmployeeName.Location = new System.Drawing.Point(166, 81);
+            this.txtEmployeeName.Multiline = true;
+            this.txtEmployeeName.Name = "txtEmployeeName";
+            this.txtEmployeeName.Size = new System.Drawing.Size(175, 20);
+            this.txtEmployeeName.TabIndex = 36;
             // 
             // label29
             // 
@@ -344,14 +339,14 @@
             this.label29.TabIndex = 37;
             this.label29.Text = "Tên nhân viên";
             // 
-            // textBox7
+            // txtEmployeeID
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(166, 41);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(104, 20);
-            this.textBox7.TabIndex = 27;
+            this.txtEmployeeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmployeeID.Location = new System.Drawing.Point(166, 41);
+            this.txtEmployeeID.Multiline = true;
+            this.txtEmployeeID.Name = "txtEmployeeID";
+            this.txtEmployeeID.Size = new System.Drawing.Size(104, 20);
+            this.txtEmployeeID.TabIndex = 27;
             // 
             // label28
             // 
@@ -363,24 +358,24 @@
             this.label28.TabIndex = 28;
             this.label28.Text = "Mã nhân viên";
             // 
-            // button1
+            // btnSelect
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(392, 420);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 34);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Chọn";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelect.Location = new System.Drawing.Point(392, 420);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(88, 34);
+            this.btnSelect.TabIndex = 27;
+            this.btnSelect.Text = "Chọn";
+            this.btnSelect.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker4
+            // datWarranty
             // 
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker4.Location = new System.Drawing.Point(166, 163);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(104, 21);
-            this.dateTimePicker4.TabIndex = 35;
-            this.dateTimePicker4.Value = new System.DateTime(2020, 11, 11, 0, 0, 0, 0);
+            this.datWarranty.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datWarranty.Location = new System.Drawing.Point(166, 163);
+            this.datWarranty.Name = "datWarranty";
+            this.datWarranty.Size = new System.Drawing.Size(104, 21);
+            this.datWarranty.TabIndex = 35;
+            this.datWarranty.Value = new System.DateTime(2020, 11, 11, 0, 0, 0, 0);
             // 
             // label27
             // 
@@ -391,14 +386,14 @@
             this.label27.TabIndex = 34;
             this.label27.Text = "Hạn bảo hành";
             // 
-            // dateTimePicker3
+            // datBuy
             // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(166, 120);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(104, 21);
-            this.dateTimePicker3.TabIndex = 27;
-            this.dateTimePicker3.Value = new System.DateTime(2019, 11, 11, 0, 0, 0, 0);
+            this.datBuy.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datBuy.Location = new System.Drawing.Point(166, 120);
+            this.datBuy.Name = "datBuy";
+            this.datBuy.Size = new System.Drawing.Size(104, 21);
+            this.datBuy.TabIndex = 27;
+            this.datBuy.Value = new System.DateTime(2019, 11, 11, 0, 0, 0, 0);
             // 
             // label26
             // 
@@ -457,7 +452,6 @@
             // 
             // pnlCustomerArea
             // 
-            this.pnlCustomerArea.Controls.Add(this.btnSelectCustomer);
             this.pnlCustomerArea.Controls.Add(this.btnPhoneNumFill);
             this.pnlCustomerArea.Controls.Add(this.label13);
             this.pnlCustomerArea.Controls.Add(this.txtPhoneNum);
@@ -476,16 +470,6 @@
             this.pnlCustomerArea.Name = "pnlCustomerArea";
             this.pnlCustomerArea.Size = new System.Drawing.Size(508, 472);
             this.pnlCustomerArea.TabIndex = 15;
-            // 
-            // btnSelectCustomer
-            // 
-            this.btnSelectCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelectCustomer.Location = new System.Drawing.Point(396, 421);
-            this.btnSelectCustomer.Name = "btnSelectCustomer";
-            this.btnSelectCustomer.Size = new System.Drawing.Size(88, 34);
-            this.btnSelectCustomer.TabIndex = 20;
-            this.btnSelectCustomer.Text = "Chọn";
-            this.btnSelectCustomer.UseVisualStyleBackColor = true;
             // 
             // btnPhoneNumFill
             // 
@@ -810,87 +794,41 @@
             // dgvPhones
             // 
             this.dgvPhones.AllowUserToAddRows = false;
+            this.dgvPhones.AllowUserToResizeColumns = false;
             this.dgvPhones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPhones.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPhones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvPhones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPhones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TenHang,
-            this.MaMauDienThoai,
-            this.TenDienThoai,
-            this.Mau,
-            this.Soluong,
-            this.Gia});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPhones.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPhones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPhones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPhones.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPhones.Location = new System.Drawing.Point(3, 46);
             this.dgvPhones.Name = "dgvPhones";
             this.dgvPhones.ReadOnly = true;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPhones.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPhones.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPhones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPhones.Size = new System.Drawing.Size(508, 378);
             this.dgvPhones.TabIndex = 0;
-            // 
-            // TenHang
-            // 
-            this.TenHang.HeaderText = "Tên hãng";
-            this.TenHang.Name = "TenHang";
-            this.TenHang.ReadOnly = true;
-            this.TenHang.Visible = false;
-            // 
-            // MaMauDienThoai
-            // 
-            this.MaMauDienThoai.HeaderText = "Mã mẫu";
-            this.MaMauDienThoai.Name = "MaMauDienThoai";
-            this.MaMauDienThoai.ReadOnly = true;
-            this.MaMauDienThoai.Visible = false;
-            // 
-            // TenDienThoai
-            // 
-            this.TenDienThoai.HeaderText = "Điện thoại";
-            this.TenDienThoai.Name = "TenDienThoai";
-            this.TenDienThoai.ReadOnly = true;
-            // 
-            // Mau
-            // 
-            this.Mau.FillWeight = 30F;
-            this.Mau.HeaderText = "Màu";
-            this.Mau.Name = "Mau";
-            this.Mau.ReadOnly = true;
-            // 
-            // Soluong
-            // 
-            this.Soluong.FillWeight = 40F;
-            this.Soluong.HeaderText = "Số lượng";
-            this.Soluong.Name = "Soluong";
-            this.Soluong.ReadOnly = true;
-            // 
-            // Gia
-            // 
-            this.Gia.FillWeight = 50F;
-            this.Gia.HeaderText = "Giá";
-            this.Gia.Name = "Gia";
-            this.Gia.ReadOnly = true;
+            this.dgvPhones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhones_CellClick);
             // 
             // cbbColors
             // 
@@ -933,6 +871,7 @@
             this.btnAddPhone.TabIndex = 9;
             this.btnAddPhone.Text = "Thêm";
             this.btnAddPhone.UseVisualStyleBackColor = true;
+            this.btnAddPhone.Click += new System.EventHandler(this.btnAddPhone_Click);
             // 
             // label2
             // 
@@ -1039,14 +978,39 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Hóa đơn bán hàng";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label16.Location = new System.Drawing.Point(890, 5);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(65, 15);
+            this.label16.TabIndex = 45;
+            this.label16.Text = "Welcome: ";
+            // 
+            // lblUsernames
+            // 
+            this.lblUsernames.AutoSize = true;
+            this.lblUsernames.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsernames.ForeColor = System.Drawing.Color.Red;
+            this.lblUsernames.Location = new System.Drawing.Point(954, 5);
+            this.lblUsernames.Name = "lblUsernames";
+            this.lblUsernames.Size = new System.Drawing.Size(42, 15);
+            this.lblUsernames.TabIndex = 46;
+            this.lblUsernames.Text = "Admin";
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1042, 621);
+            this.Controls.Add(this.lblUsernames);
             this.Controls.Add(this.pnlSalebills);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.mnsMenu);
             this.Name = "Home";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             this.mnsMenu.ResumeLayout(false);
             this.mnsMenu.PerformLayout();
@@ -1098,7 +1062,6 @@
         private System.Windows.Forms.ComboBox cbbBuyMethod;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Button btnSelectCustomer;
         private System.Windows.Forms.Button btnPhoneNumFill;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtPhoneNum;
@@ -1144,22 +1107,18 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnAddOrder;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaMauDienThoai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenDienThoai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mau;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Soluong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.Button btnSelect;
+        private System.Windows.Forms.DateTimePicker datWarranty;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker datBuy;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtEmployeeName;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtEmployeeID;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblUsernames;
     }
 }

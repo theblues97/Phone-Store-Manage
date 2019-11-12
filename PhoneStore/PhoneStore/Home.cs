@@ -12,11 +12,17 @@ namespace PhoneStore
 {
     public partial class Home : Form
     {
+        public string username;
         public Home()
         {
             InitializeComponent();
         }
 
+        public Home(string Username) : this()
+        {
+            username = Username;
+            lblUsernames.Text = username;
+        }
 
         #region Methods
         void LoadComboBox()
@@ -51,8 +57,9 @@ namespace PhoneStore
                              select new
                              {
                                  TenHang = pb.TenHDT,
-                                 MaMauDienThoai = mp.MaMDT,
+                                 MaMauDienThoai = mp.MaMDT,       
                                  TenDienThoai = mp.TenDT,
+                                 MaDienThoai = p.MaDT,
                                  Mau = p.Mau,
                                  SoLuong = p.SoLuong,
                                  Gia = p.Gia,
@@ -79,7 +86,7 @@ namespace PhoneStore
                 var result = from q in query
                              select new
                              {
-                                 q.MaMauDienThoai,
+                                 q.MaDienThoai,
                                  q.TenDienThoai,
                                  q.Mau,
                                  q.SoLuong,
@@ -89,6 +96,15 @@ namespace PhoneStore
 
                 dgvPhones.DataSource = result.ToList();
                 dgvPhones.Columns[0].Visible = false;
+                dgvPhones.Columns[5].Visible = false;
+                dgvPhones.Columns[1].HeaderText = "Tên điện thoại";
+                dgvPhones.Columns[2].HeaderText = "Màu";
+                dgvPhones.Columns[3].HeaderText = "Số lượng";
+                dgvPhones.Columns[4].HeaderText = "Giá";
+                dgvPhones.Columns[1].FillWeight = 150;
+                dgvPhones.Columns[2].FillWeight = 50;
+                dgvPhones.Columns[3].FillWeight = 70;
+                dgvPhones.Columns[4].FillWeight = 70;
                 dgvPhones.Refresh();
 
                 if (txtPhoneSearch.Text != "")
@@ -98,7 +114,7 @@ namespace PhoneStore
                                   //join q in query on pr.tendt equals q.tendienthoai
                               select new
                               {
-                                  MaMauDienThoai = pr.MaMDT,
+                                  MaDienThoai = pr.MaDT,
                                   TenDienThoai = pr.TenDT,
                                   Mau = pr.Mau,
                                   SoLuong = pr.SoLuong,
@@ -108,8 +124,27 @@ namespace PhoneStore
 
                     dgvPhones.DataSource = res.ToList();
                     dgvPhones.Columns[0].Visible = false;
+                    dgvPhones.Columns[5].Visible = false;
                     dgvPhones.Refresh();
                 }
+            }
+        }
+
+        void LoadEmployee()
+        {
+            using (var ctx = new PhoneStoreManageEntities())
+            {
+                var employee = from emp in ctx.NhanViens
+                               join acc in ctx.Accounts on emp.MaNV equals acc.MaNV
+                               where acc.Username == username
+                               select emp;
+                txtEmployeeID.Text = (from emp in employee select emp.MaNV).FirstOrDefault().ToString();
+                txtEmployeeName.Text = (from emp in employee select emp.TenNV).FirstOrDefault().ToString();
+
+                DateTime time = DateTime.Now;
+                datBuy.Value = new DateTime(time.Year, time.Month, time.Day);
+                datWarranty.Value = new DateTime(time.Year + 1, time.Month, time.Day);
+
             }
         }
 
@@ -141,12 +176,25 @@ namespace PhoneStore
                 }
             }
         }
+
+        void ChoosePhones()
+        {
+            var cRow = dgvPhones.CurrentCell.RowIndex;
+            var PhoneID = dgvPhones.Rows[cRow].Cells[0].FormattedValue.ToString();
+
+            using (var ctx = new PhoneStoreManageEntities())
+            {
+
+            }
+        }
+
         #endregion
 
         #region Events
         private void hoaĐơnBanHangToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnlSalebills.Visible = true;
+            LoadEmployee();
         }
 
         private void hoaĐơnSuaChuaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -212,20 +260,24 @@ namespace PhoneStore
 
         private void dgvPhones_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
             if (e.RowIndex > -1)
             {
                 dgvPhones.CurrentRow.Selected = true;
-                txtPhone.Text = dgvPhones.Rows[e.RowIndex].Cells["TenDienThoai"].FormattedValue.ToString();
-                txtColor.Text = dgvPhones.Rows[e.RowIndex].Cells["Mau"].FormattedValue.ToString();
-                txtAvailble.Text = dgvPhones.Rows[e.RowIndex].Cells["SoLuong"].FormattedValue.ToString();
-                txtPrice.Text = dgvPhones.Rows[e.RowIndex].Cells["Gia"].FormattedValue.ToString();
-                txtGift.Text = dgvPhones.Rows[e.RowIndex].Cells["KhuyenMai"].FormattedValue.ToString();
+                txtPhone.Text = dgvPhones.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
+                txtColor.Text = dgvPhones.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
+                txtAvailble.Text = dgvPhones.Rows[e.RowIndex].Cells[3].FormattedValue.ToString();
+                txtPrice.Text = dgvPhones.Rows[e.RowIndex].Cells[4].FormattedValue.ToString();
+                txtGift.Text = dgvPhones.Rows[e.RowIndex].Cells[5].FormattedValue.ToString();
             }
         }
 
         private void btnList_Click(object sender, EventArgs e)
         {
+        }
+
+        private void btnAddPhone_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

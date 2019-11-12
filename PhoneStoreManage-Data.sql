@@ -66,14 +66,14 @@ insert into NhanVien values('8',N'Đặng Thái Sơn',N'Nam','1985-09-15','093
 insert into NhanVien values('9',N'Bùi Bích Ngân',N'Nữ','1990-05-18','0924861008','5800000','nganbb@gmail.com',N'Vĩnh Long','3','9');
 insert into NhanVien values('10',N'Lê Thành Công',N'Nam','1996-09-02','0923302286','8800000','conglt@gmail.com',N'Cà Mau','3','10');
 
-insert into Account values('admin','12345678','1');
-insert into Account values('manager1','123456','2');
-insert into Account values('manager2','123456','3');
-insert into Account values('employee1','123456','4');
-insert into Account values('employee2','123456','5');
-insert into Account values('employee3','123456','6');
-insert into Account values('employee4','123456','7');
-insert into Account values('employee5','123456','8');
+insert into Account values('Admin','12345678','1');
+insert into Account values('Manager1','123456','2');
+insert into Account values('Manager2','123456','3');
+insert into Account values('Employee1','123456','4');
+insert into Account values('Employee2','123456','5');
+insert into Account values('Employee3','123456','6');
+insert into Account values('Employee4','123456','7');
+insert into Account values('Employee5','123456','8');
 
 insert into HangDienThoai values('1','Apple');
 insert into HangDienThoai values('2','Samsung');

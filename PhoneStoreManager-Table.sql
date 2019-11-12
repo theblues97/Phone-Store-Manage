@@ -195,7 +195,7 @@ create procedure pro_SearchPhones
 @key nvarchar(50)
 as
 begin
-	select mdt.TenDT, mdt.MaMDT, dt.Mau, dt.SoLuong, dt.Gia, mdt.KM from MauDienThoai mdt, DienThoai dt
+	select mdt.TenDT, dt.MaDT, dt.Mau, dt.SoLuong, dt.Gia, mdt.KM from MauDienThoai mdt, DienThoai dt
 	where CHARINDEX(@key,mdt.TenDT) != 0 and mdt.MaMDT = dt.MaMDT;
 end
 go
