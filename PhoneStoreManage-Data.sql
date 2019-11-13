@@ -5,7 +5,7 @@ use PhoneStoreManage;
 go
 
 --delete from CauHinh;
---delete from SuaChua;
+delete from SuaChua;
 delete from ChitietHoadon;
 delete from HoaDon;
 delete from DienThoai;
@@ -159,3 +159,7 @@ insert into ChiTietHoadon values('5','4','21');
 insert into ChiTietHoadon values('6','5','16');
 insert into ChiTietHoadon values('7','6','28');
 go
+
+
+exec pro_CreateWarrantys 1, 'Huawei Nova 3i', '2019-10-15', '0', N'Thanh toán trực tiếp', N'Thay màn hình', '','','2';
+exec pro_CreateWarrantys 2, 'Samsung Galaxy S10+', '2019-10-15', '13000000', N'Thanh toán trực tiếp', N'Thay màn hình', '10','9',null;

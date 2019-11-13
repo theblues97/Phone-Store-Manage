@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.thôngTinTaiKhoanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngKêĐiênThoaiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngKêBanHangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,8 +50,8 @@
             this.quanLyKhachHangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngKêKhachHangToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlSalebills = new System.Windows.Forms.Panel();
-            this.tabMain = new System.Windows.Forms.TabControl();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabMainBill = new System.Windows.Forms.TabControl();
+            this.tabBill = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtEmployeeName = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
@@ -81,10 +81,10 @@
             this.datBirth = new System.Windows.Forms.DateTimePicker();
             this.radMale = new System.Windows.Forms.RadioButton();
             this.radFemale = new System.Windows.Forms.RadioButton();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabDetailBill = new System.Windows.Forms.TabPage();
             this.pnlBillPhoneArea = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
-            this.dgvBillPhones = new System.Windows.Forms.DataGridView();
+            this.dgvDetailBillPhones = new System.Windows.Forms.DataGridView();
             this.label15 = new System.Windows.Forms.Label();
             this.lblTotalMoney = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -108,7 +108,6 @@
             this.txtPhoneSearch = new System.Windows.Forms.TextBox();
             this.pnlBillListMain = new System.Windows.Forms.Panel();
             this.pnlToolMenu = new System.Windows.Forms.Panel();
-            this.btnList = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnAddOrder = new System.Windows.Forms.Button();
@@ -117,13 +116,13 @@
             this.lblUsernames = new System.Windows.Forms.Label();
             this.mnsMenu.SuspendLayout();
             this.pnlSalebills.SuspendLayout();
-            this.tabMain.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.tabMainBill.SuspendLayout();
+            this.tabBill.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlCustomerArea.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.tabDetailBill.SuspendLayout();
             this.pnlBillPhoneArea.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBillPhones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetailBillPhones)).BeginInit();
             this.pnlPhoneArea.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhones)).BeginInit();
             this.pnlToolMenu.SuspendLayout();
@@ -267,7 +266,7 @@
             // 
             // pnlSalebills
             // 
-            this.pnlSalebills.Controls.Add(this.tabMain);
+            this.pnlSalebills.Controls.Add(this.tabMainBill);
             this.pnlSalebills.Controls.Add(this.pnlBillListMain);
             this.pnlSalebills.Controls.Add(this.pnlToolMenu);
             this.pnlSalebills.Controls.Add(this.label1);
@@ -277,28 +276,28 @@
             this.pnlSalebills.TabIndex = 1;
             this.pnlSalebills.Visible = false;
             // 
-            // tabMain
+            // tabMainBill
             // 
-            this.tabMain.Controls.Add(this.tabPage2);
-            this.tabMain.Controls.Add(this.tabPage3);
-            this.tabMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabMain.Location = new System.Drawing.Point(0, 80);
-            this.tabMain.Name = "tabMain";
-            this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(1040, 514);
-            this.tabMain.TabIndex = 38;
+            this.tabMainBill.Controls.Add(this.tabBill);
+            this.tabMainBill.Controls.Add(this.tabDetailBill);
+            this.tabMainBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabMainBill.Location = new System.Drawing.Point(0, 80);
+            this.tabMainBill.Name = "tabMainBill";
+            this.tabMainBill.SelectedIndex = 0;
+            this.tabMainBill.Size = new System.Drawing.Size(1040, 514);
+            this.tabMainBill.TabIndex = 38;
             // 
-            // tabPage2
+            // tabBill
             // 
-            this.tabPage2.Controls.Add(this.panel1);
-            this.tabPage2.Controls.Add(this.pnlCustomerArea);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1032, 486);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Thông tin hóa đơn";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabBill.Controls.Add(this.panel1);
+            this.tabBill.Controls.Add(this.pnlCustomerArea);
+            this.tabBill.Location = new System.Drawing.Point(4, 24);
+            this.tabBill.Name = "tabBill";
+            this.tabBill.Padding = new System.Windows.Forms.Padding(3);
+            this.tabBill.Size = new System.Drawing.Size(1032, 486);
+            this.tabBill.TabIndex = 1;
+            this.tabBill.Text = "Thông tin hóa đơn";
+            this.tabBill.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -367,6 +366,7 @@
             this.btnSelect.TabIndex = 27;
             this.btnSelect.Text = "Chọn";
             this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // datWarranty
             // 
@@ -609,22 +609,22 @@
             this.radFemale.Text = "Nữ";
             this.radFemale.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
+            // tabDetailBill
             // 
-            this.tabPage3.Controls.Add(this.pnlBillPhoneArea);
-            this.tabPage3.Controls.Add(this.pnlPhoneArea);
-            this.tabPage3.Location = new System.Drawing.Point(4, 24);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1032, 486);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Chọn điện thoại";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabDetailBill.Controls.Add(this.pnlBillPhoneArea);
+            this.tabDetailBill.Controls.Add(this.pnlPhoneArea);
+            this.tabDetailBill.Location = new System.Drawing.Point(4, 24);
+            this.tabDetailBill.Name = "tabDetailBill";
+            this.tabDetailBill.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDetailBill.Size = new System.Drawing.Size(1032, 486);
+            this.tabDetailBill.TabIndex = 2;
+            this.tabDetailBill.Text = "Chọn điện thoại";
+            this.tabDetailBill.UseVisualStyleBackColor = true;
             // 
             // pnlBillPhoneArea
             // 
             this.pnlBillPhoneArea.Controls.Add(this.button4);
-            this.pnlBillPhoneArea.Controls.Add(this.dgvBillPhones);
+            this.pnlBillPhoneArea.Controls.Add(this.dgvDetailBillPhones);
             this.pnlBillPhoneArea.Controls.Add(this.label15);
             this.pnlBillPhoneArea.Controls.Add(this.lblTotalMoney);
             this.pnlBillPhoneArea.Controls.Add(this.label5);
@@ -652,15 +652,15 @@
             this.button4.Text = "Tạo";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // dgvBillPhones
+            // dgvDetailBillPhones
             // 
-            this.dgvBillPhones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvBillPhones.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgvBillPhones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBillPhones.Location = new System.Drawing.Point(3, 179);
-            this.dgvBillPhones.Name = "dgvBillPhones";
-            this.dgvBillPhones.Size = new System.Drawing.Size(508, 245);
-            this.dgvBillPhones.TabIndex = 0;
+            this.dgvDetailBillPhones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvDetailBillPhones.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvDetailBillPhones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetailBillPhones.Location = new System.Drawing.Point(3, 179);
+            this.dgvDetailBillPhones.Name = "dgvDetailBillPhones";
+            this.dgvDetailBillPhones.Size = new System.Drawing.Size(508, 245);
+            this.dgvDetailBillPhones.TabIndex = 0;
             // 
             // label15
             // 
@@ -675,7 +675,7 @@
             // lblTotalMoney
             // 
             this.lblTotalMoney.AutoSize = true;
-            this.lblTotalMoney.Location = new System.Drawing.Point(105, 451);
+            this.lblTotalMoney.Location = new System.Drawing.Point(82, 451);
             this.lblTotalMoney.Name = "lblTotalMoney";
             this.lblTotalMoney.Size = new System.Drawing.Size(14, 15);
             this.lblTotalMoney.TabIndex = 36;
@@ -694,7 +694,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(38, 451);
+            this.label4.Location = new System.Drawing.Point(15, 451);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 15);
             this.label4.TabIndex = 35;
@@ -714,7 +714,7 @@
             this.txtPhone.Location = new System.Drawing.Point(139, 28);
             this.txtPhone.Multiline = true;
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(178, 20);
+            this.txtPhone.Size = new System.Drawing.Size(235, 20);
             this.txtPhone.TabIndex = 40;
             // 
             // label14
@@ -733,7 +733,7 @@
             this.txtColor.Location = new System.Drawing.Point(139, 68);
             this.txtColor.Multiline = true;
             this.txtColor.Name = "txtColor";
-            this.txtColor.Size = new System.Drawing.Size(91, 20);
+            this.txtColor.Size = new System.Drawing.Size(59, 20);
             this.txtColor.TabIndex = 41;
             // 
             // txtPrice
@@ -789,7 +789,6 @@
             this.pnlPhoneArea.Name = "pnlPhoneArea";
             this.pnlPhoneArea.Size = new System.Drawing.Size(514, 490);
             this.pnlPhoneArea.TabIndex = 4;
-            this.pnlPhoneArea.Visible = false;
             // 
             // dgvPhones
             // 
@@ -797,34 +796,34 @@
             this.dgvPhones.AllowUserToResizeColumns = false;
             this.dgvPhones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPhones.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPhones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPhones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvPhones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPhones.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPhones.DefaultCellStyle = dataGridViewCellStyle20;
             this.dgvPhones.Location = new System.Drawing.Point(3, 46);
             this.dgvPhones.Name = "dgvPhones";
             this.dgvPhones.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPhones.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPhones.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvPhones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPhones.Size = new System.Drawing.Size(508, 378);
             this.dgvPhones.TabIndex = 0;
@@ -899,9 +898,8 @@
             // 
             this.txtPhoneSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhoneSearch.Location = new System.Drawing.Point(247, 18);
-            this.txtPhoneSearch.Multiline = true;
             this.txtPhoneSearch.Name = "txtPhoneSearch";
-            this.txtPhoneSearch.Size = new System.Drawing.Size(200, 20);
+            this.txtPhoneSearch.Size = new System.Drawing.Size(200, 21);
             this.txtPhoneSearch.TabIndex = 5;
             // 
             // pnlBillListMain
@@ -913,7 +911,6 @@
             // 
             // pnlToolMenu
             // 
-            this.pnlToolMenu.Controls.Add(this.btnList);
             this.pnlToolMenu.Controls.Add(this.button3);
             this.pnlToolMenu.Controls.Add(this.button2);
             this.pnlToolMenu.Controls.Add(this.btnAddOrder);
@@ -921,18 +918,6 @@
             this.pnlToolMenu.Name = "pnlToolMenu";
             this.pnlToolMenu.Size = new System.Drawing.Size(1037, 40);
             this.pnlToolMenu.TabIndex = 1;
-            // 
-            // btnList
-            // 
-            this.btnList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnList.Location = new System.Drawing.Point(147, 4);
-            this.btnList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnList.Name = "btnList";
-            this.btnList.Size = new System.Drawing.Size(40, 32);
-            this.btnList.TabIndex = 3;
-            this.btnList.Text = "List";
-            this.btnList.UseVisualStyleBackColor = true;
-            this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
             // button3
             // 
@@ -1016,16 +1001,16 @@
             this.mnsMenu.PerformLayout();
             this.pnlSalebills.ResumeLayout(false);
             this.pnlSalebills.PerformLayout();
-            this.tabMain.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
+            this.tabMainBill.ResumeLayout(false);
+            this.tabBill.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pnlCustomerArea.ResumeLayout(false);
             this.pnlCustomerArea.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
+            this.tabDetailBill.ResumeLayout(false);
             this.pnlBillPhoneArea.ResumeLayout(false);
             this.pnlBillPhoneArea.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBillPhones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetailBillPhones)).EndInit();
             this.pnlPhoneArea.ResumeLayout(false);
             this.pnlPhoneArea.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhones)).EndInit();
@@ -1055,8 +1040,8 @@
         private System.Windows.Forms.ToolStripMenuItem quanLyKhachHangToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thôngKêKhachHangToolStripMenuItem1;
         private System.Windows.Forms.Panel pnlSalebills;
-        private System.Windows.Forms.TabControl tabMain;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabControl tabMainBill;
+        private System.Windows.Forms.TabPage tabBill;
         private System.Windows.Forms.Panel pnlCustomerArea;
         private System.Windows.Forms.ComboBox cbbPayMethod;
         private System.Windows.Forms.ComboBox cbbBuyMethod;
@@ -1076,9 +1061,9 @@
         private System.Windows.Forms.DateTimePicker datBirth;
         private System.Windows.Forms.RadioButton radMale;
         private System.Windows.Forms.RadioButton radFemale;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabDetailBill;
         private System.Windows.Forms.Panel pnlBillPhoneArea;
-        private System.Windows.Forms.DataGridView dgvBillPhones;
+        private System.Windows.Forms.DataGridView dgvDetailBillPhones;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lblTotalMoney;
         private System.Windows.Forms.Label label5;
@@ -1102,7 +1087,6 @@
         private System.Windows.Forms.TextBox txtPhoneSearch;
         private System.Windows.Forms.Panel pnlBillListMain;
         private System.Windows.Forms.Panel pnlToolMenu;
-        private System.Windows.Forms.Button btnList;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnAddOrder;

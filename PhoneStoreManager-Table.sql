@@ -158,6 +158,9 @@ go
 
 drop trigger if exists trg_UpdatePhones;
 drop trigger if exists trg_UpdateBills;
+drop proc if exists pro_SearchPhones;
+drop proc if exists pro_CreateWarrantys;
+--drop view if exists viw_DetailOrders;
 go
 
 create trigger trg_UpdatePhones
@@ -187,10 +190,6 @@ begin
 end
 go
 
-drop proc if exists pro_SearchPhones
-drop proc if exists pro_CreateWarrantys
-go
-
 create procedure pro_SearchPhones
 @key nvarchar(50)
 as
@@ -217,5 +216,30 @@ begin
 end
 go
 
-exec pro_CreateWarrantys 1, 'Huawei Nova 3i', '2019-10-15', '0', N'Thanh toán trực tiếp', N'Thay màn hình', '','','2';
-exec pro_CreateWarrantys 2, 'Samsung Galaxy S10+', '2019-10-15', '13000000', N'Thanh toán trực tiếp', N'Thay màn hình', '10','9',null;
+--drop view if exists viw_DetailOrders;
+--go
+
+--create view viw_DetailOrders(MaCTHD, MaHD, MaDT, TenDT, Mau, Gia, Soluong)
+--as
+--	select chd.MaCTHD, chd.MaHD, dt.MaDT, mdt.TenDT, dt.Mau, dt.Gia, SoLuong as '0'
+--	from ChiTietHoadon chd, DienThoai dt, MauDienThoai mdt 
+--	where chd.MaDT = dt.MaDT and dt.MaMDT = mdt.MaMDT;
+--go
+
+--drop trigger if exists trg_UpdateDetailBills
+--go
+
+--create trigger trg_UpdateDetailBills
+--on ChiTietHoaDon
+--for insert as
+--begin
+--	declare @count int;
+--	select @count = count(Gia) from  HoaDon hd, DienThoai dt, ChiTietHoadon chd 
+--	where dt.MaDT = chd.MaDT and hd.MaHD = chd.MaHD group by dt.MaDT;
+
+--	update viw_DetailOrders
+--	set Soluong = @count
+--	from viw_DetailOrders
+--	join inserted on viw_DetailOrders.MaHD = inserted.MaHD
+--end
+--go

@@ -35,41 +35,41 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtEmpSalary = new System.Windows.Forms.TextBox();
             this.pnlCustomerArea = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtEmpPos = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEmpPhone = new System.Windows.Forms.TextBox();
             this.btnSelectCustomer = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtPhoneNum = new System.Windows.Forms.TextBox();
-            this.txtCustomer = new System.Windows.Forms.TextBox();
-            this.txtAdress = new System.Windows.Forms.TextBox();
+            this.txtEmpID = new System.Windows.Forms.TextBox();
+            this.txtEmpName = new System.Windows.Forms.TextBox();
+            this.txtEmpAdress = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.datBirth = new System.Windows.Forms.DateTimePicker();
-            this.radMale = new System.Windows.Forms.RadioButton();
-            this.radFemale = new System.Windows.Forms.RadioButton();
+            this.datEmpBirth = new System.Windows.Forms.DateTimePicker();
+            this.radEmpMale = new System.Windows.Forms.RadioButton();
+            this.radEmpFemale = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtEmpPass = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtEmpUsername = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.datEmpEnd = new System.Windows.Forms.DateTimePicker();
             this.button4 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtEmpContractID = new System.Windows.Forms.TextBox();
+            this.txtContractType = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.datEmpStart = new System.Windows.Forms.DateTimePicker();
             this.pnlToolMenu = new System.Windows.Forms.Panel();
             this.thôngKêKhachHangToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.quanLyKhachHangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -173,35 +173,35 @@
             this.label4.TabIndex = 32;
             this.label4.Text = "Lương";
             // 
-            // textBox3
+            // txtEmpSalary
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(131, 282);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(99, 20);
-            this.textBox3.TabIndex = 31;
+            this.txtEmpSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmpSalary.Location = new System.Drawing.Point(131, 282);
+            this.txtEmpSalary.Multiline = true;
+            this.txtEmpSalary.Name = "txtEmpSalary";
+            this.txtEmpSalary.Size = new System.Drawing.Size(99, 20);
+            this.txtEmpSalary.TabIndex = 31;
             // 
             // pnlCustomerArea
             // 
             this.pnlCustomerArea.Controls.Add(this.label4);
-            this.pnlCustomerArea.Controls.Add(this.textBox3);
+            this.pnlCustomerArea.Controls.Add(this.txtEmpSalary);
             this.pnlCustomerArea.Controls.Add(this.label3);
-            this.pnlCustomerArea.Controls.Add(this.textBox2);
+            this.pnlCustomerArea.Controls.Add(this.txtEmpPos);
             this.pnlCustomerArea.Controls.Add(this.label2);
-            this.pnlCustomerArea.Controls.Add(this.textBox1);
+            this.pnlCustomerArea.Controls.Add(this.txtEmpPhone);
             this.pnlCustomerArea.Controls.Add(this.btnSelectCustomer);
             this.pnlCustomerArea.Controls.Add(this.label13);
-            this.pnlCustomerArea.Controls.Add(this.txtPhoneNum);
-            this.pnlCustomerArea.Controls.Add(this.txtCustomer);
-            this.pnlCustomerArea.Controls.Add(this.txtAdress);
+            this.pnlCustomerArea.Controls.Add(this.txtEmpID);
+            this.pnlCustomerArea.Controls.Add(this.txtEmpName);
+            this.pnlCustomerArea.Controls.Add(this.txtEmpAdress);
             this.pnlCustomerArea.Controls.Add(this.label8);
             this.pnlCustomerArea.Controls.Add(this.label9);
             this.pnlCustomerArea.Controls.Add(this.label10);
             this.pnlCustomerArea.Controls.Add(this.label11);
-            this.pnlCustomerArea.Controls.Add(this.datBirth);
-            this.pnlCustomerArea.Controls.Add(this.radMale);
-            this.pnlCustomerArea.Controls.Add(this.radFemale);
+            this.pnlCustomerArea.Controls.Add(this.datEmpBirth);
+            this.pnlCustomerArea.Controls.Add(this.radEmpMale);
+            this.pnlCustomerArea.Controls.Add(this.radEmpFemale);
             this.pnlCustomerArea.Location = new System.Drawing.Point(6, 6);
             this.pnlCustomerArea.Name = "pnlCustomerArea";
             this.pnlCustomerArea.Size = new System.Drawing.Size(503, 518);
@@ -217,14 +217,14 @@
             this.label3.TabIndex = 30;
             this.label3.Text = "Chức vụ";
             // 
-            // textBox2
+            // txtEmpPos
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(131, 242);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(159, 20);
-            this.textBox2.TabIndex = 29;
+            this.txtEmpPos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmpPos.Location = new System.Drawing.Point(131, 242);
+            this.txtEmpPos.Multiline = true;
+            this.txtEmpPos.Name = "txtEmpPos";
+            this.txtEmpPos.Size = new System.Drawing.Size(159, 20);
+            this.txtEmpPos.TabIndex = 29;
             // 
             // label2
             // 
@@ -236,14 +236,14 @@
             this.label2.TabIndex = 28;
             this.label2.Text = "Số điện thoại";
             // 
-            // textBox1
+            // txtEmpPhone
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(131, 202);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(159, 20);
-            this.textBox1.TabIndex = 27;
+            this.txtEmpPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmpPhone.Location = new System.Drawing.Point(131, 202);
+            this.txtEmpPhone.Multiline = true;
+            this.txtEmpPhone.Name = "txtEmpPhone";
+            this.txtEmpPhone.Size = new System.Drawing.Size(159, 20);
+            this.txtEmpPhone.TabIndex = 27;
             // 
             // btnSelectCustomer
             // 
@@ -265,32 +265,32 @@
             this.label13.TabIndex = 22;
             this.label13.Text = "MSNV";
             // 
-            // txtPhoneNum
+            // txtEmpID
             // 
-            this.txtPhoneNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhoneNum.Location = new System.Drawing.Point(131, 39);
-            this.txtPhoneNum.Multiline = true;
-            this.txtPhoneNum.Name = "txtPhoneNum";
-            this.txtPhoneNum.Size = new System.Drawing.Size(104, 20);
-            this.txtPhoneNum.TabIndex = 10;
+            this.txtEmpID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmpID.Location = new System.Drawing.Point(131, 39);
+            this.txtEmpID.Multiline = true;
+            this.txtEmpID.Name = "txtEmpID";
+            this.txtEmpID.Size = new System.Drawing.Size(104, 20);
+            this.txtEmpID.TabIndex = 10;
             // 
-            // txtCustomer
+            // txtEmpName
             // 
-            this.txtCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomer.Location = new System.Drawing.Point(131, 79);
-            this.txtCustomer.Multiline = true;
-            this.txtCustomer.Name = "txtCustomer";
-            this.txtCustomer.Size = new System.Drawing.Size(164, 20);
-            this.txtCustomer.TabIndex = 12;
+            this.txtEmpName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmpName.Location = new System.Drawing.Point(131, 79);
+            this.txtEmpName.Multiline = true;
+            this.txtEmpName.Name = "txtEmpName";
+            this.txtEmpName.Size = new System.Drawing.Size(164, 20);
+            this.txtEmpName.TabIndex = 12;
             // 
-            // txtAdress
+            // txtEmpAdress
             // 
-            this.txtAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAdress.Location = new System.Drawing.Point(131, 323);
-            this.txtAdress.Multiline = true;
-            this.txtAdress.Name = "txtAdress";
-            this.txtAdress.Size = new System.Drawing.Size(259, 40);
-            this.txtAdress.TabIndex = 17;
+            this.txtEmpAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmpAdress.Location = new System.Drawing.Point(131, 323);
+            this.txtEmpAdress.Multiline = true;
+            this.txtEmpAdress.Name = "txtEmpAdress";
+            this.txtEmpAdress.Size = new System.Drawing.Size(259, 40);
+            this.txtEmpAdress.TabIndex = 17;
             // 
             // label8
             // 
@@ -316,7 +316,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(43, 125);
+            this.label10.Location = new System.Drawing.Point(43, 123);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(61, 15);
             this.label10.TabIndex = 16;
@@ -332,36 +332,36 @@
             this.label11.TabIndex = 17;
             this.label11.Text = "Giới tính";
             // 
-            // datBirth
+            // datEmpBirth
             // 
-            this.datBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datBirth.Location = new System.Drawing.Point(131, 119);
-            this.datBirth.Name = "datBirth";
-            this.datBirth.Size = new System.Drawing.Size(104, 20);
-            this.datBirth.TabIndex = 13;
-            this.datBirth.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.datEmpBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datEmpBirth.Location = new System.Drawing.Point(131, 119);
+            this.datEmpBirth.Name = "datEmpBirth";
+            this.datEmpBirth.Size = new System.Drawing.Size(104, 20);
+            this.datEmpBirth.TabIndex = 13;
+            this.datEmpBirth.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
-            // radMale
+            // radEmpMale
             // 
-            this.radMale.AutoSize = true;
-            this.radMale.Location = new System.Drawing.Point(131, 161);
-            this.radMale.Name = "radMale";
-            this.radMale.Size = new System.Drawing.Size(47, 17);
-            this.radMale.TabIndex = 14;
-            this.radMale.TabStop = true;
-            this.radMale.Text = "Nam";
-            this.radMale.UseVisualStyleBackColor = true;
+            this.radEmpMale.AutoSize = true;
+            this.radEmpMale.Location = new System.Drawing.Point(131, 161);
+            this.radEmpMale.Name = "radEmpMale";
+            this.radEmpMale.Size = new System.Drawing.Size(47, 17);
+            this.radEmpMale.TabIndex = 14;
+            this.radEmpMale.TabStop = true;
+            this.radEmpMale.Text = "Nam";
+            this.radEmpMale.UseVisualStyleBackColor = true;
             // 
-            // radFemale
+            // radEmpFemale
             // 
-            this.radFemale.AutoSize = true;
-            this.radFemale.Location = new System.Drawing.Point(196, 161);
-            this.radFemale.Name = "radFemale";
-            this.radFemale.Size = new System.Drawing.Size(39, 17);
-            this.radFemale.TabIndex = 15;
-            this.radFemale.TabStop = true;
-            this.radFemale.Text = "Nữ";
-            this.radFemale.UseVisualStyleBackColor = true;
+            this.radEmpFemale.AutoSize = true;
+            this.radEmpFemale.Location = new System.Drawing.Point(196, 161);
+            this.radEmpFemale.Name = "radEmpFemale";
+            this.radEmpFemale.Size = new System.Drawing.Size(39, 17);
+            this.radEmpFemale.TabIndex = 15;
+            this.radEmpFemale.TabStop = true;
+            this.radEmpFemale.Text = "Nữ";
+            this.radEmpFemale.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -397,32 +397,33 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.txtEmpPass);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.txtEmpUsername);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.dateTimePicker2);
+            this.panel1.Controls.Add(this.datEmpEnd);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.textBox8);
+            this.panel1.Controls.Add(this.txtEmpContractID);
+            this.panel1.Controls.Add(this.txtContractType);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label17);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.datEmpStart);
             this.panel1.Location = new System.Drawing.Point(521, 6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(505, 518);
             this.panel1.TabIndex = 33;
             // 
-            // textBox5
+            // txtEmpPass
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(156, 282);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(164, 20);
-            this.textBox5.TabIndex = 27;
+            this.txtEmpPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmpPass.Location = new System.Drawing.Point(156, 282);
+            this.txtEmpPass.Multiline = true;
+            this.txtEmpPass.Name = "txtEmpPass";
+            this.txtEmpPass.PasswordChar = '*';
+            this.txtEmpPass.Size = new System.Drawing.Size(164, 20);
+            this.txtEmpPass.TabIndex = 27;
             // 
             // label7
             // 
@@ -434,14 +435,14 @@
             this.label7.TabIndex = 28;
             this.label7.Text = "Password";
             // 
-            // textBox4
+            // txtEmpUsername
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(156, 242);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(164, 20);
-            this.textBox4.TabIndex = 25;
+            this.txtEmpUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmpUsername.Location = new System.Drawing.Point(156, 242);
+            this.txtEmpUsername.Multiline = true;
+            this.txtEmpUsername.Name = "txtEmpUsername";
+            this.txtEmpUsername.Size = new System.Drawing.Size(164, 20);
+            this.txtEmpUsername.TabIndex = 25;
             // 
             // label6
             // 
@@ -463,14 +464,14 @@
             this.label5.TabIndex = 24;
             this.label5.Text = "Ngày kết thúc";
             // 
-            // dateTimePicker2
+            // datEmpEnd
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(156, 158);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(104, 20);
-            this.dateTimePicker2.TabIndex = 23;
-            this.dateTimePicker2.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.datEmpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datEmpEnd.Location = new System.Drawing.Point(156, 158);
+            this.datEmpEnd.Name = "datEmpEnd";
+            this.datEmpEnd.Size = new System.Drawing.Size(104, 20);
+            this.datEmpEnd.TabIndex = 23;
+            this.datEmpEnd.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // button4
             // 
@@ -492,23 +493,23 @@
             this.label14.TabIndex = 22;
             this.label14.Text = "Mã hợp đồng";
             // 
-            // textBox7
+            // txtEmpContractID
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(156, 39);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(104, 20);
-            this.textBox7.TabIndex = 10;
+            this.txtEmpContractID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmpContractID.Location = new System.Drawing.Point(156, 39);
+            this.txtEmpContractID.Multiline = true;
+            this.txtEmpContractID.Name = "txtEmpContractID";
+            this.txtEmpContractID.Size = new System.Drawing.Size(104, 20);
+            this.txtEmpContractID.TabIndex = 10;
             // 
-            // textBox8
+            // txtContractType
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(156, 79);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(164, 20);
-            this.textBox8.TabIndex = 12;
+            this.txtContractType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContractType.Location = new System.Drawing.Point(156, 79);
+            this.txtContractType.Multiline = true;
+            this.txtContractType.Name = "txtContractType";
+            this.txtContractType.Size = new System.Drawing.Size(164, 20);
+            this.txtContractType.TabIndex = 12;
             // 
             // label15
             // 
@@ -530,14 +531,14 @@
             this.label17.TabIndex = 16;
             this.label17.Text = "Ngày bắt đầu";
             // 
-            // dateTimePicker1
+            // datEmpStart
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(156, 119);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(104, 20);
-            this.dateTimePicker1.TabIndex = 13;
-            this.dateTimePicker1.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.datEmpStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datEmpStart.Location = new System.Drawing.Point(156, 119);
+            this.datEmpStart.Name = "datEmpStart";
+            this.datEmpStart.Size = new System.Drawing.Size(104, 20);
+            this.datEmpStart.TabIndex = 13;
+            this.datEmpStart.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // pnlToolMenu
             // 
@@ -654,19 +655,19 @@
             // thôngTinTaiKhoanToolStripMenuItem
             // 
             this.thôngTinTaiKhoanToolStripMenuItem.Name = "thôngTinTaiKhoanToolStripMenuItem";
-            this.thôngTinTaiKhoanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.thôngTinTaiKhoanToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.thôngTinTaiKhoanToolStripMenuItem.Text = "Thông tin tài khoản";
             // 
             // quanLyTaiKhoanToolStripMenuItem
             // 
             this.quanLyTaiKhoanToolStripMenuItem.Name = "quanLyTaiKhoanToolStripMenuItem";
-            this.quanLyTaiKhoanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quanLyTaiKhoanToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.quanLyTaiKhoanToolStripMenuItem.Text = "Quản lý tài khoản";
             // 
             // quanLyHơpĐôngToolStripMenuItem
             // 
             this.quanLyHơpĐôngToolStripMenuItem.Name = "quanLyHơpĐôngToolStripMenuItem";
-            this.quanLyHơpĐôngToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quanLyHơpĐôngToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.quanLyHơpĐôngToolStripMenuItem.Text = "Quản lý hợp đồng";
             // 
             // điênThoaiToolStripMenuItem
@@ -718,24 +719,24 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtEmpSalary;
         private System.Windows.Forms.Panel pnlCustomerArea;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtEmpPos;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEmpPhone;
         private System.Windows.Forms.Button btnSelectCustomer;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtPhoneNum;
-        private System.Windows.Forms.TextBox txtCustomer;
-        private System.Windows.Forms.TextBox txtAdress;
+        private System.Windows.Forms.TextBox txtEmpID;
+        private System.Windows.Forms.TextBox txtEmpName;
+        private System.Windows.Forms.TextBox txtEmpAdress;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker datBirth;
-        private System.Windows.Forms.RadioButton radMale;
-        private System.Windows.Forms.RadioButton radFemale;
+        private System.Windows.Forms.DateTimePicker datEmpBirth;
+        private System.Windows.Forms.RadioButton radEmpMale;
+        private System.Windows.Forms.RadioButton radEmpFemale;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnlToolMenu;
         private System.Windows.Forms.ToolStripMenuItem thôngKêKhachHangToolStripMenuItem1;
@@ -760,17 +761,17 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker datEmpEnd;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtEmpContractID;
+        private System.Windows.Forms.TextBox txtContractType;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.DateTimePicker datEmpStart;
+        private System.Windows.Forms.TextBox txtEmpPass;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtEmpUsername;
         private System.Windows.Forms.Label label6;
     }
 }
