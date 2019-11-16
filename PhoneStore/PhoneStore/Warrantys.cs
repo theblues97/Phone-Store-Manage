@@ -12,9 +12,146 @@ namespace PhoneStore
 {
     public partial class Warrantys : Form
     {
+        public string username;
         public Warrantys()
         {
             InitializeComponent();
+        }
+
+        public Warrantys(string Username) : this()
+        {
+            username = Username;
+        }
+
+        void LoadCustomers()
+        {
+            dgvWaBills.DataSource = null;
+            dgvWaPhoneBill.DataSource = null;
+
+            using (var ctx = new PhoneStoreManageEntities())
+            {
+                var customer = from c in ctx.KhachHangs where c.SoDienThoai == txtWaPhoneNum.Text select c;
+                try
+                {
+                    txtWaCustomer.Text = (from c in customer select c.TenKH).FirstOrDefault().ToString();
+                    datWaBirth.Value = (from c in customer select c.NgaySinh).FirstOrDefault().Value;
+                    txtWaEmail.Text = (from c in customer select c.Email).FirstOrDefault().ToString();
+                    txtWaAdress.Text = (from c in customer select c.DiaChi).FirstOrDefault().ToString();
+
+                    if ((from c in customer select c.GioiTinh).FirstOrDefault().ToString() == "Nam")
+                        radWaMale.Checked = true;
+                    else
+                        radWaFemale.Checked = true;
+
+
+                    var cusID = (from c in customer select c.MaKH).FirstOrDefault();
+                    var bill = from b in ctx.HoaDons
+                               where b.MaKH == cusID
+                               select new
+                               {
+                                   b.MaHD,
+                                   b.MaKH,
+                                   b.NhanVien.TenNV,
+                                   b.NgayMua,
+                                   b.HanBH,
+                                   b.Tongtien
+                               };
+                    dgvWaBills.DataSource = bill.ToList();
+                    dgvWaBills.Columns[0].HeaderText = "Mã HD";
+                    dgvWaBills.Columns[1].HeaderText = "Mã KH";
+                    dgvWaBills.Columns[2].HeaderText = "Nhân viên";
+                    dgvWaBills.Columns[3].HeaderText = "Ngày mua";
+                    dgvWaBills.Columns[4].HeaderText = "Hạn bảo hành";
+                    dgvWaBills.Columns[5].HeaderText = "Tổng tiền";
+                    dgvWaBills.Refresh();
+
+                }
+                catch
+                {
+                    txtWaCustomer.Text = "";
+                    datWaBirth.Value = new DateTime(2000, 1, 1);
+                    txtWaEmail.Text = "";
+                    txtWaAdress.Text = "";
+                    radWaMale.Checked = false;
+                    radWaFemale.Checked = false;
+
+                    DialogResult answer = MessageBox.Show("Không tìn thấy khách hàng. Bạn có muốn tạo mới không?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (answer == DialogResult.Yes)
+                    {
+                        var lastCusID = (from cus in ctx.KhachHangs orderby cus.MaKH descending select cus.MaKH).FirstOrDefault();
+                        var lastID = (from hd in ctx.HoaDons orderby hd.MaHD descending select hd.MaHD).FirstOrDefault();
+                        var newCus = new KhachHang { MaKH = lastCusID + 1, SoDienThoai = txtWaPhoneNum.Text };
+                        ctx.KhachHangs.Add(newCus);
+                        ctx.SaveChanges();
+                    }
+                }
+            }
+        }
+
+        void LoadDetailBill(DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                dgvWaBills.CurrentRow.Selected = true;
+                var billID = Int32.Parse(dgvWaBills.Rows[e.RowIndex].Cells[1].FormattedValue.ToString());
+                using (var ctx = new PhoneStoreManageEntities())
+                {
+                    var debills = from db in ctx.ChiTietHoadons where db.MaHD == billID
+                                  select new
+                                  {
+                                      db.DienThoai.MauDienThoai.TenDT,
+                                      db.DienThoai.Mau,
+                                      db.DienThoai.Gia
+                                  };
+
+                    dgvWaPhoneBill.DataSource = debills.ToList();
+                    dgvWaPhoneBill.Columns[0].HeaderText = "Điện thoại";
+                    dgvWaPhoneBill.Columns[1].HeaderText = "Màu";
+                    dgvWaPhoneBill.Columns[2].HeaderText = "Giá";
+                }
+            }
+        }
+
+        void CheckedInfor(DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                dgvWaPhoneBill.CurrentRow.Selected = true;
+
+                txtWaPhoneName.Text = dgvWaPhoneBill.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
+
+                DateTime time = DateTime.Now;
+                datWaReceive.Value = new DateTime(time.Year, time.Month, time.Day);
+
+                using (var ctx = new PhoneStoreManageEntities())
+                {
+                    var emp = (from em in ctx.Accounts where em.Username == username select em).FirstOrDefault();
+                    txtWaEmpID.Text = emp.MaNV.ToString();
+                    txtWaEmpName.Text = emp.NhanVien.TenNV.ToString();
+
+                }
+                    
+            }
+        }
+
+        private void btnWaPhoneNumFill_Click(object sender, EventArgs e)
+        {
+            LoadCustomers();
+        }
+
+        private void dgvWaBills_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            LoadDetailBill(e);
+        }
+
+        private void dgvWaPhoneBill_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            CheckedInfor(e);
+        }
+
+        private void btnWaCreate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

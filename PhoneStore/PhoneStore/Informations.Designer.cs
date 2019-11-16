@@ -41,7 +41,6 @@
             this.txtEmpPos = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtEmpPhone = new System.Windows.Forms.TextBox();
-            this.btnSelectCustomer = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.txtEmpID = new System.Windows.Forms.TextBox();
             this.txtEmpName = new System.Windows.Forms.TextBox();
@@ -190,7 +189,6 @@
             this.pnlCustomerArea.Controls.Add(this.txtEmpPos);
             this.pnlCustomerArea.Controls.Add(this.label2);
             this.pnlCustomerArea.Controls.Add(this.txtEmpPhone);
-            this.pnlCustomerArea.Controls.Add(this.btnSelectCustomer);
             this.pnlCustomerArea.Controls.Add(this.label13);
             this.pnlCustomerArea.Controls.Add(this.txtEmpID);
             this.pnlCustomerArea.Controls.Add(this.txtEmpName);
@@ -244,16 +242,6 @@
             this.txtEmpPhone.Name = "txtEmpPhone";
             this.txtEmpPhone.Size = new System.Drawing.Size(159, 20);
             this.txtEmpPhone.TabIndex = 27;
-            // 
-            // btnSelectCustomer
-            // 
-            this.btnSelectCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelectCustomer.Location = new System.Drawing.Point(349, 468);
-            this.btnSelectCustomer.Name = "btnSelectCustomer";
-            this.btnSelectCustomer.Size = new System.Drawing.Size(88, 34);
-            this.btnSelectCustomer.TabIndex = 20;
-            this.btnSelectCustomer.Text = "Lưu";
-            this.btnSelectCustomer.UseVisualStyleBackColor = true;
             // 
             // label13
             // 
@@ -725,7 +713,6 @@
         private System.Windows.Forms.TextBox txtEmpPos;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtEmpPhone;
-        private System.Windows.Forms.Button btnSelectCustomer;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtEmpID;
         private System.Windows.Forms.TextBox txtEmpName;

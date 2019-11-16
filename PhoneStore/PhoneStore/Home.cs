@@ -292,7 +292,7 @@ namespace PhoneStore
 
         private void hoaĐơnSuaChuaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Warrantys warrantys = new Warrantys();
+            Warrantys warrantys = new Warrantys(username);
             warrantys.Show();
         }
 
@@ -353,6 +353,12 @@ namespace PhoneStore
         private void txtPhoneSearch_Enter(object sender, EventArgs e)
         {
             LoadPhones();
+        }
+
+        private void quanLyNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageEmployees manageEmployees = new ManageEmployees(username);
+            manageEmployees.Show();
         }
     }
 }

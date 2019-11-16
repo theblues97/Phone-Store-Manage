@@ -57,58 +57,54 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pnlCustomerArea = new System.Windows.Forms.Panel();
-            this.btnPhoneNumFill = new System.Windows.Forms.Button();
+            this.btnWaPhoneNumFill = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtPhoneNum = new System.Windows.Forms.TextBox();
-            this.txtCustomer = new System.Windows.Forms.TextBox();
-            this.txtAdress = new System.Windows.Forms.TextBox();
+            this.txtWaPhoneNum = new System.Windows.Forms.TextBox();
+            this.txtWaCustomer = new System.Windows.Forms.TextBox();
+            this.txtWaAdress = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtWaEmail = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.datBirth = new System.Windows.Forms.DateTimePicker();
-            this.radMale = new System.Windows.Forms.RadioButton();
-            this.radFemale = new System.Windows.Forms.RadioButton();
-            this.button4 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.TenDTs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Maus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuongs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gias = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvPhones = new System.Windows.Forms.DataGridView();
+            this.datWaBirth = new System.Windows.Forms.DateTimePicker();
+            this.radWaMale = new System.Windows.Forms.RadioButton();
+            this.radWaFemale = new System.Windows.Forms.RadioButton();
+            this.btnWaCreate = new System.Windows.Forms.Button();
+            this.dgvWaPhoneBill = new System.Windows.Forms.DataGridView();
+            this.dgvWaBills = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlToolMenu = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtWaEmpName = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtWaEmpID = new System.Windows.Forms.TextBox();
+            this.cbbWaPayMethod = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.datWaReceive = new System.Windows.Forms.DateTimePicker();
+            this.txtWaPhoneName = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtWaNotices = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.mnsMenu.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.pnlCustomerArea.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhones)).BeginInit();
-            this.tabPage1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWaPhoneBill)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWaBills)).BeginInit();
             this.panel2.SuspendLayout();
             this.pnlToolMenu.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -311,10 +307,11 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.panel3);
             this.tabPage2.Controls.Add(this.pnlCustomerArea);
-            this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Controls.Add(this.dataGridView2);
-            this.tabPage2.Controls.Add(this.dgvPhones);
+            this.tabPage2.Controls.Add(this.btnWaCreate);
+            this.tabPage2.Controls.Add(this.dgvWaPhoneBill);
+            this.tabPage2.Controls.Add(this.dgvWaBills);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -325,77 +322,78 @@
             // 
             // pnlCustomerArea
             // 
-            this.pnlCustomerArea.Controls.Add(this.btnPhoneNumFill);
+            this.pnlCustomerArea.Controls.Add(this.btnWaPhoneNumFill);
             this.pnlCustomerArea.Controls.Add(this.label13);
-            this.pnlCustomerArea.Controls.Add(this.txtPhoneNum);
-            this.pnlCustomerArea.Controls.Add(this.txtCustomer);
-            this.pnlCustomerArea.Controls.Add(this.txtAdress);
+            this.pnlCustomerArea.Controls.Add(this.txtWaPhoneNum);
+            this.pnlCustomerArea.Controls.Add(this.txtWaCustomer);
+            this.pnlCustomerArea.Controls.Add(this.txtWaAdress);
             this.pnlCustomerArea.Controls.Add(this.label8);
             this.pnlCustomerArea.Controls.Add(this.label9);
             this.pnlCustomerArea.Controls.Add(this.label10);
-            this.pnlCustomerArea.Controls.Add(this.txtEmail);
+            this.pnlCustomerArea.Controls.Add(this.txtWaEmail);
             this.pnlCustomerArea.Controls.Add(this.label11);
             this.pnlCustomerArea.Controls.Add(this.label12);
-            this.pnlCustomerArea.Controls.Add(this.datBirth);
-            this.pnlCustomerArea.Controls.Add(this.radMale);
-            this.pnlCustomerArea.Controls.Add(this.radFemale);
+            this.pnlCustomerArea.Controls.Add(this.datWaBirth);
+            this.pnlCustomerArea.Controls.Add(this.radWaMale);
+            this.pnlCustomerArea.Controls.Add(this.radWaFemale);
             this.pnlCustomerArea.Location = new System.Drawing.Point(6, 6);
             this.pnlCustomerArea.Name = "pnlCustomerArea";
-            this.pnlCustomerArea.Size = new System.Drawing.Size(440, 446);
+            this.pnlCustomerArea.Size = new System.Drawing.Size(440, 209);
             this.pnlCustomerArea.TabIndex = 29;
             // 
-            // btnPhoneNumFill
+            // btnWaPhoneNumFill
             // 
-            this.btnPhoneNumFill.Location = new System.Drawing.Point(352, 36);
-            this.btnPhoneNumFill.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnPhoneNumFill.Name = "btnPhoneNumFill";
-            this.btnPhoneNumFill.Size = new System.Drawing.Size(40, 32);
-            this.btnPhoneNumFill.TabIndex = 11;
-            this.btnPhoneNumFill.Text = "Fill";
-            this.btnPhoneNumFill.UseVisualStyleBackColor = true;
+            this.btnWaPhoneNumFill.Location = new System.Drawing.Point(313, 2);
+            this.btnWaPhoneNumFill.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnWaPhoneNumFill.Name = "btnWaPhoneNumFill";
+            this.btnWaPhoneNumFill.Size = new System.Drawing.Size(40, 32);
+            this.btnWaPhoneNumFill.TabIndex = 11;
+            this.btnWaPhoneNumFill.Text = "Fill";
+            this.btnWaPhoneNumFill.UseVisualStyleBackColor = true;
+            this.btnWaPhoneNumFill.Click += new System.EventHandler(this.btnWaPhoneNumFill_Click);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(45, 47);
+            this.label13.Location = new System.Drawing.Point(6, 13);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(79, 15);
             this.label13.TabIndex = 22;
             this.label13.Text = "Số điện thoại";
             // 
-            // txtPhoneNum
+            // txtWaPhoneNum
             // 
-            this.txtPhoneNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhoneNum.Location = new System.Drawing.Point(133, 42);
-            this.txtPhoneNum.Multiline = true;
-            this.txtPhoneNum.Name = "txtPhoneNum";
-            this.txtPhoneNum.Size = new System.Drawing.Size(175, 20);
-            this.txtPhoneNum.TabIndex = 10;
+            this.txtWaPhoneNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWaPhoneNum.Location = new System.Drawing.Point(94, 8);
+            this.txtWaPhoneNum.Multiline = true;
+            this.txtWaPhoneNum.Name = "txtWaPhoneNum";
+            this.txtWaPhoneNum.Size = new System.Drawing.Size(175, 20);
+            this.txtWaPhoneNum.TabIndex = 10;
             // 
-            // txtCustomer
+            // txtWaCustomer
             // 
-            this.txtCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomer.Location = new System.Drawing.Point(133, 82);
-            this.txtCustomer.Multiline = true;
-            this.txtCustomer.Name = "txtCustomer";
-            this.txtCustomer.Size = new System.Drawing.Size(211, 20);
-            this.txtCustomer.TabIndex = 12;
+            this.txtWaCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWaCustomer.Location = new System.Drawing.Point(94, 48);
+            this.txtWaCustomer.Multiline = true;
+            this.txtWaCustomer.Name = "txtWaCustomer";
+            this.txtWaCustomer.Size = new System.Drawing.Size(211, 20);
+            this.txtWaCustomer.TabIndex = 12;
             // 
-            // txtAdress
+            // txtWaAdress
             // 
-            this.txtAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAdress.Location = new System.Drawing.Point(133, 239);
-            this.txtAdress.Multiline = true;
-            this.txtAdress.Name = "txtAdress";
-            this.txtAdress.Size = new System.Drawing.Size(259, 40);
-            this.txtAdress.TabIndex = 17;
+            this.txtWaAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWaAdress.Location = new System.Drawing.Point(94, 166);
+            this.txtWaAdress.Multiline = true;
+            this.txtWaAdress.Name = "txtWaAdress";
+            this.txtWaAdress.Size = new System.Drawing.Size(259, 40);
+            this.txtWaAdress.TabIndex = 17;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(45, 87);
+            this.label8.Location = new System.Drawing.Point(6, 53);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 15);
             this.label8.TabIndex = 15;
@@ -405,7 +403,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(45, 244);
+            this.label9.Location = new System.Drawing.Point(6, 171);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(45, 15);
             this.label9.TabIndex = 26;
@@ -415,26 +413,26 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(45, 128);
+            this.label10.Location = new System.Drawing.Point(6, 94);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(61, 15);
             this.label10.TabIndex = 16;
             this.label10.Text = "Ngày sinh";
             // 
-            // txtEmail
+            // txtWaEmail
             // 
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(133, 199);
-            this.txtEmail.Multiline = true;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(211, 20);
-            this.txtEmail.TabIndex = 16;
+            this.txtWaEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWaEmail.Location = new System.Drawing.Point(94, 126);
+            this.txtWaEmail.Multiline = true;
+            this.txtWaEmail.Name = "txtWaEmail";
+            this.txtWaEmail.Size = new System.Drawing.Size(211, 20);
+            this.txtWaEmail.TabIndex = 16;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(45, 164);
+            this.label11.Location = new System.Drawing.Point(217, 92);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(52, 15);
             this.label11.TabIndex = 17;
@@ -444,97 +442,70 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(45, 204);
+            this.label12.Location = new System.Drawing.Point(6, 131);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(39, 15);
             this.label12.TabIndex = 24;
             this.label12.Text = "Email";
             // 
-            // datBirth
+            // datWaBirth
             // 
-            this.datBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datBirth.Location = new System.Drawing.Point(133, 122);
-            this.datBirth.Name = "datBirth";
-            this.datBirth.Size = new System.Drawing.Size(104, 20);
-            this.datBirth.TabIndex = 13;
-            this.datBirth.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.datWaBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datWaBirth.Location = new System.Drawing.Point(94, 88);
+            this.datWaBirth.Name = "datWaBirth";
+            this.datWaBirth.Size = new System.Drawing.Size(104, 20);
+            this.datWaBirth.TabIndex = 13;
+            this.datWaBirth.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
-            // radMale
+            // radWaMale
             // 
-            this.radMale.AutoSize = true;
-            this.radMale.Location = new System.Drawing.Point(133, 162);
-            this.radMale.Name = "radMale";
-            this.radMale.Size = new System.Drawing.Size(47, 17);
-            this.radMale.TabIndex = 14;
-            this.radMale.TabStop = true;
-            this.radMale.Text = "Nam";
-            this.radMale.UseVisualStyleBackColor = true;
+            this.radWaMale.AutoSize = true;
+            this.radWaMale.Location = new System.Drawing.Point(275, 92);
+            this.radWaMale.Name = "radWaMale";
+            this.radWaMale.Size = new System.Drawing.Size(47, 17);
+            this.radWaMale.TabIndex = 14;
+            this.radWaMale.TabStop = true;
+            this.radWaMale.Text = "Nam";
+            this.radWaMale.UseVisualStyleBackColor = true;
             // 
-            // radFemale
+            // radWaFemale
             // 
-            this.radFemale.AutoSize = true;
-            this.radFemale.Location = new System.Drawing.Point(198, 162);
-            this.radFemale.Name = "radFemale";
-            this.radFemale.Size = new System.Drawing.Size(39, 17);
-            this.radFemale.TabIndex = 15;
-            this.radFemale.TabStop = true;
-            this.radFemale.Text = "Nữ";
-            this.radFemale.UseVisualStyleBackColor = true;
+            this.radWaFemale.AutoSize = true;
+            this.radWaFemale.Location = new System.Drawing.Point(340, 92);
+            this.radWaFemale.Name = "radWaFemale";
+            this.radWaFemale.Size = new System.Drawing.Size(39, 17);
+            this.radWaFemale.TabIndex = 15;
+            this.radWaFemale.TabStop = true;
+            this.radWaFemale.Text = "Nữ";
+            this.radWaFemale.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnWaCreate
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(920, 479);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(88, 34);
-            this.button4.TabIndex = 28;
-            this.button4.Text = "Chọn";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnWaCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWaCreate.Location = new System.Drawing.Point(919, 479);
+            this.btnWaCreate.Name = "btnWaCreate";
+            this.btnWaCreate.Size = new System.Drawing.Size(88, 34);
+            this.btnWaCreate.TabIndex = 28;
+            this.btnWaCreate.Text = "Tạo";
+            this.btnWaCreate.UseVisualStyleBackColor = true;
+            this.btnWaCreate.Click += new System.EventHandler(this.btnWaCreate_Click);
             // 
-            // dataGridView2
+            // dgvWaPhoneBill
             // 
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TenDTs,
-            this.Maus,
-            this.SoLuongs,
-            this.Gias});
-            this.dataGridView2.Location = new System.Drawing.Point(453, 245);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(570, 207);
-            this.dataGridView2.TabIndex = 8;
+            this.dgvWaPhoneBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvWaPhoneBill.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvWaPhoneBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvWaPhoneBill.Location = new System.Drawing.Point(452, 172);
+            this.dgvWaPhoneBill.Name = "dgvWaPhoneBill";
+            this.dgvWaPhoneBill.Size = new System.Drawing.Size(570, 159);
+            this.dgvWaPhoneBill.TabIndex = 8;
+            this.dgvWaPhoneBill.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWaPhoneBill_CellClick);
             // 
-            // TenDTs
+            // dgvWaBills
             // 
-            this.TenDTs.FillWeight = 150F;
-            this.TenDTs.HeaderText = "Điện thoại";
-            this.TenDTs.Name = "TenDTs";
-            // 
-            // Maus
-            // 
-            this.Maus.FillWeight = 50F;
-            this.Maus.HeaderText = "Màu";
-            this.Maus.Name = "Maus";
-            // 
-            // SoLuongs
-            // 
-            this.SoLuongs.FillWeight = 70F;
-            this.SoLuongs.HeaderText = "Số lượng";
-            this.SoLuongs.Name = "SoLuongs";
-            // 
-            // Gias
-            // 
-            this.Gias.FillWeight = 80F;
-            this.Gias.HeaderText = "Thành tiền";
-            this.Gias.Name = "Gias";
-            // 
-            // dgvPhones
-            // 
-            this.dgvPhones.AllowUserToAddRows = false;
-            this.dgvPhones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPhones.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvWaBills.AllowUserToAddRows = false;
+            this.dgvWaBills.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvWaBills.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -542,8 +513,8 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPhones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvPhones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvWaBills.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvWaBills.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -551,10 +522,10 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPhones.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvPhones.Location = new System.Drawing.Point(452, 6);
-            this.dgvPhones.Name = "dgvPhones";
-            this.dgvPhones.ReadOnly = true;
+            this.dgvWaBills.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvWaBills.Location = new System.Drawing.Point(452, 6);
+            this.dgvWaBills.Name = "dgvWaBills";
+            this.dgvWaBills.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -562,14 +533,14 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPhones.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvPhones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvPhones.Size = new System.Drawing.Size(570, 233);
-            this.dgvPhones.TabIndex = 1;
+            this.dgvWaBills.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvWaBills.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvWaBills.Size = new System.Drawing.Size(570, 155);
+            this.dgvWaBills.TabIndex = 1;
+            this.dgvWaBills.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWaBills_CellClick);
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.panel3);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -577,164 +548,6 @@
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Hóa đơn sửa chữa";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.button5);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.textBox1);
-            this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Controls.Add(this.textBox3);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.textBox4);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.dateTimePicker1);
-            this.panel3.Controls.Add(this.radioButton1);
-            this.panel3.Controls.Add(this.radioButton2);
-            this.panel3.Location = new System.Drawing.Point(6, 6);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(440, 516);
-            this.panel3.TabIndex = 30;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(352, 36);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(40, 32);
-            this.button5.TabIndex = 11;
-            this.button5.Text = "Fill";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(45, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 15);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Số điện thoại";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(133, 42);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(175, 20);
-            this.textBox1.TabIndex = 10;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(133, 82);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(211, 20);
-            this.textBox2.TabIndex = 12;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(133, 239);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(259, 40);
-            this.textBox3.TabIndex = 17;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(45, 87);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 15);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Khách hàng";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(45, 244);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 15);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Địa chỉ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(45, 128);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 15);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Ngày sinh";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(133, 199);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(211, 20);
-            this.textBox4.TabIndex = 16;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(45, 164);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 15);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Giới tính";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(45, 204);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 15);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "Email";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(133, 122);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(104, 20);
-            this.dateTimePicker1.TabIndex = 13;
-            this.dateTimePicker1.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(133, 162);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(47, 17);
-            this.radioButton1.TabIndex = 14;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Nam";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(198, 162);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(39, 17);
-            this.radioButton2.TabIndex = 15;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Nữ";
-            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -779,6 +592,175 @@
             this.panel1.Size = new System.Drawing.Size(1042, 661);
             this.panel1.TabIndex = 1;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label15);
+            this.panel3.Controls.Add(this.txtWaEmpName);
+            this.panel3.Controls.Add(this.label14);
+            this.panel3.Controls.Add(this.txtWaEmpID);
+            this.panel3.Controls.Add(this.cbbWaPayMethod);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.datWaReceive);
+            this.panel3.Controls.Add(this.txtWaPhoneName);
+            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Controls.Add(this.txtWaNotices);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Location = new System.Drawing.Point(6, 227);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(440, 295);
+            this.panel3.TabIndex = 31;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(207, 13);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(47, 15);
+            this.label15.TabIndex = 29;
+            this.label15.Text = "Tên NV";
+            // 
+            // txtWaEmpName
+            // 
+            this.txtWaEmpName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWaEmpName.Location = new System.Drawing.Point(260, 10);
+            this.txtWaEmpName.Multiline = true;
+            this.txtWaEmpName.Name = "txtWaEmpName";
+            this.txtWaEmpName.Size = new System.Drawing.Size(168, 20);
+            this.txtWaEmpName.TabIndex = 28;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(6, 13);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(81, 15);
+            this.label14.TabIndex = 22;
+            this.label14.Text = "Mã nhân viên";
+            // 
+            // txtWaEmpID
+            // 
+            this.txtWaEmpID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWaEmpID.Location = new System.Drawing.Point(94, 10);
+            this.txtWaEmpID.Multiline = true;
+            this.txtWaEmpID.Name = "txtWaEmpID";
+            this.txtWaEmpID.Size = new System.Drawing.Size(72, 20);
+            this.txtWaEmpID.TabIndex = 10;
+            // 
+            // cbbWaPayMethod
+            // 
+            this.cbbWaPayMethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbWaPayMethod.FormattingEnabled = true;
+            this.cbbWaPayMethod.ItemHeight = 15;
+            this.cbbWaPayMethod.Items.AddRange(new object[] {
+            "Thanh toán trực tiếp",
+            "Thanh toán bằng thẻ"});
+            this.cbbWaPayMethod.Location = new System.Drawing.Point(94, 178);
+            this.cbbWaPayMethod.Name = "cbbWaPayMethod";
+            this.cbbWaPayMethod.Size = new System.Drawing.Size(145, 23);
+            this.cbbWaPayMethod.TabIndex = 27;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 59);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 15);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Tên điện thoại";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(6, 101);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(66, 15);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Ngày nhận";
+            // 
+            // datWaReceive
+            // 
+            this.datWaReceive.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datWaReceive.Location = new System.Drawing.Point(94, 97);
+            this.datWaReceive.Name = "datWaReceive";
+            this.datWaReceive.Size = new System.Drawing.Size(104, 20);
+            this.datWaReceive.TabIndex = 13;
+            this.datWaReceive.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            // 
+            // txtWaPhoneName
+            // 
+            this.txtWaPhoneName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWaPhoneName.Location = new System.Drawing.Point(94, 56);
+            this.txtWaPhoneName.Multiline = true;
+            this.txtWaPhoneName.Name = "txtWaPhoneName";
+            this.txtWaPhoneName.Size = new System.Drawing.Size(175, 20);
+            this.txtWaPhoneName.TabIndex = 10;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(94, 138);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(104, 20);
+            this.textBox2.TabIndex = 12;
+            this.textBox2.Text = "0";
+            // 
+            // txtWaNotices
+            // 
+            this.txtWaNotices.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWaNotices.Location = new System.Drawing.Point(94, 218);
+            this.txtWaNotices.Multiline = true;
+            this.txtWaNotices.Name = "txtWaNotices";
+            this.txtWaNotices.Size = new System.Drawing.Size(259, 40);
+            this.txtWaNotices.TabIndex = 17;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 141);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 15);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Phí sửa chữa";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 221);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 15);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Nội dung";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(27, 161);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(0, 15);
+            this.label6.TabIndex = 17;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 181);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(82, 15);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "P.t thanh toán";
+            // 
             // Warrantys
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -793,16 +775,15 @@
             this.tabPage2.ResumeLayout(false);
             this.pnlCustomerArea.ResumeLayout(false);
             this.pnlCustomerArea.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhones)).EndInit();
-            this.tabPage1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWaPhoneBill)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWaBills)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.pnlToolMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -834,47 +815,44 @@
         private System.Windows.Forms.Button btnList;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dgvPhones;
+        private System.Windows.Forms.DataGridView dgvWaBills;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnlToolMenu;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenDTs;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Maus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongs;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Gias;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridView dgvWaPhoneBill;
+        private System.Windows.Forms.Button btnWaCreate;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel pnlCustomerArea;
-        private System.Windows.Forms.Button btnPhoneNumFill;
+        private System.Windows.Forms.Button btnWaPhoneNumFill;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtPhoneNum;
-        private System.Windows.Forms.TextBox txtCustomer;
-        private System.Windows.Forms.TextBox txtAdress;
+        private System.Windows.Forms.TextBox txtWaPhoneNum;
+        private System.Windows.Forms.TextBox txtWaCustomer;
+        private System.Windows.Forms.TextBox txtWaAdress;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtWaEmail;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DateTimePicker datBirth;
-        private System.Windows.Forms.RadioButton radMale;
-        private System.Windows.Forms.RadioButton radFemale;
+        private System.Windows.Forms.DateTimePicker datWaBirth;
+        private System.Windows.Forms.RadioButton radWaMale;
+        private System.Windows.Forms.RadioButton radWaFemale;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtWaEmpName;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtWaEmpID;
+        private System.Windows.Forms.ComboBox cbbWaPayMethod;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker datWaReceive;
+        private System.Windows.Forms.TextBox txtWaPhoneName;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtWaNotices;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
     }
 }

@@ -58,10 +58,10 @@ insert into HopDong values('10',N'Toàn thời gian','2017-07-01','2022-07-01'
 insert into NhanVien values('1',N'Administrator',N'Nam','2019-11-11','0793517964','1','khainq97@gmail.com',N'Đắk Lắk','1','1');
 insert into NhanVien values('2',N'Bùi Trung Nghĩa',N'Nam','1982-11-22','0998902604','15000000','nghiabt@gmail.com',N'Hải Dương','2','3');
 insert into NhanVien values('3',N'Nguyễn Thanh Dương',N'Nữ','1993-07-13','0975633288','6200000','duongnt@gmail.com',N'Quảng Nam','3','2');
-insert into NhanVien values('4',N'Hồ Ái Linh',N'Nữ','1994-03-25','092214303','9000000','linhha@gmail.com',N'Tây Ninh','3','4');
-insert into NhanVien values('5',N'Nguyễn Phương Nghi',N'Nữ','1990-08-17','0916366192','62000000','nghinp@gmail.com',N'Hà Giang','3','5');
-insert into NhanVien values('6',N'Nguyễn Minh Triết',N'Nam','1995-09-27','0911416353','84000000','trietnm@gmail.com',N'Hồ Chí Minh','3','6');
-insert into NhanVien values('7',N'Trần Thành Trung',N'Nam','1987-02-01','0901816968','82000000','trungtt@gmail.com',N'Bắc Cạn','3','7');
+insert into NhanVien values('4',N'Hồ Ái Linh',N'Nữ','1994-03-25','0922143033','9000000','linhha@gmail.com',N'Tây Ninh','3','4');
+insert into NhanVien values('5',N'Nguyễn Phương Nghi',N'Nữ','1990-08-17','0916366192','6200000','nghinp@gmail.com',N'Hà Giang','3','5');
+insert into NhanVien values('6',N'Nguyễn Minh Triết',N'Nam','1995-09-27','0911416353','8400000','trietnm@gmail.com',N'Hồ Chí Minh','3','6');
+insert into NhanVien values('7',N'Trần Thành Trung',N'Nam','1987-02-01','0901816968','8200000','trungtt@gmail.com',N'Bắc Cạn','3','7');
 insert into NhanVien values('8',N'Đặng Thái Sơn',N'Nam','1985-09-15','0937015631','9200000','sondt@gmail.com',N'Hồ Chí Minh','3','8');
 insert into NhanVien values('9',N'Bùi Bích Ngân',N'Nữ','1990-05-18','0924861008','5800000','nganbb@gmail.com',N'Vĩnh Long','3','9');
 insert into NhanVien values('10',N'Lê Thành Công',N'Nam','1996-09-02','0923302286','8800000','conglt@gmail.com',N'Cà Mau','3','10');
@@ -159,7 +159,6 @@ insert into ChiTietHoadon values('5','4','21');
 insert into ChiTietHoadon values('6','5','16');
 insert into ChiTietHoadon values('7','6','28');
 go
-
 
 exec pro_CreateWarrantys 1, 'Huawei Nova 3i', '2019-10-15', '0', N'Thanh toán trực tiếp', N'Thay màn hình', '','','2';
 exec pro_CreateWarrantys 2, 'Samsung Galaxy S10+', '2019-10-15', '13000000', N'Thanh toán trực tiếp', N'Thay màn hình', '10','9',null;

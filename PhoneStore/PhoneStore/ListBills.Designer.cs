@@ -70,19 +70,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.TenDTs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Maus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuongs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvBillList = new System.Windows.Forms.DataGridView();
-            this.MaNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayMua = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HanBH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PTMuaHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PTThanhToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -442,7 +430,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(864, 20);
+            this.textBox2.Location = new System.Drawing.Point(681, 19);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(150, 21);
             this.textBox2.TabIndex = 5;
@@ -450,7 +438,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(796, 23);
+            this.label17.Location = new System.Drawing.Point(588, 22);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(62, 15);
             this.label17.TabIndex = 4;
@@ -458,7 +446,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(681, 20);
+            this.textBox1.Location = new System.Drawing.Point(908, 19);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 21);
             this.textBox1.TabIndex = 3;
@@ -466,112 +454,31 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(588, 23);
+            this.label16.Location = new System.Drawing.Point(860, 22);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(44, 15);
+            this.label16.Size = new System.Drawing.Size(42, 15);
             this.label16.TabIndex = 2;
-            this.label16.Text = "Mã NV";
+            this.label16.Text = "MSNV";
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TenDTs,
-            this.Maus,
-            this.SoLuongs,
-            this.Gias});
             this.dataGridView1.Location = new System.Drawing.Point(587, 256);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(439, 168);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // TenDTs
-            // 
-            this.TenDTs.FillWeight = 150F;
-            this.TenDTs.HeaderText = "Điện thoại";
-            this.TenDTs.Name = "TenDTs";
-            // 
-            // Maus
-            // 
-            this.Maus.FillWeight = 50F;
-            this.Maus.HeaderText = "Màu";
-            this.Maus.Name = "Maus";
-            // 
-            // SoLuongs
-            // 
-            this.SoLuongs.FillWeight = 70F;
-            this.SoLuongs.HeaderText = "Số lượng";
-            this.SoLuongs.Name = "SoLuongs";
-            // 
-            // Gias
-            // 
-            this.Gias.FillWeight = 80F;
-            this.Gias.HeaderText = "Thành tiền";
-            this.Gias.Name = "Gias";
             // 
             // dgvBillList
             // 
             this.dgvBillList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBillList.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvBillList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBillList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaNhanVien,
-            this.NhanVien,
-            this.KhachHang,
-            this.NgayMua,
-            this.HanBH,
-            this.PTMuaHang,
-            this.PTThanhToan,
-            this.TongTien});
             this.dgvBillList.Location = new System.Drawing.Point(3, 3);
             this.dgvBillList.Name = "dgvBillList";
             this.dgvBillList.Size = new System.Drawing.Size(578, 421);
             this.dgvBillList.TabIndex = 0;
-            // 
-            // MaNhanVien
-            // 
-            this.MaNhanVien.HeaderText = "Mã nhân viên";
-            this.MaNhanVien.Name = "MaNhanVien";
-            // 
-            // NhanVien
-            // 
-            this.NhanVien.HeaderText = "Nhân viên";
-            this.NhanVien.Name = "NhanVien";
-            // 
-            // KhachHang
-            // 
-            this.KhachHang.HeaderText = "Khách hàng";
-            this.KhachHang.Name = "KhachHang";
-            // 
-            // NgayMua
-            // 
-            this.NgayMua.HeaderText = "Ngày mua";
-            this.NgayMua.Name = "NgayMua";
-            // 
-            // HanBH
-            // 
-            this.HanBH.HeaderText = "Bảo hành";
-            this.HanBH.Name = "HanBH";
-            this.HanBH.Visible = false;
-            // 
-            // PTMuaHang
-            // 
-            this.PTMuaHang.HeaderText = "PT Mua hàng";
-            this.PTMuaHang.Name = "PTMuaHang";
-            this.PTMuaHang.Visible = false;
-            // 
-            // PTThanhToan
-            // 
-            this.PTThanhToan.HeaderText = "PT Thanh toán";
-            this.PTThanhToan.Name = "PTThanhToan";
-            this.PTThanhToan.Visible = false;
-            // 
-            // TongTien
-            // 
-            this.TongTien.HeaderText = "Tổng tiền";
-            this.TongTien.Name = "TongTien";
             // 
             // tabPage2
             // 
@@ -818,19 +725,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenDTs;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Maus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongs;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Gias;
         private System.Windows.Forms.DataGridView dgvBillList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KhachHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayMua;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HanBH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PTMuaHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PTThanhToan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TextBox textBox7;

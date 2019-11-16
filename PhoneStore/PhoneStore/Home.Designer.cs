@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.thôngTinTaiKhoanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngKêĐiênThoaiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngKêBanHangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,7 +42,6 @@
             this.mnsMenu = new System.Windows.Forms.MenuStrip();
             this.taiKhoanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quanLyTaiKhoanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quanLyHơpĐôngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.điênThoaiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quanLyĐiênThoaiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.danhSachNhâpxuâtĐiênThoaiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -114,6 +113,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.lblUsernames = new System.Windows.Forms.Label();
+            this.nhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quanLyNhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quanLyHơpĐôngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsMenu.SuspendLayout();
             this.pnlSalebills.SuspendLayout();
             this.tabMainBill.SuspendLayout();
@@ -131,7 +133,7 @@
             // thôngTinTaiKhoanToolStripMenuItem
             // 
             this.thôngTinTaiKhoanToolStripMenuItem.Name = "thôngTinTaiKhoanToolStripMenuItem";
-            this.thôngTinTaiKhoanToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.thôngTinTaiKhoanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.thôngTinTaiKhoanToolStripMenuItem.Text = "Thông tin tài khoản";
             this.thôngTinTaiKhoanToolStripMenuItem.Click += new System.EventHandler(this.thôngTinTaiKhoanToolStripMenuItem_Click);
             // 
@@ -166,14 +168,14 @@
             // hoaĐơnSuaChuaToolStripMenuItem
             // 
             this.hoaĐơnSuaChuaToolStripMenuItem.Name = "hoaĐơnSuaChuaToolStripMenuItem";
-            this.hoaĐơnSuaChuaToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.hoaĐơnSuaChuaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.hoaĐơnSuaChuaToolStripMenuItem.Text = "Hóa đơn sửa chữa";
             this.hoaĐơnSuaChuaToolStripMenuItem.Click += new System.EventHandler(this.hoaĐơnSuaChuaToolStripMenuItem_Click);
             // 
             // hoaĐơnBanHangToolStripMenuItem
             // 
             this.hoaĐơnBanHangToolStripMenuItem.Name = "hoaĐơnBanHangToolStripMenuItem";
-            this.hoaĐơnBanHangToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.hoaĐơnBanHangToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.hoaĐơnBanHangToolStripMenuItem.Text = "Hóa đơn bán hàng";
             this.hoaĐơnBanHangToolStripMenuItem.Click += new System.EventHandler(this.hoaĐơnBanHangToolStripMenuItem_Click);
             // 
@@ -193,7 +195,8 @@
             this.thôngKêToolStripMenuItem,
             this.taiKhoanToolStripMenuItem,
             this.điênThoaiToolStripMenuItem,
-            this.khachHangToolStripMenuItem});
+            this.khachHangToolStripMenuItem,
+            this.nhToolStripMenuItem});
             this.mnsMenu.Location = new System.Drawing.Point(0, 0);
             this.mnsMenu.Name = "mnsMenu";
             this.mnsMenu.Size = new System.Drawing.Size(1042, 24);
@@ -204,8 +207,7 @@
             // 
             this.taiKhoanToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thôngTinTaiKhoanToolStripMenuItem,
-            this.quanLyTaiKhoanToolStripMenuItem,
-            this.quanLyHơpĐôngToolStripMenuItem});
+            this.quanLyTaiKhoanToolStripMenuItem});
             this.taiKhoanToolStripMenuItem.Name = "taiKhoanToolStripMenuItem";
             this.taiKhoanToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.taiKhoanToolStripMenuItem.Text = "Tài khoản";
@@ -213,14 +215,8 @@
             // quanLyTaiKhoanToolStripMenuItem
             // 
             this.quanLyTaiKhoanToolStripMenuItem.Name = "quanLyTaiKhoanToolStripMenuItem";
-            this.quanLyTaiKhoanToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.quanLyTaiKhoanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.quanLyTaiKhoanToolStripMenuItem.Text = "Quản lý tài khoản";
-            // 
-            // quanLyHơpĐôngToolStripMenuItem
-            // 
-            this.quanLyHơpĐôngToolStripMenuItem.Name = "quanLyHơpĐôngToolStripMenuItem";
-            this.quanLyHơpĐôngToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
-            this.quanLyHơpĐôngToolStripMenuItem.Text = "Quản lý hợp đồng";
             // 
             // điênThoaiToolStripMenuItem
             // 
@@ -281,10 +277,10 @@
             this.tabMainBill.Controls.Add(this.tabBill);
             this.tabMainBill.Controls.Add(this.tabDetailBill);
             this.tabMainBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabMainBill.Location = new System.Drawing.Point(0, 80);
+            this.tabMainBill.Location = new System.Drawing.Point(3, 80);
             this.tabMainBill.Name = "tabMainBill";
             this.tabMainBill.SelectedIndex = 0;
-            this.tabMainBill.Size = new System.Drawing.Size(1040, 514);
+            this.tabMainBill.Size = new System.Drawing.Size(1037, 514);
             this.tabMainBill.TabIndex = 38;
             // 
             // tabBill
@@ -294,7 +290,7 @@
             this.tabBill.Location = new System.Drawing.Point(4, 24);
             this.tabBill.Name = "tabBill";
             this.tabBill.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBill.Size = new System.Drawing.Size(1032, 486);
+            this.tabBill.Size = new System.Drawing.Size(1029, 486);
             this.tabBill.TabIndex = 1;
             this.tabBill.Text = "Thông tin hóa đơn";
             this.tabBill.UseVisualStyleBackColor = true;
@@ -323,9 +319,8 @@
             // 
             this.txtEmployeeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmployeeName.Location = new System.Drawing.Point(166, 81);
-            this.txtEmployeeName.Multiline = true;
             this.txtEmployeeName.Name = "txtEmployeeName";
-            this.txtEmployeeName.Size = new System.Drawing.Size(175, 20);
+            this.txtEmployeeName.Size = new System.Drawing.Size(175, 21);
             this.txtEmployeeName.TabIndex = 36;
             // 
             // label29
@@ -342,9 +337,8 @@
             // 
             this.txtEmployeeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmployeeID.Location = new System.Drawing.Point(166, 41);
-            this.txtEmployeeID.Multiline = true;
             this.txtEmployeeID.Name = "txtEmployeeID";
-            this.txtEmployeeID.Size = new System.Drawing.Size(104, 20);
+            this.txtEmployeeID.Size = new System.Drawing.Size(104, 21);
             this.txtEmployeeID.TabIndex = 27;
             // 
             // label28
@@ -496,18 +490,16 @@
             // 
             this.txtPhoneNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhoneNum.Location = new System.Drawing.Point(133, 42);
-            this.txtPhoneNum.Multiline = true;
             this.txtPhoneNum.Name = "txtPhoneNum";
-            this.txtPhoneNum.Size = new System.Drawing.Size(175, 20);
+            this.txtPhoneNum.Size = new System.Drawing.Size(175, 21);
             this.txtPhoneNum.TabIndex = 10;
             // 
             // txtCustomer
             // 
             this.txtCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomer.Location = new System.Drawing.Point(133, 82);
-            this.txtCustomer.Multiline = true;
             this.txtCustomer.Name = "txtCustomer";
-            this.txtCustomer.Size = new System.Drawing.Size(211, 20);
+            this.txtCustomer.Size = new System.Drawing.Size(211, 21);
             this.txtCustomer.TabIndex = 12;
             // 
             // txtAdress
@@ -553,9 +545,8 @@
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(133, 199);
-            this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(211, 20);
+            this.txtEmail.Size = new System.Drawing.Size(211, 21);
             this.txtEmail.TabIndex = 16;
             // 
             // label11
@@ -616,7 +607,7 @@
             this.tabDetailBill.Location = new System.Drawing.Point(4, 24);
             this.tabDetailBill.Name = "tabDetailBill";
             this.tabDetailBill.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDetailBill.Size = new System.Drawing.Size(1032, 486);
+            this.tabDetailBill.Size = new System.Drawing.Size(1029, 486);
             this.tabDetailBill.TabIndex = 2;
             this.tabDetailBill.Text = "Chọn điện thoại";
             this.tabDetailBill.UseVisualStyleBackColor = true;
@@ -657,9 +648,9 @@
             this.dgvDetailBillPhones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDetailBillPhones.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvDetailBillPhones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetailBillPhones.Location = new System.Drawing.Point(3, 179);
+            this.dgvDetailBillPhones.Location = new System.Drawing.Point(3, 194);
             this.dgvDetailBillPhones.Name = "dgvDetailBillPhones";
-            this.dgvDetailBillPhones.Size = new System.Drawing.Size(508, 245);
+            this.dgvDetailBillPhones.Size = new System.Drawing.Size(508, 230);
             this.dgvDetailBillPhones.TabIndex = 0;
             // 
             // label15
@@ -704,17 +695,17 @@
             // 
             this.txtGift.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGift.Location = new System.Drawing.Point(139, 148);
+            this.txtGift.Multiline = true;
             this.txtGift.Name = "txtGift";
-            this.txtGift.Size = new System.Drawing.Size(287, 21);
+            this.txtGift.Size = new System.Drawing.Size(287, 40);
             this.txtGift.TabIndex = 48;
             // 
             // txtPhone
             // 
             this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.Location = new System.Drawing.Point(139, 28);
-            this.txtPhone.Multiline = true;
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(235, 20);
+            this.txtPhone.Size = new System.Drawing.Size(235, 21);
             this.txtPhone.TabIndex = 40;
             // 
             // label14
@@ -731,27 +722,24 @@
             // 
             this.txtColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtColor.Location = new System.Drawing.Point(139, 68);
-            this.txtColor.Multiline = true;
             this.txtColor.Name = "txtColor";
-            this.txtColor.Size = new System.Drawing.Size(59, 20);
+            this.txtColor.Size = new System.Drawing.Size(59, 21);
             this.txtColor.TabIndex = 41;
             // 
             // txtPrice
             // 
             this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrice.Location = new System.Drawing.Point(335, 108);
-            this.txtPrice.Multiline = true;
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(91, 20);
+            this.txtPrice.Size = new System.Drawing.Size(91, 21);
             this.txtPrice.TabIndex = 45;
             // 
             // txtAvailble
             // 
             this.txtAvailble.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAvailble.Location = new System.Drawing.Point(139, 108);
-            this.txtAvailble.Multiline = true;
             this.txtAvailble.Name = "txtAvailble";
-            this.txtAvailble.Size = new System.Drawing.Size(39, 20);
+            this.txtAvailble.Size = new System.Drawing.Size(39, 21);
             this.txtAvailble.TabIndex = 42;
             // 
             // label7
@@ -796,34 +784,34 @@
             this.dgvPhones.AllowUserToResizeColumns = false;
             this.dgvPhones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPhones.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPhones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPhones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPhones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPhones.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPhones.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvPhones.Location = new System.Drawing.Point(3, 46);
             this.dgvPhones.Name = "dgvPhones";
             this.dgvPhones.ReadOnly = true;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPhones.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPhones.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvPhones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPhones.Size = new System.Drawing.Size(508, 378);
             this.dgvPhones.TabIndex = 0;
@@ -985,6 +973,28 @@
             this.lblUsernames.TabIndex = 46;
             this.lblUsernames.Text = "Admin";
             // 
+            // nhToolStripMenuItem
+            // 
+            this.nhToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.quanLyNhânViênToolStripMenuItem,
+            this.quanLyHơpĐôngToolStripMenuItem});
+            this.nhToolStripMenuItem.Name = "nhToolStripMenuItem";
+            this.nhToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.nhToolStripMenuItem.Text = "Nhân viên";
+            // 
+            // quanLyNhânViênToolStripMenuItem
+            // 
+            this.quanLyNhânViênToolStripMenuItem.Name = "quanLyNhânViênToolStripMenuItem";
+            this.quanLyNhânViênToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quanLyNhânViênToolStripMenuItem.Text = "Quản lý nhân viên";
+            this.quanLyNhânViênToolStripMenuItem.Click += new System.EventHandler(this.quanLyNhânViênToolStripMenuItem_Click);
+            // 
+            // quanLyHơpĐôngToolStripMenuItem
+            // 
+            this.quanLyHơpĐôngToolStripMenuItem.Name = "quanLyHơpĐôngToolStripMenuItem";
+            this.quanLyHơpĐôngToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quanLyHơpĐôngToolStripMenuItem.Text = "Quản lý hợp đồng";
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1032,7 +1042,6 @@
         private System.Windows.Forms.MenuStrip mnsMenu;
         private System.Windows.Forms.ToolStripMenuItem taiKhoanToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quanLyTaiKhoanToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quanLyHơpĐôngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem điênThoaiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quanLyĐiênThoaiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem danhSachNhâpxuâtĐiênThoaiToolStripMenuItem;
@@ -1104,5 +1113,8 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label lblUsernames;
+        private System.Windows.Forms.ToolStripMenuItem nhToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quanLyNhânViênToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quanLyHơpĐôngToolStripMenuItem;
     }
 }
