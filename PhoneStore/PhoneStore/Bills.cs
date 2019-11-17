@@ -25,8 +25,50 @@ namespace PhoneStore
             LoadEmployee();
             LoadComboBox();
             LoadPhones();
+
+            cbbBuyMethod.SelectedIndex = 0;
+            cbbPayMethod.SelectedIndex = 0;
         }
         #region Methods
+        void LoadCustomers()
+        {
+            using (var ctx = new PhoneStoreManageEntities())
+            {
+                var customer = from c in ctx.KhachHangs where c.SoDienThoai == txtPhoneNum.Text select c;
+                try
+                {
+                    txtCustomer.Text = (from c in customer select c.TenKH).FirstOrDefault().ToString();
+                    datBirth.Value = (from c in customer select c.NgaySinh).FirstOrDefault().Value;
+                    txtEmail.Text = (from c in customer select c.Email).FirstOrDefault().ToString();
+                    txtAdress.Text = (from c in customer select c.DiaChi).FirstOrDefault().ToString();
+
+                    if ((from c in customer select c.GioiTinh).FirstOrDefault().ToString() == "Nam")
+                        radMale.Checked = true;
+                    else
+                        radFemale.Checked = true;
+                }
+                catch
+                {
+                    txtCustomer.Text = "";
+                    datBirth.Value = new DateTime(2000, 1, 1);
+                    txtEmail.Text = "";
+                    txtAdress.Text = "";
+                    radMale.Checked = false;
+                    radFemale.Checked = false;
+
+                    DialogResult answer = MessageBox.Show("Không tìn thấy khách hàng. Bạn có muốn tạo mới không?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (answer == DialogResult.Yes)
+                    {
+                        var lastCusID = (from cus in ctx.KhachHangs orderby cus.MaKH descending select cus.MaKH).FirstOrDefault();
+                        //var lastID = (from hd in ctx.HoaDons orderby hd.MaHD descending select hd.MaHD).FirstOrDefault();
+                        var newCus = new KhachHang { MaKH = lastCusID + 1, SoDienThoai = txtPhoneNum.Text };
+                        ctx.KhachHangs.Add(newCus);
+                        ctx.SaveChanges();
+                    }
+                }
+            }
+        }
+
         void LoadComboBox()
         {
             using (var ctx = new PhoneStoreManageEntities())
@@ -159,45 +201,6 @@ namespace PhoneStore
             }
         }
 
-        void LoadCustomers()
-        {
-            using (var ctx = new PhoneStoreManageEntities())
-            {
-                var customer = from c in ctx.KhachHangs where c.SoDienThoai == txtPhoneNum.Text select c;
-                try
-                {
-                    txtCustomer.Text = (from c in customer select c.TenKH).FirstOrDefault().ToString();
-                    datBirth.Value = (from c in customer select c.NgaySinh).FirstOrDefault().Value;
-                    txtEmail.Text = (from c in customer select c.Email).FirstOrDefault().ToString();
-                    txtAdress.Text = (from c in customer select c.DiaChi).FirstOrDefault().ToString();
-
-                    if ((from c in customer select c.GioiTinh).FirstOrDefault().ToString() == "Nam")
-                        radMale.Checked = true;
-                    else
-                        radFemale.Checked = true;
-                }
-                catch
-                {
-                    txtCustomer.Text = "";
-                    datBirth.Value = new DateTime(2000, 1, 1);
-                    txtEmail.Text = "";
-                    txtAdress.Text = "";
-                    radMale.Checked = false;
-                    radFemale.Checked = false;
-
-                    DialogResult answer = MessageBox.Show("Không tìn thấy khách hàng. Bạn có muốn tạo mới không?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (answer == DialogResult.Yes)
-                    {
-                        var lastCusID = (from cus in ctx.KhachHangs orderby cus.MaKH descending select cus.MaKH).FirstOrDefault();
-                        //var lastID = (from hd in ctx.HoaDons orderby hd.MaHD descending select hd.MaHD).FirstOrDefault();
-                        var newCus = new KhachHang { MaKH = lastCusID + 1, SoDienThoai = txtPhoneNum.Text };
-                        ctx.KhachHangs.Add(newCus);
-                        ctx.SaveChanges();
-                    }
-                }
-            }
-        }
-
         void CreateBills()
         {
             using (var ctx = new PhoneStoreManageEntities())
@@ -282,7 +285,7 @@ namespace PhoneStore
 
         private void btnPhoneNumFill_Click(object sender, EventArgs e)
         {
-            LoadPhones();
+            LoadCustomers();
         }
         private void btnSelect_Click(object sender, EventArgs e)
         {
@@ -302,7 +305,7 @@ namespace PhoneStore
 
         private void btnPhoneSearch_Click(object sender, EventArgs e)
         {
-            LoadCustomers();
+            LoadPhones();
         }
 
         private void dgvPhones_CellClick(object sender, DataGridViewCellEventArgs e)
