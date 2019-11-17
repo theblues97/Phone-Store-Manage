@@ -219,11 +219,11 @@ go
 --drop view if exists viw_DetailOrders;
 --go
 
---create view viw_DetailOrders(MaCTHD, MaHD, MaDT, TenDT, Mau, Gia, Soluong)
+--create view viw_DetailOrders
 --as
---	select chd.MaCTHD, chd.MaHD, dt.MaDT, mdt.TenDT, dt.Mau, dt.Gia, SoLuong as '0'
+--	select chd.MaHD, dt.MaDT, mdt.TenDT, dt.Mau, dt.Gia
 --	from ChiTietHoadon chd, DienThoai dt, MauDienThoai mdt 
---	where chd.MaDT = dt.MaDT and dt.MaMDT = mdt.MaMDT;
+--	where chd.MaDT = dt.MaDT and dt.MaMDT = mdt.MaMDT group by chd.MaHD, dt.MaDT, mdt.TenDT, dt.Mau, dt.Gia;
 --go
 
 --drop trigger if exists trg_UpdateDetailBills
@@ -235,7 +235,7 @@ go
 --begin
 --	declare @count int;
 --	select @count = count(Gia) from  HoaDon hd, DienThoai dt, ChiTietHoadon chd 
---	where dt.MaDT = chd.MaDT and hd.MaHD = chd.MaHD group by dt.MaDT;
+--	where dt.MaDT = chd.MaDT and hd.MaHD = chd.MaHD group by chd.MaHD, dt.MaDT order by chd.MaHD;
 
 --	update viw_DetailOrders
 --	set Soluong = @count

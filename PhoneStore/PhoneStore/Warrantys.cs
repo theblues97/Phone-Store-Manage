@@ -13,6 +13,8 @@ namespace PhoneStore
     public partial class Warrantys : Form
     {
         public string username;
+        public int billID;
+        public int cusID;
         public Warrantys()
         {
             InitializeComponent();
@@ -21,6 +23,20 @@ namespace PhoneStore
         public Warrantys(string Username) : this()
         {
             username = Username;
+            InitLoad();
+        }
+
+        void InitLoad()
+        {
+            DateTime time = DateTime.Now;
+            datWaReceive.Value = new DateTime(time.Year, time.Month, time.Day);
+
+            using (var ctx = new PhoneStoreManageEntities())
+            {
+                var emp = (from em in ctx.Accounts where em.Username == username select em).FirstOrDefault();
+                txtWaEmpID.Text = emp.MaNV.ToString();
+                txtWaEmpName.Text = emp.NhanVien.TenNV.ToString();
+            }
         }
 
         void LoadCustomers()
@@ -44,7 +60,7 @@ namespace PhoneStore
                         radWaFemale.Checked = true;
 
 
-                    var cusID = (from c in customer select c.MaKH).FirstOrDefault();
+                    cusID = (from c in customer select c.MaKH).FirstOrDefault();
                     var bill = from b in ctx.HoaDons
                                where b.MaKH == cusID
                                select new
@@ -79,8 +95,8 @@ namespace PhoneStore
                     if (answer == DialogResult.Yes)
                     {
                         var lastCusID = (from cus in ctx.KhachHangs orderby cus.MaKH descending select cus.MaKH).FirstOrDefault();
-                        var lastID = (from hd in ctx.HoaDons orderby hd.MaHD descending select hd.MaHD).FirstOrDefault();
                         var newCus = new KhachHang { MaKH = lastCusID + 1, SoDienThoai = txtWaPhoneNum.Text };
+                        cusID = lastCusID + 1;
                         ctx.KhachHangs.Add(newCus);
                         ctx.SaveChanges();
                     }
@@ -93,7 +109,7 @@ namespace PhoneStore
             if (e.RowIndex > -1)
             {
                 dgvWaBills.CurrentRow.Selected = true;
-                var billID = Int32.Parse(dgvWaBills.Rows[e.RowIndex].Cells[1].FormattedValue.ToString());
+                billID = Int32.Parse(dgvWaBills.Rows[e.RowIndex].Cells[1].FormattedValue.ToString());
                 using (var ctx = new PhoneStoreManageEntities())
                 {
                     var debills = from db in ctx.ChiTietHoadons where db.MaHD == billID
@@ -118,19 +134,46 @@ namespace PhoneStore
             {
                 dgvWaPhoneBill.CurrentRow.Selected = true;
 
-                txtWaPhoneName.Text = dgvWaPhoneBill.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
+                txtWaPhoneName.Text = dgvWaPhoneBill.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
 
-                DateTime time = DateTime.Now;
-                datWaReceive.Value = new DateTime(time.Year, time.Month, time.Day);
 
                 using (var ctx = new PhoneStoreManageEntities())
                 {
-                    var emp = (from em in ctx.Accounts where em.Username == username select em).FirstOrDefault();
-                    txtWaEmpID.Text = emp.MaNV.ToString();
-                    txtWaEmpName.Text = emp.NhanVien.TenNV.ToString();
-
+                    cbbWaPayMethod.SelectedItem = (from b in ctx.HoaDons where b.MaHD == billID select b.PTThanhToan).FirstOrDefault();
                 }
-                    
+            }
+        }
+
+        void CreateWarranty()
+        {
+            using (var ctx = new PhoneStoreManageEntities())
+            {
+
+                var cus = (from c in ctx.KhachHangs where c.SoDienThoai == txtWaPhoneNum.Text select c).FirstOrDefault();
+                cus.TenKH = txtWaCustomer.Text;
+                cus.GioiTinh = radWaMale.Checked ? "Nam" : "Nữ";
+                cus.NgaySinh = datWaBirth.Value;
+                cus.Email = txtWaEmail.Text;
+                cus.DiaChi = txtWaAdress.Text;
+
+                var lastWaID = (from wa in ctx.SuaChuas orderby wa.MaSC descending select wa.MaSC).FirstOrDefault();
+
+                try
+                {
+                    if(billID != 0)
+                        ctx.pro_CreateWarrantys(lastWaID + 1, txtWaPhoneName.Text, datWaReceive.Value, Int32.Parse(txtWaCharge.Text),
+                            cbbWaPayMethod.SelectedItem.ToString(), txtWaNotices.Text, cusID, Int32.Parse(txtWaEmpID.Text), billID);
+                    else
+                        ctx.pro_CreateWarrantys(lastWaID + 1, txtWaPhoneName.Text, datWaReceive.Value, Int32.Parse(txtWaCharge.Text),
+                            cbbWaPayMethod.SelectedItem.ToString(), txtWaNotices.Text, cusID, Int32.Parse(txtWaEmpID.Text), null);
+
+                    MessageBox.Show("Thêm thành công!","Information",  MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch
+                {
+                    MessageBox.Show("Thêm không thành công\n Hãy kiểm tra lại các trường thông tin!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                ctx.SaveChanges();
             }
         }
 
@@ -151,7 +194,7 @@ namespace PhoneStore
 
         private void btnWaCreate_Click(object sender, EventArgs e)
         {
-
+            CreateWarranty();
         }
     }
 }
