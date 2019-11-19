@@ -18,8 +18,10 @@ namespace PhoneStore
         Bills bills;
         Warrantys warrantys;
         Informations accounts;
-        ListBills listBills;
+        ManageBills manageBills;
         ManageEmployees manageEmployees;
+        ManagePhones managePhones;
+        ManageCustomer manageCustomer;
 
         public Home()
         {
@@ -34,8 +36,10 @@ namespace PhoneStore
             bills = new Bills(username);
             warrantys = new Warrantys(username);
             accounts = new Informations(username);
-            listBills = new ListBills();
+            manageBills = new ManageBills();
             manageEmployees = new ManageEmployees(username);
+            managePhones = new ManagePhones(username);
+            manageCustomer = new ManageCustomer(username);
         }
 
         private bool CheckExistForm(string name)
@@ -100,14 +104,26 @@ namespace PhoneStore
 
         private void quanLyHoaĐơnBanHangToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!CheckExistForm("ListBills"))
+            if (!CheckExistForm("ManageBills"))
             {
-                listBills.MdiParent = this;
-                listBills.Show();
-                listBills.Location = new Point(0, 0);
+                manageBills.MdiParent = this;
+                manageBills.Show();
+                manageBills.Location = new Point(0, 0);
             }
             else
-                ActiveChildForm("ListBills");
+                ActiveChildForm("ManageBills");
+        }
+
+        private void quanLyĐiênThoaiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!CheckExistForm("ManagePhones"))
+            {
+                managePhones.MdiParent = this;
+                managePhones.Show();
+                managePhones.Location = new Point(0, 0);
+            }
+            else
+                ActiveChildForm("ManagePhones");
         }
 
         private void quanLyNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
@@ -121,6 +137,19 @@ namespace PhoneStore
             else
                 ActiveChildForm("ManageEmployees");
         }
+
+        private void quanLyKhachHangToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!CheckExistForm("ManageCustomer"))
+            {
+                manageCustomer.MdiParent = this;
+                manageCustomer.Show();
+                manageCustomer.Location = new Point(0, 0);
+            }
+            else
+                ActiveChildForm("ManageCustomer");
+        }
+
         #endregion
     }
 }

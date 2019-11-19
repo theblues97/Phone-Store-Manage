@@ -317,8 +317,6 @@ namespace PhoneStore
         {
             ChoosePhones();
         }
-
-
         #endregion
 
 

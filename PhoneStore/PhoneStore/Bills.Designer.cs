@@ -221,7 +221,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(66, 168);
+            this.label27.Location = new System.Drawing.Point(66, 166);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(85, 15);
             this.label27.TabIndex = 34;
@@ -230,7 +230,7 @@
             // datBuy
             // 
             this.datBuy.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datBuy.Location = new System.Drawing.Point(166, 120);
+            this.datBuy.Location = new System.Drawing.Point(166, 122);
             this.datBuy.Name = "datBuy";
             this.datBuy.Size = new System.Drawing.Size(104, 21);
             this.datBuy.TabIndex = 27;
@@ -419,7 +419,7 @@
             // datBirth
             // 
             this.datBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datBirth.Location = new System.Drawing.Point(133, 122);
+            this.datBirth.Location = new System.Drawing.Point(133, 124);
             this.datBirth.Name = "datBirth";
             this.datBirth.Size = new System.Drawing.Size(104, 21);
             this.datBirth.TabIndex = 13;
@@ -544,7 +544,7 @@
             this.txtGift.Location = new System.Drawing.Point(139, 148);
             this.txtGift.Multiline = true;
             this.txtGift.Name = "txtGift";
-            this.txtGift.Size = new System.Drawing.Size(287, 40);
+            this.txtGift.Size = new System.Drawing.Size(272, 40);
             this.txtGift.TabIndex = 48;
             // 
             // txtPhone
@@ -559,7 +559,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(291, 111);
+            this.label14.Location = new System.Drawing.Point(276, 111);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(26, 15);
             this.label14.TabIndex = 47;
@@ -576,7 +576,7 @@
             // txtPrice
             // 
             this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(335, 108);
+            this.txtPrice.Location = new System.Drawing.Point(320, 108);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(91, 21);
             this.txtPrice.TabIndex = 45;
@@ -751,7 +751,7 @@
             this.pnlToolMenu.Controls.Add(this.btnAddOrder);
             this.pnlToolMenu.Location = new System.Drawing.Point(3, 37);
             this.pnlToolMenu.Name = "pnlToolMenu";
-            this.pnlToolMenu.Size = new System.Drawing.Size(1037, 40);
+            this.pnlToolMenu.Size = new System.Drawing.Size(1032, 40);
             this.pnlToolMenu.TabIndex = 1;
             // 
             // button3

@@ -33,27 +33,27 @@
             this.thôngKêBanHangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngKêKhachHangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thôngKêNhâpxuâtĐiênThoaiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hoaĐơnSuaChuaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hoaĐơnBanHangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hoaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsMenu = new System.Windows.Forms.MenuStrip();
             this.taiKhoanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label16 = new System.Windows.Forms.Label();
-            this.lblUsernames = new System.Windows.Forms.Label();
             this.quanLyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quanLyHoaĐơnBanHangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quanLyĐiênThoaiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.quanLyNhânViênToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.quanLyKhachHangToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.thôngKêNhâpxuâtĐiênThoaiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label16 = new System.Windows.Forms.Label();
+            this.lblUsernames = new System.Windows.Forms.Label();
             this.mnsMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // thôngTinTaiKhoanToolStripMenuItem
             // 
             this.thôngTinTaiKhoanToolStripMenuItem.Name = "thôngTinTaiKhoanToolStripMenuItem";
-            this.thôngTinTaiKhoanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.thôngTinTaiKhoanToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.thôngTinTaiKhoanToolStripMenuItem.Text = "Thông tin tài khoản";
             this.thôngTinTaiKhoanToolStripMenuItem.Click += new System.EventHandler(this.thôngTinTaiKhoanToolStripMenuItem_Click);
             // 
@@ -86,17 +86,23 @@
             this.thôngKêToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.thôngKêToolStripMenuItem.Text = "Thống kê";
             // 
+            // thôngKêNhâpxuâtĐiênThoaiToolStripMenuItem
+            // 
+            this.thôngKêNhâpxuâtĐiênThoaiToolStripMenuItem.Name = "thôngKêNhâpxuâtĐiênThoaiToolStripMenuItem";
+            this.thôngKêNhâpxuâtĐiênThoaiToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.thôngKêNhâpxuâtĐiênThoaiToolStripMenuItem.Text = "Thống kê nhập/xuất  điện thoại";
+            // 
             // hoaĐơnSuaChuaToolStripMenuItem
             // 
             this.hoaĐơnSuaChuaToolStripMenuItem.Name = "hoaĐơnSuaChuaToolStripMenuItem";
-            this.hoaĐơnSuaChuaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hoaĐơnSuaChuaToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.hoaĐơnSuaChuaToolStripMenuItem.Text = "Hóa đơn sửa chữa";
             this.hoaĐơnSuaChuaToolStripMenuItem.Click += new System.EventHandler(this.hoaĐơnSuaChuaToolStripMenuItem_Click);
             // 
             // hoaĐơnBanHangToolStripMenuItem
             // 
             this.hoaĐơnBanHangToolStripMenuItem.Name = "hoaĐơnBanHangToolStripMenuItem";
-            this.hoaĐơnBanHangToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hoaĐơnBanHangToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.hoaĐơnBanHangToolStripMenuItem.Text = "Hóa đơn bán hàng";
             this.hoaĐơnBanHangToolStripMenuItem.Click += new System.EventHandler(this.hoaĐơnBanHangToolStripMenuItem_Click);
             // 
@@ -130,28 +136,6 @@
             this.taiKhoanToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.taiKhoanToolStripMenuItem.Text = "Tài khoản";
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label16.Location = new System.Drawing.Point(890, 5);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(65, 15);
-            this.label16.TabIndex = 45;
-            this.label16.Text = "Welcome: ";
-            // 
-            // lblUsernames
-            // 
-            this.lblUsernames.AutoSize = true;
-            this.lblUsernames.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsernames.ForeColor = System.Drawing.Color.Red;
-            this.lblUsernames.Location = new System.Drawing.Point(954, 5);
-            this.lblUsernames.Name = "lblUsernames";
-            this.lblUsernames.Size = new System.Drawing.Size(42, 15);
-            this.lblUsernames.TabIndex = 46;
-            this.lblUsernames.Text = "Admin";
-            // 
             // quanLyToolStripMenuItem
             // 
             this.quanLyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -176,6 +160,7 @@
             this.quanLyĐiênThoaiToolStripMenuItem1.Name = "quanLyĐiênThoaiToolStripMenuItem1";
             this.quanLyĐiênThoaiToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.quanLyĐiênThoaiToolStripMenuItem1.Text = "Quản lý điện thoại";
+            this.quanLyĐiênThoaiToolStripMenuItem1.Click += new System.EventHandler(this.quanLyĐiênThoaiToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -194,12 +179,29 @@
             this.quanLyKhachHangToolStripMenuItem1.Name = "quanLyKhachHangToolStripMenuItem1";
             this.quanLyKhachHangToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.quanLyKhachHangToolStripMenuItem1.Text = "Quản lý khách hàng";
+            this.quanLyKhachHangToolStripMenuItem1.Click += new System.EventHandler(this.quanLyKhachHangToolStripMenuItem_Click);
             // 
-            // thôngKêNhâpxuâtĐiênThoaiToolStripMenuItem
+            // label16
             // 
-            this.thôngKêNhâpxuâtĐiênThoaiToolStripMenuItem.Name = "thôngKêNhâpxuâtĐiênThoaiToolStripMenuItem";
-            this.thôngKêNhâpxuâtĐiênThoaiToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
-            this.thôngKêNhâpxuâtĐiênThoaiToolStripMenuItem.Text = "Thống kê nhập/xuất  điện thoại";
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label16.Location = new System.Drawing.Point(890, 5);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(65, 15);
+            this.label16.TabIndex = 45;
+            this.label16.Text = "Welcome: ";
+            // 
+            // lblUsernames
+            // 
+            this.lblUsernames.AutoSize = true;
+            this.lblUsernames.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsernames.ForeColor = System.Drawing.Color.Red;
+            this.lblUsernames.Location = new System.Drawing.Point(954, 5);
+            this.lblUsernames.Name = "lblUsernames";
+            this.lblUsernames.Size = new System.Drawing.Size(42, 15);
+            this.lblUsernames.TabIndex = 46;
+            this.lblUsernames.Text = "Admin";
             // 
             // Home
             // 
