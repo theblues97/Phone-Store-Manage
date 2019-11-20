@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlSalebills = new System.Windows.Forms.Panel();
             this.tabMainBill = new System.Windows.Forms.TabControl();
             this.tabBill = new System.Windows.Forms.TabPage();
@@ -94,6 +94,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnAddOrder = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.pnlSalebills.SuspendLayout();
             this.tabMainBill.SuspendLayout();
             this.tabBill.SuspendLayout();
@@ -275,7 +276,7 @@
             this.cbbBuyMethod.ItemHeight = 15;
             this.cbbBuyMethod.Items.AddRange(new object[] {
             "Mua tại cửa hàng",
-            "Giao tại hàng nhà"});
+            "Giao hàng tại nhà"});
             this.cbbBuyMethod.Location = new System.Drawing.Point(166, 205);
             this.cbbBuyMethod.Name = "cbbBuyMethod";
             this.cbbBuyMethod.Size = new System.Drawing.Size(145, 23);
@@ -475,15 +476,15 @@
             this.pnlBillPhoneArea.Controls.Add(this.txtAvailble);
             this.pnlBillPhoneArea.Controls.Add(this.label7);
             this.pnlBillPhoneArea.Controls.Add(this.label6);
-            this.pnlBillPhoneArea.Location = new System.Drawing.Point(517, 0);
+            this.pnlBillPhoneArea.Location = new System.Drawing.Point(537, 0);
             this.pnlBillPhoneArea.Name = "pnlBillPhoneArea";
-            this.pnlBillPhoneArea.Size = new System.Drawing.Size(514, 489);
+            this.pnlBillPhoneArea.Size = new System.Drawing.Size(494, 489);
             this.pnlBillPhoneArea.TabIndex = 50;
             // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(418, 446);
+            this.button4.Location = new System.Drawing.Point(388, 442);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(88, 34);
             this.button4.TabIndex = 40;
@@ -495,16 +496,16 @@
             this.dgvDetailBillPhones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDetailBillPhones.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvDetailBillPhones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetailBillPhones.Location = new System.Drawing.Point(3, 194);
+            this.dgvDetailBillPhones.Location = new System.Drawing.Point(0, 212);
             this.dgvDetailBillPhones.Name = "dgvDetailBillPhones";
-            this.dgvDetailBillPhones.Size = new System.Drawing.Size(508, 230);
+            this.dgvDetailBillPhones.Size = new System.Drawing.Size(494, 212);
             this.dgvDetailBillPhones.TabIndex = 0;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(38, 151);
+            this.label15.Location = new System.Drawing.Point(62, 155);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(72, 15);
             this.label15.TabIndex = 49;
@@ -523,7 +524,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(38, 29);
+            this.label5.Location = new System.Drawing.Point(62, 33);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 15);
             this.label5.TabIndex = 40;
@@ -541,7 +542,7 @@
             // txtGift
             // 
             this.txtGift.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGift.Location = new System.Drawing.Point(139, 148);
+            this.txtGift.Location = new System.Drawing.Point(163, 152);
             this.txtGift.Multiline = true;
             this.txtGift.Name = "txtGift";
             this.txtGift.Size = new System.Drawing.Size(272, 40);
@@ -550,7 +551,7 @@
             // txtPhone
             // 
             this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(139, 28);
+            this.txtPhone.Location = new System.Drawing.Point(163, 32);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(235, 21);
             this.txtPhone.TabIndex = 40;
@@ -559,7 +560,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(276, 111);
+            this.label14.Location = new System.Drawing.Point(300, 115);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(26, 15);
             this.label14.TabIndex = 47;
@@ -568,7 +569,7 @@
             // txtColor
             // 
             this.txtColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtColor.Location = new System.Drawing.Point(139, 68);
+            this.txtColor.Location = new System.Drawing.Point(163, 72);
             this.txtColor.Name = "txtColor";
             this.txtColor.Size = new System.Drawing.Size(59, 21);
             this.txtColor.TabIndex = 41;
@@ -576,7 +577,7 @@
             // txtPrice
             // 
             this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(320, 108);
+            this.txtPrice.Location = new System.Drawing.Point(344, 112);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(91, 21);
             this.txtPrice.TabIndex = 45;
@@ -584,7 +585,7 @@
             // txtAvailble
             // 
             this.txtAvailble.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAvailble.Location = new System.Drawing.Point(139, 108);
+            this.txtAvailble.Location = new System.Drawing.Point(163, 112);
             this.txtAvailble.Name = "txtAvailble";
             this.txtAvailble.Size = new System.Drawing.Size(39, 21);
             this.txtAvailble.TabIndex = 42;
@@ -593,7 +594,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(38, 111);
+            this.label7.Location = new System.Drawing.Point(62, 115);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 15);
             this.label7.TabIndex = 44;
@@ -603,7 +604,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(38, 71);
+            this.label6.Location = new System.Drawing.Point(62, 75);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(32, 15);
             this.label6.TabIndex = 43;
@@ -611,6 +612,7 @@
             // 
             // pnlPhoneArea
             // 
+            this.pnlPhoneArea.Controls.Add(this.btnCancel);
             this.pnlPhoneArea.Controls.Add(this.dgvPhones);
             this.pnlPhoneArea.Controls.Add(this.cbbColors);
             this.pnlPhoneArea.Controls.Add(this.label3);
@@ -622,7 +624,7 @@
             this.pnlPhoneArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlPhoneArea.Location = new System.Drawing.Point(0, 0);
             this.pnlPhoneArea.Name = "pnlPhoneArea";
-            this.pnlPhoneArea.Size = new System.Drawing.Size(514, 490);
+            this.pnlPhoneArea.Size = new System.Drawing.Size(539, 490);
             this.pnlPhoneArea.TabIndex = 4;
             // 
             // dgvPhones
@@ -631,36 +633,36 @@
             this.dgvPhones.AllowUserToResizeColumns = false;
             this.dgvPhones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPhones.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPhones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPhones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPhones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPhones.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPhones.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPhones.Location = new System.Drawing.Point(3, 46);
             this.dgvPhones.Name = "dgvPhones";
             this.dgvPhones.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPhones.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPhones.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPhones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvPhones.Size = new System.Drawing.Size(508, 378);
+            this.dgvPhones.Size = new System.Drawing.Size(533, 378);
             this.dgvPhones.TabIndex = 0;
             this.dgvPhones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhones_CellClick);
             // 
@@ -669,9 +671,9 @@
             this.cbbColors.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbColors.FormattingEnabled = true;
             this.cbbColors.ItemHeight = 15;
-            this.cbbColors.Location = new System.Drawing.Point(162, 16);
+            this.cbbColors.Location = new System.Drawing.Point(175, 16);
             this.cbbColors.Name = "cbbColors";
-            this.cbbColors.Size = new System.Drawing.Size(70, 23);
+            this.cbbColors.Size = new System.Drawing.Size(108, 23);
             this.cbbColors.TabIndex = 38;
             this.cbbColors.SelectedIndexChanged += new System.EventHandler(this.cbbColors_SelectedIndexChanged);
             // 
@@ -679,7 +681,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(123, 19);
+            this.label3.Location = new System.Drawing.Point(136, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 15);
             this.label3.TabIndex = 39;
@@ -699,7 +701,7 @@
             // btnAddPhone
             // 
             this.btnAddPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddPhone.Location = new System.Drawing.Point(405, 442);
+            this.btnAddPhone.Location = new System.Drawing.Point(420, 442);
             this.btnAddPhone.Name = "btnAddPhone";
             this.btnAddPhone.Size = new System.Drawing.Size(88, 34);
             this.btnAddPhone.TabIndex = 9;
@@ -720,7 +722,7 @@
             // btnPhoneSearch
             // 
             this.btnPhoneSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhoneSearch.Location = new System.Drawing.Point(453, 10);
+            this.btnPhoneSearch.Location = new System.Drawing.Point(468, 10);
             this.btnPhoneSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnPhoneSearch.Name = "btnPhoneSearch";
             this.btnPhoneSearch.Size = new System.Drawing.Size(40, 32);
@@ -732,9 +734,9 @@
             // txtPhoneSearch
             // 
             this.txtPhoneSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhoneSearch.Location = new System.Drawing.Point(247, 18);
+            this.txtPhoneSearch.Location = new System.Drawing.Point(319, 16);
             this.txtPhoneSearch.Name = "txtPhoneSearch";
-            this.txtPhoneSearch.Size = new System.Drawing.Size(200, 21);
+            this.txtPhoneSearch.Size = new System.Drawing.Size(143, 21);
             this.txtPhoneSearch.TabIndex = 5;
             // 
             // pnlBillListMain
@@ -796,6 +798,17 @@
             this.label1.Size = new System.Drawing.Size(189, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Hóa đơn bán hàng";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(29, 442);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(88, 34);
+            this.btnCancel.TabIndex = 40;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // Bills
             // 
@@ -891,5 +904,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnAddOrder;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

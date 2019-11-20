@@ -146,7 +146,7 @@ insert into DienThoai values('30',N'Trắng','10','5390000','15');
 
 insert into HoaDon values('1','1','3','2019-02-27','2019-08-27',N'Mua tại cửa hàng',N'Thanh toán trực tiếp','0');
 insert into HoaDon values('2','4','4','2019-02-28','2019-02-28',N'Mua tại của hàng',N'Thanh toán bằng thẻ','0');
-insert into HoaDon values('3','5','3','2019-03-02','2019-09-02',N'Giao tại hàng nhà',N'Thanh toán bằng thẻ','0');
+insert into HoaDon values('3','5','3','2019-03-02','2019-09-02',N'Giao hàng tại nhà',N'Thanh toán bằng thẻ','0');
 insert into HoaDon values('4','11','5','2019-04-11','2019-06-11',N'Mua tại cửa hàng',N'Thanh toán trực tiếp','0');
 insert into HoaDon values('5','12','5','2019-02-13','2019-02-13',N'Mua tại cửa hàng',N'Thanh toán bằng thẻ','0');
 insert into HoaDon values('6','9','6','2019-05-24','2019-05-24',N'Mua tại cửa hàng',N'Thanh toán trực tiếp','0');

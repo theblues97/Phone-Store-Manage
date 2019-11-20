@@ -63,6 +63,10 @@ namespace PhoneStore
 
                 dgvPhoneSamples.DataSource = query.ToList();
                 dgvPhoneSamples.Columns[0].Visible = false;
+                dgvPhoneSamples.Columns[1].HeaderText = "Tên điện thoại";
+                dgvPhoneSamples.Columns[2].HeaderText = "Năm sản xuất";
+                dgvPhoneSamples.Columns[3].HeaderText = "Khuyến mãi";
+                dgvPhoneSamples.Columns[4].HeaderText = "Mô tả";
                 dgvPhoneSamples.Refresh();
             }
         }

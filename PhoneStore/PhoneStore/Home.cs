@@ -18,10 +18,11 @@ namespace PhoneStore
         Bills bills;
         Warrantys warrantys;
         Informations accounts;
-        ManageBills manageBills;
         ManageEmployees manageEmployees;
         ManagePhones managePhones;
         ManageCustomer manageCustomer;
+
+        StatisticBills statisticBills;
 
         public Home()
         {
@@ -36,7 +37,7 @@ namespace PhoneStore
             bills = new Bills(username);
             warrantys = new Warrantys(username);
             accounts = new Informations(username);
-            manageBills = new ManageBills();
+            statisticBills = new StatisticBills(username);
             manageEmployees = new ManageEmployees(username);
             managePhones = new ManagePhones(username);
             manageCustomer = new ManageCustomer(username);
@@ -102,18 +103,6 @@ namespace PhoneStore
                 ActiveChildForm("Informations");
         }
 
-        private void quanLyHoaĐơnBanHangToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (!CheckExistForm("ManageBills"))
-            {
-                manageBills.MdiParent = this;
-                manageBills.Show();
-                manageBills.Location = new Point(0, 0);
-            }
-            else
-                ActiveChildForm("ManageBills");
-        }
-
         private void quanLyĐiênThoaiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!CheckExistForm("ManagePhones"))
@@ -150,6 +139,19 @@ namespace PhoneStore
                 ActiveChildForm("ManageCustomer");
         }
 
+        private void thongKeHoaĐơnBanHangToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!CheckExistForm("StatisticBills"))
+            {
+                statisticBills.MdiParent = this;
+                statisticBills.Show();
+                statisticBills.Location = new Point(0, 0);
+            }
+            else
+                ActiveChildForm("StatisticBills");
+        }
         #endregion
+
+
     }
 }

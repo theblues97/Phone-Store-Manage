@@ -60,7 +60,6 @@ namespace PhoneStore
                     if (answer == DialogResult.Yes)
                     {
                         var lastCusID = (from cus in ctx.KhachHangs orderby cus.MaKH descending select cus.MaKH).FirstOrDefault();
-                        //var lastID = (from hd in ctx.HoaDons orderby hd.MaHD descending select hd.MaHD).FirstOrDefault();
                         var newCus = new KhachHang { MaKH = lastCusID + 1, SoDienThoai = txtPhoneNum.Text };
                         ctx.KhachHangs.Add(newCus);
                         ctx.SaveChanges();
@@ -104,21 +103,6 @@ namespace PhoneStore
                                 KhuyenMai = p.MauDienThoai.KM
 
                             };
-
-                //var query = (from pb in ctx.HangDienThoais
-                //             join mp in ctx.MauDienThoais on pb.MaHDT equals mp.MaHDT
-                //             join p in ctx.DienThoais on mp.MaMDT equals p.MaMDT
-                //             select new
-                //             {
-                //                 TenHang = pb.TenHDT,
-                //                 MaMauDienThoai = mp.MaMDT,       
-                //                 TenDienThoai = mp.TenDT,
-                //                 MaDienThoai = p.MaDT,
-                //                 Mau = p.Mau,
-                //                 SoLuong = p.SoLuong,
-                //                 Gia = p.Gia,
-                //                 KhuyenMai = mp.KM
-                //             });
 
                 if (cbbBrand.SelectedIndex > -1)
                 {
@@ -246,23 +230,56 @@ namespace PhoneStore
                 };
                 ctx.ChiTietHoadons.Add(newDeBill);
                 ctx.SaveChanges();
+                LoadPhones();
+                dgvPhones.Rows[cRow].Selected = true;
 
-                //var countPhone = (from db in ctx.ChiTietHoadons where db.MaHD == billID && db.MaDT == PhoneID select db).Count();
-
-                var detailBill = (from db in ctx.ChiTietHoadons
-                                  where db.MaHD == billID
+                var detailBill = (from b in ctx.ChiTietHoadons
                                   select new
                                   {
-                                      db.DienThoai.MaDT,
-                                      //db.MaHD,
-                                      db.DienThoai.MauDienThoai.TenDT,
-                                      db.DienThoai.Mau,
-                                      db.DienThoai.Gia
-                                  });//.Distinct();
-                dgvDetailBillPhones.DataSource = detailBill.ToList();
-                dgvDetailBillPhones.Columns[0].Visible = false;
+                                      b.MaHD,
+                                      b.MaDT,
+                                      b.DienThoai.MauDienThoai.TenDT,
+                                      b.DienThoai.Mau,
+                                      b.DienThoai.Gia
+                                  }).Distinct();
+
+                var countList = from db in ctx.ChiTietHoadons
+                                join p in ctx.DienThoais on db.MaDT equals p.MaDT
+                                join b in ctx.HoaDons on db.MaHD equals b.MaHD
+                                group db by new { db.MaHD, db.MaDT, db.DienThoai.Gia } into dbs
+                                orderby dbs.Key.MaHD
+                                select new
+                                {
+                                    dbs.Key,
+                                    Count = dbs.Count(),
+                                    Total = dbs.Count() * dbs.Key.Gia
+                                };
+                var query = from bill in detailBill
+                            join list in countList on
+                            new { bill.MaHD, bill.MaDT } equals
+                            new { list.Key.MaHD, list.Key.MaDT }
+                            into result
+                            from r in result.DefaultIfEmpty()
+                            where bill.MaHD == billID
+                            select new
+                            {                              
+                                bill.TenDT,
+                                bill.Mau,
+                                bill.Gia,
+                                r.Count,
+                                r.Total
+                            };
+                var a = query.ToList();
+                dgvDetailBillPhones.DataSource = query.ToList();
+                dgvDetailBillPhones.Columns[0].HeaderText = "Điện thoại";
+                dgvDetailBillPhones.Columns[1].HeaderText = "Màu";
+                dgvDetailBillPhones.Columns[2].HeaderText = "Giá";
+                dgvDetailBillPhones.Columns[3].HeaderText = "Số lượng";
+                dgvDetailBillPhones.Columns[4].HeaderText = "Thành tiền";
                 dgvDetailBillPhones.Refresh();
-                LoadPhones();
+
+                lblTotalMoney.Text = (from q in ctx.HoaDons where q.MaHD == billID select q.Tongtien).FirstOrDefault().ToString();
+
             }
         }
 
@@ -317,6 +334,12 @@ namespace PhoneStore
         {
             ChoosePhones();
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            var 
+        }
+
         #endregion
 
 
