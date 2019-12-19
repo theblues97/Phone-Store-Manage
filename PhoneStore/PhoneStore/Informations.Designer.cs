@@ -28,99 +28,86 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnList = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btnAddOrder = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtEmpSalary = new System.Windows.Forms.TextBox();
+            this.txtSalary = new System.Windows.Forms.TextBox();
             this.pnlCustomerArea = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtEmpPos = new System.Windows.Forms.TextBox();
+            this.txtPos = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtEmpPhone = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtEmpID = new System.Windows.Forms.TextBox();
-            this.txtEmpName = new System.Windows.Forms.TextBox();
-            this.txtEmpAdress = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtAdress = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.datEmpBirth = new System.Windows.Forms.DateTimePicker();
-            this.radEmpMale = new System.Windows.Forms.RadioButton();
-            this.radEmpFemale = new System.Windows.Forms.RadioButton();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.datBirth = new System.Windows.Forms.DateTimePicker();
+            this.radMale = new System.Windows.Forms.RadioButton();
+            this.radFemale = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtEmpPass = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtEmpUsername = new System.Windows.Forms.TextBox();
+            this.btnChangePass = new System.Windows.Forms.Button();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.pnlChangePass = new System.Windows.Forms.Panel();
+            this.txtReNewPass = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtNewPass = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.datEmpEnd = new System.Windows.Forms.DateTimePicker();
-            this.button4 = new System.Windows.Forms.Button();
+            this.datEnd = new System.Windows.Forms.DateTimePicker();
+            this.btnSave = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtEmpContractID = new System.Windows.Forms.TextBox();
+            this.txtContractID = new System.Windows.Forms.TextBox();
             this.txtContractType = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.datEmpStart = new System.Windows.Forms.DateTimePicker();
+            this.datStarted = new System.Windows.Forms.DateTimePicker();
             this.pnlToolMenu = new System.Windows.Forms.Panel();
+            this.btnRefesh = new System.Windows.Forms.Button();
             this.pnlCustomerArea.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.pnlChangePass.SuspendLayout();
             this.pnlToolMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btnDel
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(193, 4);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 32);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Res";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDel.Enabled = false;
+            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDel.Location = new System.Drawing.Point(101, 4);
+            this.btnDel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(40, 32);
+            this.btnDel.TabIndex = 2;
+            this.btnDel.Text = "Xóa";
+            this.btnDel.UseVisualStyleBackColor = true;
             // 
-            // btnList
+            // btnAdd
             // 
-            this.btnList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnList.Location = new System.Drawing.Point(147, 4);
-            this.btnList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnList.Name = "btnList";
-            this.btnList.Size = new System.Drawing.Size(40, 32);
-            this.btnList.TabIndex = 3;
-            this.btnList.Text = "List";
-            this.btnList.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(101, 4);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(40, 32);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Del";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // btnAddOrder
-            // 
-            this.btnAddOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddOrder.Location = new System.Drawing.Point(9, 4);
-            this.btnAddOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnAddOrder.Name = "btnAddOrder";
-            this.btnAddOrder.Size = new System.Drawing.Size(40, 32);
-            this.btnAddOrder.TabIndex = 0;
-            this.btnAddOrder.Text = "Add";
-            this.btnAddOrder.UseVisualStyleBackColor = true;
+            this.btnAdd.Enabled = false;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(9, 4);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(40, 32);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -132,16 +119,16 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Thông tin tài khoản";
             // 
-            // button2
+            // btnEdit
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(55, 4);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(40, 32);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Edit";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(55, 4);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(40, 32);
+            this.btnEdit.TabIndex = 1;
+            this.btnEdit.Text = "Sửa";
+            this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -153,38 +140,52 @@
             this.label4.TabIndex = 32;
             this.label4.Text = "Lương";
             // 
-            // txtEmpSalary
+            // txtSalary
             // 
-            this.txtEmpSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmpSalary.Location = new System.Drawing.Point(131, 282);
-            this.txtEmpSalary.Multiline = true;
-            this.txtEmpSalary.Name = "txtEmpSalary";
-            this.txtEmpSalary.Size = new System.Drawing.Size(99, 20);
-            this.txtEmpSalary.TabIndex = 31;
+            this.txtSalary.Enabled = false;
+            this.txtSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSalary.Location = new System.Drawing.Point(131, 282);
+            this.txtSalary.Multiline = true;
+            this.txtSalary.Name = "txtSalary";
+            this.txtSalary.Size = new System.Drawing.Size(99, 20);
+            this.txtSalary.TabIndex = 31;
             // 
             // pnlCustomerArea
             // 
+            this.pnlCustomerArea.Controls.Add(this.btnCancel);
             this.pnlCustomerArea.Controls.Add(this.label4);
-            this.pnlCustomerArea.Controls.Add(this.txtEmpSalary);
+            this.pnlCustomerArea.Controls.Add(this.txtSalary);
             this.pnlCustomerArea.Controls.Add(this.label3);
-            this.pnlCustomerArea.Controls.Add(this.txtEmpPos);
+            this.pnlCustomerArea.Controls.Add(this.txtPos);
             this.pnlCustomerArea.Controls.Add(this.label2);
-            this.pnlCustomerArea.Controls.Add(this.txtEmpPhone);
+            this.pnlCustomerArea.Controls.Add(this.txtPhone);
             this.pnlCustomerArea.Controls.Add(this.label13);
-            this.pnlCustomerArea.Controls.Add(this.txtEmpID);
-            this.pnlCustomerArea.Controls.Add(this.txtEmpName);
-            this.pnlCustomerArea.Controls.Add(this.txtEmpAdress);
+            this.pnlCustomerArea.Controls.Add(this.txtID);
+            this.pnlCustomerArea.Controls.Add(this.txtName);
+            this.pnlCustomerArea.Controls.Add(this.txtAdress);
             this.pnlCustomerArea.Controls.Add(this.label8);
             this.pnlCustomerArea.Controls.Add(this.label9);
             this.pnlCustomerArea.Controls.Add(this.label10);
             this.pnlCustomerArea.Controls.Add(this.label11);
-            this.pnlCustomerArea.Controls.Add(this.datEmpBirth);
-            this.pnlCustomerArea.Controls.Add(this.radEmpMale);
-            this.pnlCustomerArea.Controls.Add(this.radEmpFemale);
-            this.pnlCustomerArea.Location = new System.Drawing.Point(6, 6);
+            this.pnlCustomerArea.Controls.Add(this.datBirth);
+            this.pnlCustomerArea.Controls.Add(this.radMale);
+            this.pnlCustomerArea.Controls.Add(this.radFemale);
+            this.pnlCustomerArea.Location = new System.Drawing.Point(3, 3);
             this.pnlCustomerArea.Name = "pnlCustomerArea";
-            this.pnlCustomerArea.Size = new System.Drawing.Size(503, 474);
+            this.pnlCustomerArea.Size = new System.Drawing.Size(510, 480);
             this.pnlCustomerArea.TabIndex = 16;
+            this.pnlCustomerArea.Click += new System.EventHandler(this.btnRefesh_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Enabled = false;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(7, 438);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(88, 34);
+            this.btnCancel.TabIndex = 35;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -196,14 +197,15 @@
             this.label3.TabIndex = 30;
             this.label3.Text = "Chức vụ";
             // 
-            // txtEmpPos
+            // txtPos
             // 
-            this.txtEmpPos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmpPos.Location = new System.Drawing.Point(131, 242);
-            this.txtEmpPos.Multiline = true;
-            this.txtEmpPos.Name = "txtEmpPos";
-            this.txtEmpPos.Size = new System.Drawing.Size(159, 20);
-            this.txtEmpPos.TabIndex = 29;
+            this.txtPos.Enabled = false;
+            this.txtPos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPos.Location = new System.Drawing.Point(131, 242);
+            this.txtPos.Multiline = true;
+            this.txtPos.Name = "txtPos";
+            this.txtPos.Size = new System.Drawing.Size(159, 20);
+            this.txtPos.TabIndex = 29;
             // 
             // label2
             // 
@@ -215,14 +217,15 @@
             this.label2.TabIndex = 28;
             this.label2.Text = "Số điện thoại";
             // 
-            // txtEmpPhone
+            // txtPhone
             // 
-            this.txtEmpPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmpPhone.Location = new System.Drawing.Point(131, 202);
-            this.txtEmpPhone.Multiline = true;
-            this.txtEmpPhone.Name = "txtEmpPhone";
-            this.txtEmpPhone.Size = new System.Drawing.Size(159, 20);
-            this.txtEmpPhone.TabIndex = 27;
+            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Location = new System.Drawing.Point(131, 202);
+            this.txtPhone.Multiline = true;
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(159, 20);
+            this.txtPhone.TabIndex = 27;
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHandle_KeyPress);
             // 
             // label13
             // 
@@ -234,32 +237,35 @@
             this.label13.TabIndex = 22;
             this.label13.Text = "Mã nhân viên";
             // 
-            // txtEmpID
+            // txtID
             // 
-            this.txtEmpID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmpID.Location = new System.Drawing.Point(131, 39);
-            this.txtEmpID.Multiline = true;
-            this.txtEmpID.Name = "txtEmpID";
-            this.txtEmpID.Size = new System.Drawing.Size(104, 20);
-            this.txtEmpID.TabIndex = 10;
+            this.txtID.Enabled = false;
+            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(131, 39);
+            this.txtID.Multiline = true;
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(104, 20);
+            this.txtID.TabIndex = 10;
             // 
-            // txtEmpName
+            // txtName
             // 
-            this.txtEmpName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmpName.Location = new System.Drawing.Point(131, 79);
-            this.txtEmpName.Multiline = true;
-            this.txtEmpName.Name = "txtEmpName";
-            this.txtEmpName.Size = new System.Drawing.Size(164, 20);
-            this.txtEmpName.TabIndex = 12;
+            this.txtName.Enabled = false;
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(131, 79);
+            this.txtName.Multiline = true;
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(164, 20);
+            this.txtName.TabIndex = 12;
             // 
-            // txtEmpAdress
+            // txtAdress
             // 
-            this.txtEmpAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmpAdress.Location = new System.Drawing.Point(131, 323);
-            this.txtEmpAdress.Multiline = true;
-            this.txtEmpAdress.Name = "txtEmpAdress";
-            this.txtEmpAdress.Size = new System.Drawing.Size(259, 40);
-            this.txtEmpAdress.TabIndex = 17;
+            this.txtAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAdress.Location = new System.Drawing.Point(131, 323);
+            this.txtAdress.Multiline = true;
+            this.txtAdress.Name = "txtAdress";
+            this.txtAdress.Size = new System.Drawing.Size(259, 40);
+            this.txtAdress.TabIndex = 17;
+            this.txtAdress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHandle_KeyPress);
             // 
             // label8
             // 
@@ -301,47 +307,50 @@
             this.label11.TabIndex = 17;
             this.label11.Text = "Giới tính";
             // 
-            // datEmpBirth
+            // datBirth
             // 
-            this.datEmpBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datEmpBirth.Location = new System.Drawing.Point(131, 119);
-            this.datEmpBirth.Name = "datEmpBirth";
-            this.datEmpBirth.Size = new System.Drawing.Size(104, 20);
-            this.datEmpBirth.TabIndex = 13;
-            this.datEmpBirth.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.datBirth.Enabled = false;
+            this.datBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datBirth.Location = new System.Drawing.Point(131, 119);
+            this.datBirth.Name = "datBirth";
+            this.datBirth.Size = new System.Drawing.Size(104, 20);
+            this.datBirth.TabIndex = 13;
+            this.datBirth.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
-            // radEmpMale
+            // radMale
             // 
-            this.radEmpMale.AutoSize = true;
-            this.radEmpMale.Location = new System.Drawing.Point(131, 161);
-            this.radEmpMale.Name = "radEmpMale";
-            this.radEmpMale.Size = new System.Drawing.Size(47, 17);
-            this.radEmpMale.TabIndex = 14;
-            this.radEmpMale.TabStop = true;
-            this.radEmpMale.Text = "Nam";
-            this.radEmpMale.UseVisualStyleBackColor = true;
+            this.radMale.AutoSize = true;
+            this.radMale.Enabled = false;
+            this.radMale.Location = new System.Drawing.Point(131, 161);
+            this.radMale.Name = "radMale";
+            this.radMale.Size = new System.Drawing.Size(47, 17);
+            this.radMale.TabIndex = 14;
+            this.radMale.TabStop = true;
+            this.radMale.Text = "Nam";
+            this.radMale.UseVisualStyleBackColor = true;
             // 
-            // radEmpFemale
+            // radFemale
             // 
-            this.radEmpFemale.AutoSize = true;
-            this.radEmpFemale.Location = new System.Drawing.Point(196, 161);
-            this.radEmpFemale.Name = "radEmpFemale";
-            this.radEmpFemale.Size = new System.Drawing.Size(39, 17);
-            this.radEmpFemale.TabIndex = 15;
-            this.radEmpFemale.TabStop = true;
-            this.radEmpFemale.Text = "Nữ";
-            this.radEmpFemale.UseVisualStyleBackColor = true;
+            this.radFemale.AutoSize = true;
+            this.radFemale.Enabled = false;
+            this.radFemale.Location = new System.Drawing.Point(196, 161);
+            this.radFemale.Name = "radFemale";
+            this.radFemale.Size = new System.Drawing.Size(39, 17);
+            this.radFemale.TabIndex = 15;
+            this.radFemale.TabStop = true;
+            this.radFemale.Text = "Nữ";
+            this.radFemale.UseVisualStyleBackColor = true;
             // 
-            // panel2
+            // panel1
             // 
-            this.panel2.Controls.Add(this.tabControl1);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.pnlToolMenu);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1038, 593);
-            this.panel2.TabIndex = 49;
+            this.panel1.Controls.Add(this.tabControl1);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.pnlToolMenu);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1038, 593);
+            this.panel1.TabIndex = 49;
             // 
             // tabControl1
             // 
@@ -354,7 +363,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.pnlCustomerArea);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -364,35 +373,27 @@
             this.tabPage1.Text = "Thông tin cá nhân";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // panel2
             // 
-            this.panel1.Controls.Add(this.txtEmpPass);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.txtEmpUsername);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.datEmpEnd);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.txtEmpContractID);
-            this.panel1.Controls.Add(this.txtContractType);
-            this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.label17);
-            this.panel1.Controls.Add(this.datEmpStart);
-            this.panel1.Location = new System.Drawing.Point(519, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(505, 480);
-            this.panel1.TabIndex = 33;
-            // 
-            // txtEmpPass
-            // 
-            this.txtEmpPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmpPass.Location = new System.Drawing.Point(156, 282);
-            this.txtEmpPass.Multiline = true;
-            this.txtEmpPass.Name = "txtEmpPass";
-            this.txtEmpPass.PasswordChar = '*';
-            this.txtEmpPass.Size = new System.Drawing.Size(164, 20);
-            this.txtEmpPass.TabIndex = 27;
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.btnChangePass);
+            this.panel2.Controls.Add(this.txtPass);
+            this.panel2.Controls.Add(this.pnlChangePass);
+            this.panel2.Controls.Add(this.txtUsername);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.datEnd);
+            this.panel2.Controls.Add(this.btnSave);
+            this.panel2.Controls.Add(this.label14);
+            this.panel2.Controls.Add(this.txtContractID);
+            this.panel2.Controls.Add(this.txtContractType);
+            this.panel2.Controls.Add(this.label15);
+            this.panel2.Controls.Add(this.label17);
+            this.panel2.Controls.Add(this.datStarted);
+            this.panel2.Location = new System.Drawing.Point(519, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(505, 480);
+            this.panel2.TabIndex = 33;
             // 
             // label7
             // 
@@ -404,14 +405,88 @@
             this.label7.TabIndex = 28;
             this.label7.Text = "Password";
             // 
-            // txtEmpUsername
+            // btnChangePass
             // 
-            this.txtEmpUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmpUsername.Location = new System.Drawing.Point(156, 242);
-            this.txtEmpUsername.Multiline = true;
-            this.txtEmpUsername.Name = "txtEmpUsername";
-            this.txtEmpUsername.Size = new System.Drawing.Size(164, 20);
-            this.txtEmpUsername.TabIndex = 25;
+            this.btnChangePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePass.Location = new System.Drawing.Point(8, 438);
+            this.btnChangePass.Name = "btnChangePass";
+            this.btnChangePass.Size = new System.Drawing.Size(88, 34);
+            this.btnChangePass.TabIndex = 34;
+            this.btnChangePass.Text = "Đổi mật khẩu";
+            this.btnChangePass.UseVisualStyleBackColor = true;
+            this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
+            // 
+            // txtPass
+            // 
+            this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.Location = new System.Drawing.Point(156, 282);
+            this.txtPass.Multiline = true;
+            this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
+            this.txtPass.Size = new System.Drawing.Size(164, 20);
+            this.txtPass.TabIndex = 27;
+            // 
+            // pnlChangePass
+            // 
+            this.pnlChangePass.Controls.Add(this.txtReNewPass);
+            this.pnlChangePass.Controls.Add(this.label16);
+            this.pnlChangePass.Controls.Add(this.label12);
+            this.pnlChangePass.Controls.Add(this.txtNewPass);
+            this.pnlChangePass.Location = new System.Drawing.Point(8, 308);
+            this.pnlChangePass.Name = "pnlChangePass";
+            this.pnlChangePass.Size = new System.Drawing.Size(492, 94);
+            this.pnlChangePass.TabIndex = 33;
+            this.pnlChangePass.Visible = false;
+            // 
+            // txtReNewPass
+            // 
+            this.txtReNewPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReNewPass.Location = new System.Drawing.Point(148, 55);
+            this.txtReNewPass.Multiline = true;
+            this.txtReNewPass.Name = "txtReNewPass";
+            this.txtReNewPass.PasswordChar = '*';
+            this.txtReNewPass.Size = new System.Drawing.Size(164, 20);
+            this.txtReNewPass.TabIndex = 31;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(58, 58);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(81, 15);
+            this.label16.TabIndex = 32;
+            this.label16.Text = "Re-Password";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(58, 18);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(88, 15);
+            this.label12.TabIndex = 30;
+            this.label12.Text = "New password";
+            // 
+            // txtNewPass
+            // 
+            this.txtNewPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewPass.Location = new System.Drawing.Point(148, 15);
+            this.txtNewPass.Multiline = true;
+            this.txtNewPass.Name = "txtNewPass";
+            this.txtNewPass.PasswordChar = '*';
+            this.txtNewPass.Size = new System.Drawing.Size(164, 20);
+            this.txtNewPass.TabIndex = 29;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Enabled = false;
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(156, 242);
+            this.txtUsername.Multiline = true;
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(164, 20);
+            this.txtUsername.TabIndex = 25;
             // 
             // label6
             // 
@@ -433,24 +508,27 @@
             this.label5.TabIndex = 24;
             this.label5.Text = "Ngày kết thúc";
             // 
-            // datEmpEnd
+            // datEnd
             // 
-            this.datEmpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datEmpEnd.Location = new System.Drawing.Point(156, 158);
-            this.datEmpEnd.Name = "datEmpEnd";
-            this.datEmpEnd.Size = new System.Drawing.Size(104, 20);
-            this.datEmpEnd.TabIndex = 23;
-            this.datEmpEnd.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.datEnd.Enabled = false;
+            this.datEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datEnd.Location = new System.Drawing.Point(156, 158);
+            this.datEnd.Name = "datEnd";
+            this.datEnd.Size = new System.Drawing.Size(104, 20);
+            this.datEnd.TabIndex = 23;
+            this.datEnd.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
-            // button4
+            // btnSave
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(412, 444);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(88, 34);
-            this.button4.TabIndex = 20;
-            this.button4.Text = "Lưu";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnSave.Enabled = false;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(412, 438);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(88, 34);
+            this.btnSave.TabIndex = 20;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label14
             // 
@@ -462,17 +540,19 @@
             this.label14.TabIndex = 22;
             this.label14.Text = "Mã hợp đồng";
             // 
-            // txtEmpContractID
+            // txtContractID
             // 
-            this.txtEmpContractID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmpContractID.Location = new System.Drawing.Point(156, 39);
-            this.txtEmpContractID.Multiline = true;
-            this.txtEmpContractID.Name = "txtEmpContractID";
-            this.txtEmpContractID.Size = new System.Drawing.Size(104, 20);
-            this.txtEmpContractID.TabIndex = 10;
+            this.txtContractID.Enabled = false;
+            this.txtContractID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContractID.Location = new System.Drawing.Point(156, 39);
+            this.txtContractID.Multiline = true;
+            this.txtContractID.Name = "txtContractID";
+            this.txtContractID.Size = new System.Drawing.Size(104, 20);
+            this.txtContractID.TabIndex = 10;
             // 
             // txtContractType
             // 
+            this.txtContractType.Enabled = false;
             this.txtContractType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContractType.Location = new System.Drawing.Point(156, 79);
             this.txtContractType.Multiline = true;
@@ -500,92 +580,111 @@
             this.label17.TabIndex = 16;
             this.label17.Text = "Ngày bắt đầu";
             // 
-            // datEmpStart
+            // datStarted
             // 
-            this.datEmpStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datEmpStart.Location = new System.Drawing.Point(156, 119);
-            this.datEmpStart.Name = "datEmpStart";
-            this.datEmpStart.Size = new System.Drawing.Size(104, 20);
-            this.datEmpStart.TabIndex = 13;
-            this.datEmpStart.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.datStarted.Enabled = false;
+            this.datStarted.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datStarted.Location = new System.Drawing.Point(156, 119);
+            this.datStarted.Name = "datStarted";
+            this.datStarted.Size = new System.Drawing.Size(104, 20);
+            this.datStarted.TabIndex = 13;
+            this.datStarted.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // pnlToolMenu
             // 
-            this.pnlToolMenu.Controls.Add(this.button1);
-            this.pnlToolMenu.Controls.Add(this.btnList);
-            this.pnlToolMenu.Controls.Add(this.button3);
-            this.pnlToolMenu.Controls.Add(this.button2);
-            this.pnlToolMenu.Controls.Add(this.btnAddOrder);
+            this.pnlToolMenu.Controls.Add(this.btnRefesh);
+            this.pnlToolMenu.Controls.Add(this.btnDel);
+            this.pnlToolMenu.Controls.Add(this.btnEdit);
+            this.pnlToolMenu.Controls.Add(this.btnAdd);
             this.pnlToolMenu.Location = new System.Drawing.Point(3, 37);
             this.pnlToolMenu.Name = "pnlToolMenu";
             this.pnlToolMenu.Size = new System.Drawing.Size(1032, 40);
             this.pnlToolMenu.TabIndex = 2;
+            // 
+            // btnRefesh
+            // 
+            this.btnRefesh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefesh.Location = new System.Drawing.Point(147, 4);
+            this.btnRefesh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRefesh.Name = "btnRefesh";
+            this.btnRefesh.Size = new System.Drawing.Size(40, 32);
+            this.btnRefesh.TabIndex = 3;
+            this.btnRefesh.Text = "Mới";
+            this.btnRefesh.UseVisualStyleBackColor = true;
+            this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
             // 
             // Informations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1038, 593);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Informations";
-            this.Text = "Information";
+            this.Text = "c";
             this.pnlCustomerArea.ResumeLayout(false);
             this.pnlCustomerArea.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.pnlChangePass.ResumeLayout(false);
+            this.pnlChangePass.PerformLayout();
             this.pnlToolMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnList;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button btnAddOrder;
+        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtEmpSalary;
+        private System.Windows.Forms.TextBox txtSalary;
         private System.Windows.Forms.Panel pnlCustomerArea;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtEmpPos;
+        private System.Windows.Forms.TextBox txtPos;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtEmpPhone;
+        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtEmpID;
-        private System.Windows.Forms.TextBox txtEmpName;
-        private System.Windows.Forms.TextBox txtEmpAdress;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtAdress;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker datEmpBirth;
-        private System.Windows.Forms.RadioButton radEmpMale;
-        private System.Windows.Forms.RadioButton radEmpFemale;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DateTimePicker datBirth;
+        private System.Windows.Forms.RadioButton radMale;
+        private System.Windows.Forms.RadioButton radFemale;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnlToolMenu;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker datEmpEnd;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DateTimePicker datEnd;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtEmpContractID;
+        private System.Windows.Forms.TextBox txtContractID;
         private System.Windows.Forms.TextBox txtContractType;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.DateTimePicker datEmpStart;
-        private System.Windows.Forms.TextBox txtEmpPass;
+        private System.Windows.Forms.DateTimePicker datStarted;
+        private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtEmpUsername;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel pnlChangePass;
+        private System.Windows.Forms.TextBox txtReNewPass;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtNewPass;
+        private System.Windows.Forms.Button btnChangePass;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnRefesh;
     }
 }

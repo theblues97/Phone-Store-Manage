@@ -57,7 +57,7 @@
             // thôngKêHoaDonToolStripMenuItem
             // 
             this.thôngKêHoaDonToolStripMenuItem.Name = "thôngKêHoaDonToolStripMenuItem";
-            this.thôngKêHoaDonToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.thôngKêHoaDonToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.thôngKêHoaDonToolStripMenuItem.Text = "Thống kê hóa đơn";
             this.thôngKêHoaDonToolStripMenuItem.Click += new System.EventHandler(this.thongKeHoaĐơnBanHangToolStripMenuItem_Click);
             // 
@@ -74,14 +74,14 @@
             // thôngKêBanHangToolStripMenuItem
             // 
             this.thôngKêBanHangToolStripMenuItem.Name = "thôngKêBanHangToolStripMenuItem";
-            this.thôngKêBanHangToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.thôngKêBanHangToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.thôngKêBanHangToolStripMenuItem.Text = "Thống kê bán hàng";
             // 
             // thôngKêNhâpxuâtĐiênThoaiToolStripMenuItem
             // 
             this.thôngKêNhâpxuâtĐiênThoaiToolStripMenuItem.Name = "thôngKêNhâpxuâtĐiênThoaiToolStripMenuItem";
-            this.thôngKêNhâpxuâtĐiênThoaiToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
-            this.thôngKêNhâpxuâtĐiênThoaiToolStripMenuItem.Text = "Thống kê nhập/xuất  điện thoại";
+            this.thôngKêNhâpxuâtĐiênThoaiToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.thôngKêNhâpxuâtĐiênThoaiToolStripMenuItem.Text = "Thống kê nhập/xuất điện thoại";
             // 
             // hoaĐơnSuaChuaToolStripMenuItem
             // 

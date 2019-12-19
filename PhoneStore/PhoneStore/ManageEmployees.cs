@@ -12,7 +12,7 @@ namespace PhoneStore
 {
     public partial class ManageEmployees : Form
     {
-        public string username;
+        private string username;
         public ManageEmployees()
         {
             InitializeComponent();
@@ -20,10 +20,10 @@ namespace PhoneStore
         public ManageEmployees(string Username) : this()
         {
             username = Username;
-            MELoadEmployees();
+            LoadEmployees();
         }
 
-        void MELoadEmployees()
+        private void LoadEmployees()
         {
             using (var ctx = new PhoneStoreManageEntities())
             {
@@ -45,24 +45,31 @@ namespace PhoneStore
                           };
 
                 dgvME.DataSource = ems.ToList();
+                dgvME.Columns[2].Visible = false;
+                dgvME.Columns[3].Visible = false;
+                dgvME.Columns[4].Visible = false;
+                dgvME.Columns[6].Visible = false;
+                dgvME.Columns[7].Visible = false;
                 dgvME.Columns[10].Visible = false;
                 dgvME.Columns[11].Visible = false;
-                dgvME.Columns[0].HeaderText = "MSNV";
+
+                dgvME.Columns[0].HeaderText = "Mã NV";
                 dgvME.Columns[1].HeaderText = "Nhân viên";
-                dgvME.Columns[2].HeaderText = "Giới tính";
-                dgvME.Columns[3].HeaderText = "Ngày sinh";
-                dgvME.Columns[4].HeaderText = "Số điện thoại";
                 dgvME.Columns[5].HeaderText = "Lương";
-                dgvME.Columns[6].HeaderText = "Email";
-                dgvME.Columns[7].HeaderText = "Địa chỉ";
                 dgvME.Columns[8].HeaderText = "Chức vụ";
                 dgvME.Columns[9].HeaderText = "Hợp đồng";
+
+                dgvME.Columns[0].FillWeight = 100;
+                dgvME.Columns[1].FillWeight = 200;
+                dgvME.Columns[5].FillWeight = 100;
+                dgvME.Columns[8].FillWeight = 100;
+                dgvME.Columns[9].FillWeight = 100;
 
                 dgvME.Refresh();
             }
         }
 
-        void MEFillInfor(DataGridViewCellEventArgs e)
+        private void FillInfor(DataGridViewCellEventArgs e)
         {
             if (e.RowIndex > -1)
             {
@@ -87,7 +94,6 @@ namespace PhoneStore
                 
                 using (var ctx = new PhoneStoreManageEntities())
                 {
-
                     var acc = from ac in ctx.Accounts where ac.MaNV == MEID select ac;
                     txtMEUsername.Text = (from ac in acc select ac.Username).FirstOrDefault();
                     txtMEPass.Text = (from ac in acc select ac.Password).FirstOrDefault();
@@ -97,7 +103,22 @@ namespace PhoneStore
 
         private void dgvME_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            MEFillInfor(e);
+            FillInfor(e);
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

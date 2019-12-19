@@ -12,12 +12,15 @@ namespace PhoneStore
 {
     public partial class Bills : Form
     {
-        public string username;
-        public int billID;
+        private string username;
+        private int billID;
+        private bool createdBill;
+
         public Bills()
         {
             InitializeComponent();
         }
+
         public Bills(string Username) : this()
         {
             username = Username;
@@ -26,15 +29,29 @@ namespace PhoneStore
             LoadComboBox();
             LoadPhones();
 
+            createdBill = false;
             cbbBuyMethod.SelectedIndex = 0;
             cbbPayMethod.SelectedIndex = 0;
+            ((Control)this.tab2).Enabled = false;
         }
+        
         #region Methods
-        void LoadCustomers()
+
+        private void ClearControls()
+        {
+            txtCustomer.Text = "";
+            datBirth.Value = new DateTime(2000, 1, 1);
+            txtEmail.Text = "";
+            txtAdress.Text = "";
+            radMale.Checked = false;
+            radFemale.Checked = false;
+        }
+
+        private void LoadCustomers()
         {
             using (var ctx = new PhoneStoreManageEntities())
             {
-                var customer = from c in ctx.KhachHangs where c.SoDienThoai == txtPhoneNum.Text select c;
+                var customer = from c in ctx.KhachHangs where c.SoDienThoai == txtSearchCus.Text select c;
                 try
                 {
                     txtCustomer.Text = (from c in customer select c.TenKH).FirstOrDefault().ToString();
@@ -49,18 +66,13 @@ namespace PhoneStore
                 }
                 catch
                 {
-                    txtCustomer.Text = "";
-                    datBirth.Value = new DateTime(2000, 1, 1);
-                    txtEmail.Text = "";
-                    txtAdress.Text = "";
-                    radMale.Checked = false;
-                    radFemale.Checked = false;
+                    ClearControls();
 
-                    DialogResult answer = MessageBox.Show("Không tìn thấy khách hàng. Bạn có muốn tạo mới không?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult answer = MessageBox.Show("Không tìn thấy khách hàng. Bạn có muốn tạo mới không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (answer == DialogResult.Yes)
                     {
                         var lastCusID = (from cus in ctx.KhachHangs orderby cus.MaKH descending select cus.MaKH).FirstOrDefault();
-                        var newCus = new KhachHang { MaKH = lastCusID + 1, SoDienThoai = txtPhoneNum.Text };
+                        var newCus = new KhachHang { MaKH = lastCusID + 1, SoDienThoai = txtSearchCus.Text };
                         ctx.KhachHangs.Add(newCus);
                         ctx.SaveChanges();
                     }
@@ -68,25 +80,20 @@ namespace PhoneStore
             }
         }
 
-        void LoadComboBox()
+        private void LoadComboBox()
         {
             using (var ctx = new PhoneStoreManageEntities())
             {
                 var brands = from b in ctx.HangDienThoais select b.TenHDT;
-                foreach (var brand in brands)
-                {
-                    cbbBrand.Items.Add(brand);
-                }
+
+                cbbBrand.Items.AddRange(brands.ToArray());
 
                 var colors = from c in ctx.DienThoais group c by c.Mau into sc select sc.Key;
-                foreach (var color in colors)
-                {
-                    cbbColors.Items.Add(color);
-                }
+                cbbColors.Items.AddRange(colors.ToArray());
             }
         }
 
-        void LoadPhones()
+        private void LoadPhones()
         {
             using (var ctx = new PhoneStoreManageEntities())
             {
@@ -97,11 +104,10 @@ namespace PhoneStore
                                 MaMauDienThoai = p.MauDienThoai.MaMDT,
                                 TenDienThoai = p.MauDienThoai.TenDT,
                                 MaDienThoai = p.MaDT,
-                                Mau = p.Mau,
-                                SoLuong = p.SoLuong,
-                                Gia = p.Gia,
+                                p.Mau,
+                                p.SoLuong,
+                                Gia = p.GiaBan,
                                 KhuyenMai = p.MauDienThoai.KM
-
                             };
 
                 if (cbbBrand.SelectedIndex > -1)
@@ -144,18 +150,18 @@ namespace PhoneStore
                 dgvPhones.Columns[4].FillWeight = 70;
                 dgvPhones.Refresh();
 
-                if (txtPhoneSearch.Text != "")
+                if (txtSearchPhone.Text != "")
                 {
-                    var proc = ctx.pro_SearchPhones(txtPhoneSearch.Text);
+                    var proc = ctx.pro_SearchPhones(txtSearchPhone.Text);
                     var res = from pr in proc
                               join q in query on pr.MaDT equals q.MaDienThoai
                               select new
                               {
                                   MaDienThoai = pr.MaDT,
                                   TenDienThoai = pr.TenDT,
-                                  Mau = pr.Mau,
-                                  SoLuong = pr.SoLuong,
-                                  Gia = pr.Gia,
+                                  pr.Mau,
+                                  pr.SoLuong,
+                                  Gia = pr.GiaBan,
                                   KhuyenMai = pr.KM
                               };
 
@@ -167,7 +173,7 @@ namespace PhoneStore
             }
         }
 
-        void LoadEmployee()
+        private void LoadEmployee()
         {
             using (var ctx = new PhoneStoreManageEntities())
             {
@@ -181,15 +187,14 @@ namespace PhoneStore
                 DateTime time = DateTime.Now;
                 datBuy.Value = new DateTime(time.Year, time.Month, time.Day);
                 datWarranty.Value = new DateTime(time.Year + 1, time.Month, time.Day);
-
             }
         }
 
-        void CreateBills()
+        private void CreateBills()
         {
             using (var ctx = new PhoneStoreManageEntities())
             {
-                var cus = (from c in ctx.KhachHangs where c.SoDienThoai == txtPhoneNum.Text select c).FirstOrDefault();
+                var cus = (from c in ctx.KhachHangs where c.SoDienThoai == txtSearchCus.Text select c).FirstOrDefault();
                 cus.TenKH = txtCustomer.Text;
                 cus.GioiTinh = radMale.Checked ? "Nam" : "Nữ";
                 cus.NgaySinh = datBirth.Value;
@@ -215,80 +220,124 @@ namespace PhoneStore
             }
         }
 
-        void ChoosePhones()
+        private void ChoosePhones()
         {
             var cRow = dgvPhones.CurrentCell.RowIndex;
             var PhoneID = Int32.Parse(dgvPhones.Rows[cRow].Cells[0].FormattedValue.ToString());
             using (var ctx = new PhoneStoreManageEntities())
             {
-                var lastDBillID = (from db in ctx.ChiTietHoadons orderby db.MaCTHD descending select db.MaCTHD).FirstOrDefault();
-                var newDeBill = new ChiTietHoadon
+                var check = (from p in ctx.DienThoais where p.MaDT == PhoneID select p.SoLuong).FirstOrDefault();
+                if (check > 0)
                 {
-                    MaCTHD = lastDBillID + 1,
-                    MaHD = billID,
-                    MaDT = PhoneID
-                };
-                ctx.ChiTietHoadons.Add(newDeBill);
-                ctx.SaveChanges();
-                LoadPhones();
-                dgvPhones.Rows[cRow].Selected = true;
+                    var lastDBillID = (from db in ctx.ChiTietHoadons orderby db.MaCTHD descending select db.MaCTHD).FirstOrDefault();
+                    var newDeBill = new ChiTietHoadon
+                    {
+                        MaCTHD = lastDBillID + 1,
+                        MaHD = billID,
+                        MaDT = PhoneID
+                    };
+                    ctx.ChiTietHoadons.Add(newDeBill);
+                    ctx.SaveChanges();
 
-                var detailBill = (from b in ctx.ChiTietHoadons
-                                  select new
-                                  {
-                                      b.MaHD,
-                                      b.MaDT,
-                                      b.DienThoai.MauDienThoai.TenDT,
-                                      b.DienThoai.Mau,
-                                      b.DienThoai.Gia
-                                  }).Distinct();
+                    LoadPhones();
+                    dgvPhones.CurrentCell = dgvPhones[1, cRow];
+                    dgvPhones.Rows[cRow].Selected = true;
 
-                var countList = from db in ctx.ChiTietHoadons
-                                join p in ctx.DienThoais on db.MaDT equals p.MaDT
-                                join b in ctx.HoaDons on db.MaHD equals b.MaHD
-                                group db by new { db.MaHD, db.MaDT, db.DienThoai.Gia } into dbs
-                                orderby dbs.Key.MaHD
+                    var detailBill = (from b in ctx.ChiTietHoadons
+                                      select new
+                                      {
+                                          b.MaHD,
+                                          b.MaDT,
+                                          b.DienThoai.MauDienThoai.TenDT,
+                                          b.DienThoai.Mau,
+                                          b.DienThoai.GiaBan
+                                      }).Distinct();
+
+                    var countList = from db in ctx.ChiTietHoadons
+                                    join p in ctx.DienThoais on db.MaDT equals p.MaDT
+                                    join b in ctx.HoaDons on db.MaHD equals b.MaHD
+                                    group db by new { db.MaHD, db.MaDT, db.DienThoai.GiaBan } into dbs
+                                    orderby dbs.Key.MaHD
+                                    select new
+                                    {
+                                        dbs.Key,
+                                        Count = dbs.Count(),
+                                        Total = dbs.Count() * dbs.Key.GiaBan
+                                    };
+
+                    var query = from bill in detailBill
+                                join list in countList on
+                                new { bill.MaHD, bill.MaDT } equals
+                                new { list.Key.MaHD, list.Key.MaDT }
+                                into result
+                                from r in result.DefaultIfEmpty()
+                                where bill.MaHD == billID
                                 select new
                                 {
-                                    dbs.Key,
-                                    Count = dbs.Count(),
-                                    Total = dbs.Count() * dbs.Key.Gia
+                                    bill.TenDT,
+                                    bill.Mau,
+                                    bill.GiaBan,
+                                    r.Count,
+                                    r.Total
                                 };
-                var query = from bill in detailBill
-                            join list in countList on
-                            new { bill.MaHD, bill.MaDT } equals
-                            new { list.Key.MaHD, list.Key.MaDT }
-                            into result
-                            from r in result.DefaultIfEmpty()
-                            where bill.MaHD == billID
-                            select new
-                            {                              
-                                bill.TenDT,
-                                bill.Mau,
-                                bill.Gia,
-                                r.Count,
-                                r.Total
-                            };
-                var a = query.ToList();
-                dgvDetailBillPhones.DataSource = query.ToList();
-                dgvDetailBillPhones.Columns[0].HeaderText = "Điện thoại";
-                dgvDetailBillPhones.Columns[1].HeaderText = "Màu";
-                dgvDetailBillPhones.Columns[2].HeaderText = "Giá";
-                dgvDetailBillPhones.Columns[3].HeaderText = "Số lượng";
-                dgvDetailBillPhones.Columns[4].HeaderText = "Thành tiền";
-                dgvDetailBillPhones.Refresh();
 
-                lblTotalMoney.Text = (from q in ctx.HoaDons where q.MaHD == billID select q.Tongtien).FirstOrDefault().ToString();
+                    dgvDetailBillPhones.DataSource = query.ToList();
+                    dgvDetailBillPhones.Columns[0].HeaderText = "Điện thoại";
+                    dgvDetailBillPhones.Columns[1].HeaderText = "Màu";
+                    dgvDetailBillPhones.Columns[2].HeaderText = "Giá";
+                    dgvDetailBillPhones.Columns[3].HeaderText = "Số lượng";
+                    dgvDetailBillPhones.Columns[4].HeaderText = "Thành tiền";
+                    dgvDetailBillPhones.Refresh();
 
+                    lblTotalMoney.Text = (from q in ctx.HoaDons where q.MaHD == billID select q.Tongtien).FirstOrDefault().ToString();
+                }
             }
         }
 
-        void FillPhone(DataGridViewCellEventArgs e)
+        private void DeleteDetailBill()
+        {
+            using (var ctx = new PhoneStoreManageEntities())
+            {
+                var dbill = from db in ctx.ChiTietHoadons where db.MaHD == billID select db;
+                var bill = (from b in ctx.HoaDons where b.MaHD == billID select b).FirstOrDefault();
+                if (bill != null)
+                {
+                    foreach (var db in dbill)
+                    {
+                        var phone = (from p in ctx.DienThoais
+                                        where p.MaDT == db.MaDT
+                                        select p).FirstOrDefault();
+                        phone.SoLuong += 1;
+                    }
+                    ctx.ChiTietHoadons.RemoveRange(dbill);
+                    ctx.SaveChanges();
+
+                    dgvDetailBillPhones.DataSource = null;
+                    dgvDetailBillPhones.Refresh();
+                }
+            }
+        }
+
+        private void DeleteBill()
+        {
+            using (var ctx = new PhoneStoreManageEntities())
+            {
+                DeleteDetailBill();
+                var bill = (from b in ctx.HoaDons where b.MaHD == billID select b).FirstOrDefault();
+                if (bill != null)
+                {
+                    ctx.HoaDons.Remove(bill);
+                    ctx.SaveChanges();
+                }
+            }
+        }
+
+        private void FillPhone(DataGridViewCellEventArgs e)
         {
             if (e.RowIndex > -1)
             {
                 dgvPhones.CurrentRow.Selected = true;
-                txtPhone.Text = dgvPhones.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
+                txtPhoneFilled.Text = dgvPhones.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
                 txtColor.Text = dgvPhones.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
                 txtAvailble.Text = dgvPhones.Rows[e.RowIndex].Cells[3].FormattedValue.ToString();
                 txtPrice.Text = dgvPhones.Rows[e.RowIndex].Cells[4].FormattedValue.ToString();
@@ -300,14 +349,65 @@ namespace PhoneStore
 
         #region Events
 
-        private void btnPhoneNumFill_Click(object sender, EventArgs e)
-        {
-            LoadCustomers();
-        }
         private void btnSelect_Click(object sender, EventArgs e)
         {
             CreateBills();
-            tabMainBill.SelectedTab = tabDetailBill;
+
+            ((Control)this.tab2).Enabled = true;
+            tabMainBill.SelectedTab = tab2;
+            btnDel.Enabled = true;
+        }
+
+        private void btnAddBill_Click(object sender, EventArgs e) //new bill
+        {
+            ClearControls();
+            tabMainBill.SelectedTab = tab1;
+            ((Control)this.tab2).Enabled = false;
+            btnDel.Enabled = false;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult answer = MessageBox.Show("Bạn có muốn hủy hóa đơn thật không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (answer == DialogResult.Yes)
+            {
+                DeleteBill();
+                tabMainBill.SelectedTab = tab1;
+                ((Control)this.tab2).Enabled = false;
+                btnDel.Enabled = true;
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult answer = MessageBox.Show("Bạn có muốn đặt lại hóa đơn thật không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (answer == DialogResult.Yes)
+            {
+                DeleteDetailBill();
+                LoadPhones();
+                lblTotalMoney.Text = "0";
+            }
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            DialogResult answer = MessageBox.Show("Bạn có muốn tạo hóa đơn thật không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (answer == DialogResult.Yes)
+            {
+                createdBill = true;
+                dgvDetailBillPhones.DataSource = null;
+                dgvDetailBillPhones.Refresh();
+                ClearControls();
+                tabMainBill.SelectedTab = tab1;
+                lblTotalMoney.Text = "0";
+                ((Control)this.tab2).Enabled = false;
+                btnDel.Enabled = false;
+            }
+        }
+
+        private void btnPhoneNumFill_Click(object sender, EventArgs e)
+        {
+            LoadCustomers();
         }
 
         private void cbbBrand_SelectedIndexChanged(object sender, EventArgs e)
@@ -334,14 +434,18 @@ namespace PhoneStore
         {
             ChoosePhones();
         }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            var 
-        }
-
         #endregion
 
-
+        private void pnlSalebills_Leave(object sender, EventArgs e)
+        {
+            if(!createdBill && tabMainBill.SelectedTab == tab2)
+            {
+                DialogResult answer = MessageBox.Show("Các thông tin chưa được lưu bạn muốn thoát chứ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (answer == DialogResult.Yes)
+                {
+                    DeleteBill();
+                }
+            }
+        }
     }
 }

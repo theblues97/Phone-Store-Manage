@@ -13,7 +13,7 @@ go
 drop table if exists SuaChua;
 drop table if exists ChitietHoadon;
 drop table if exists HoaDon;
-drop table if exists CauHinh;
+--drop table if exists CauHinh;
 drop table if exists DienThoai;
 drop table if exists MauDienThoai;
 drop table if exists HangDienThoai;
@@ -94,8 +94,9 @@ create table DienThoai
 (
 	MaDT int primary key not null,
 	Mau nvarchar(50),
-	SoLuong int,
-	Gia int,
+	SoLuong int check (SoLuong > -1),
+	GiaNhap int,
+	GiaBan int,
 	MaMDT int not null,
 	foreign key (MaMDT) references MauDienThoai(MaMDT)
 );
@@ -160,7 +161,6 @@ drop trigger if exists trg_UpdatePhones;
 drop trigger if exists trg_UpdateBills;
 drop proc if exists pro_SearchPhones;
 drop proc if exists pro_CreateWarrantys;
---drop view if exists viw_DetailOrders;
 go
 
 create trigger trg_UpdatePhones
@@ -179,7 +179,7 @@ on ChiTietHoaDon
 for insert as
 begin
 	declare @sum int;
-	select @sum = sum(Gia) from DienThoai dt, HoaDon hd, ChiTietHoadon chd 
+	select @sum = sum(GiaBan) from DienThoai dt, HoaDon hd, ChiTietHoadon chd 
 	where dt.MaDT = chd.MaDT and hd.MaHD = chd.MaHD group by hd.MaHD
 
     update HoaDon
@@ -194,7 +194,7 @@ create procedure pro_SearchPhones
 @key nvarchar(50)
 as
 begin
-	select mdt.TenDT, dt.MaDT, dt.Mau, dt.SoLuong, dt.Gia, mdt.KM from MauDienThoai mdt, DienThoai dt
+	select mdt.TenDT, dt.MaDT, dt.Mau, dt.SoLuong, dt.GiaBan, mdt.KM from MauDienThoai mdt, DienThoai dt
 	where CHARINDEX(@key,mdt.TenDT) != 0 and mdt.MaMDT = dt.MaMDT;
 end
 go
@@ -215,31 +215,3 @@ begin
 	insert into SuaChua values(@MaSC, @TenDienThoai, @NgayNhan, @PhiSC, @PTThanhToan, @NoiDung, @MaKH, @MaNV, @MaHD)
 end
 go
-
---drop view if exists viw_DetailOrders;
---go
-
---create view viw_DetailOrders
---as
---	select chd.MaHD, dt.MaDT, mdt.TenDT, dt.Mau, dt.Gia
---	from ChiTietHoadon chd, DienThoai dt, MauDienThoai mdt 
---	where chd.MaDT = dt.MaDT and dt.MaMDT = mdt.MaMDT group by chd.MaHD, dt.MaDT, mdt.TenDT, dt.Mau, dt.Gia;
---go
-
---drop trigger if exists trg_UpdateDetailBills
---go
-
---create trigger trg_UpdateDetailBills
---on ChiTietHoaDon
---for insert as
---begin
---	declare @count int;
---	select @count = count(Gia) from  HoaDon hd, DienThoai dt, ChiTietHoadon chd 
---	where dt.MaDT = chd.MaDT and hd.MaHD = chd.MaHD group by chd.MaHD, dt.MaDT order by chd.MaHD;
-
---	update viw_DetailOrders
---	set Soluong = @count
---	from viw_DetailOrders
---	join inserted on viw_DetailOrders.MaHD = inserted.MaHD
---end
---go

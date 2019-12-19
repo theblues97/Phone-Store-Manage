@@ -24,11 +24,14 @@ namespace PhoneStore
                 var pass = (from acc in ctx.Accounts where acc.Username == user select acc.Password).FirstOrDefault();
                 if (String.Compare(user, txtUsername.Text, true) == 0 && String.Compare(pass, txtPassword.Text, false) == 0)
                 {
+                    this.Hide();
                     Home home = new Home(user);
-                    home.Show();
+                    home.ShowDialog();
+
+                    this.Close();
                 }
                 else
-                    MessageBox.Show("Username or password is incorrect\nPlease try again!", "Warning!", 
+                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng\nVui lòng kiểm tra lại!", "Cảnh báo!", 
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

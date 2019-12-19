@@ -117,7 +117,7 @@ namespace PhoneStore
                                   {
                                       db.DienThoai.MauDienThoai.TenDT,
                                       db.DienThoai.Mau,
-                                      db.DienThoai.Gia
+                                      db.DienThoai.GiaBan
                                   };
 
                     dgvWaPhoneBill.DataSource = debills.ToList();

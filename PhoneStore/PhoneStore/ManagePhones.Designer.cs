@@ -29,37 +29,55 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tabMainBill = new System.Windows.Forms.TabControl();
-            this.tabMP = new System.Windows.Forms.TabPage();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.datProduce = new System.Windows.Forms.DateTimePicker();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtPromotion = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtPhoneSample = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtBrand = new System.Windows.Forms.TextBox();
+            this.tabMain = new System.Windows.Forms.TabControl();
+            this.tab2 = new System.Windows.Forms.TabPage();
+            this.pnlPhone = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtSalePrice = new System.Windows.Forms.TextBox();
+            this.cbbColor = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtNumber = new System.Windows.Forms.TextBox();
+            this.txtEntryPrice = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cbbEditBrand = new System.Windows.Forms.ComboBox();
+            this.radPhoneMode = new System.Windows.Forms.RadioButton();
+            this.radPhoneSampleMode = new System.Windows.Forms.RadioButton();
+            this.radBrandMode = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
+            this.pnlPhoneSample = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtPhoneSampleID = new System.Windows.Forms.TextBox();
+            this.txtPhoneSample = new System.Windows.Forms.TextBox();
+            this.txtPromotion = new System.Windows.Forms.TextBox();
+            this.datManufacturing = new System.Windows.Forms.DateTimePicker();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dgvPhoneSamples = new System.Windows.Forms.DataGridView();
+            this.btnClean = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbbBrand = new System.Windows.Forms.ComboBox();
+            this.cbbBrandFilter = new System.Windows.Forms.ComboBox();
+            this.btnSave = new System.Windows.Forms.Button();
             this.pnlToolMenu = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.btnAddOrder = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvPhoneSamples = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            this.tabMainBill.SuspendLayout();
-            this.tabMP.SuspendLayout();
-            this.pnlToolMenu.SuspendLayout();
+            this.tabMain.SuspendLayout();
+            this.tab2.SuspendLayout();
+            this.pnlPhone.SuspendLayout();
+            this.pnlPhoneSample.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhoneSamples)).BeginInit();
+            this.pnlToolMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.tabMainBill);
+            this.panel1.Controls.Add(this.tabMain);
             this.panel1.Controls.Add(this.pnlToolMenu);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -68,186 +86,373 @@
             this.panel1.Size = new System.Drawing.Size(1038, 593);
             this.panel1.TabIndex = 0;
             // 
-            // tabMainBill
+            // tabMain
             // 
-            this.tabMainBill.Controls.Add(this.tabMP);
-            this.tabMainBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabMainBill.Location = new System.Drawing.Point(1, 80);
-            this.tabMainBill.Name = "tabMainBill";
-            this.tabMainBill.SelectedIndex = 0;
-            this.tabMainBill.Size = new System.Drawing.Size(1037, 513);
-            this.tabMainBill.TabIndex = 39;
+            this.tabMain.Controls.Add(this.tab2);
+            this.tabMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabMain.Location = new System.Drawing.Point(1, 80);
+            this.tabMain.Name = "tabMain";
+            this.tabMain.SelectedIndex = 0;
+            this.tabMain.Size = new System.Drawing.Size(1037, 513);
+            this.tabMain.TabIndex = 39;
             // 
-            // tabMP
+            // tab2
             // 
-            this.tabMP.Controls.Add(this.dgvPhoneSamples);
-            this.tabMP.Controls.Add(this.btnSave);
-            this.tabMP.Controls.Add(this.datProduce);
-            this.tabMP.Controls.Add(this.txtDescription);
-            this.tabMP.Controls.Add(this.label7);
-            this.tabMP.Controls.Add(this.label6);
-            this.tabMP.Controls.Add(this.txtPromotion);
-            this.tabMP.Controls.Add(this.label5);
-            this.tabMP.Controls.Add(this.txtPhoneSample);
-            this.tabMP.Controls.Add(this.label3);
-            this.tabMP.Controls.Add(this.txtBrand);
-            this.tabMP.Controls.Add(this.label4);
-            this.tabMP.Controls.Add(this.label2);
-            this.tabMP.Controls.Add(this.cbbBrand);
-            this.tabMP.Location = new System.Drawing.Point(4, 24);
-            this.tabMP.Name = "tabMP";
-            this.tabMP.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMP.Size = new System.Drawing.Size(1029, 485);
-            this.tabMP.TabIndex = 1;
-            this.tabMP.Text = "Danh sách điện thoại";
-            this.tabMP.UseVisualStyleBackColor = true;
+            this.tab2.Controls.Add(this.pnlPhone);
+            this.tab2.Controls.Add(this.cbbEditBrand);
+            this.tab2.Controls.Add(this.radPhoneMode);
+            this.tab2.Controls.Add(this.radPhoneSampleMode);
+            this.tab2.Controls.Add(this.radBrandMode);
+            this.tab2.Controls.Add(this.label4);
+            this.tab2.Controls.Add(this.pnlPhoneSample);
+            this.tab2.Controls.Add(this.dgvPhoneSamples);
+            this.tab2.Controls.Add(this.btnClean);
+            this.tab2.Controls.Add(this.label2);
+            this.tab2.Controls.Add(this.cbbBrandFilter);
+            this.tab2.Controls.Add(this.btnSave);
+            this.tab2.Location = new System.Drawing.Point(4, 24);
+            this.tab2.Name = "tab2";
+            this.tab2.Padding = new System.Windows.Forms.Padding(3);
+            this.tab2.Size = new System.Drawing.Size(1029, 485);
+            this.tab2.TabIndex = 2;
+            this.tab2.Text = "Mẫu điện thoại";
+            this.tab2.UseVisualStyleBackColor = true;
             // 
-            // btnSave
+            // pnlPhone
             // 
-            this.btnSave.Enabled = false;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(933, 443);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(88, 34);
-            this.btnSave.TabIndex = 46;
-            this.btnSave.Text = "Lưu";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.pnlPhone.Controls.Add(this.label12);
+            this.pnlPhone.Controls.Add(this.label9);
+            this.pnlPhone.Controls.Add(this.txtSalePrice);
+            this.pnlPhone.Controls.Add(this.cbbColor);
+            this.pnlPhone.Controls.Add(this.label11);
+            this.pnlPhone.Controls.Add(this.txtNumber);
+            this.pnlPhone.Controls.Add(this.txtEntryPrice);
+            this.pnlPhone.Controls.Add(this.label10);
+            this.pnlPhone.Enabled = false;
+            this.pnlPhone.Location = new System.Drawing.Point(613, 356);
+            this.pnlPhone.Name = "pnlPhone";
+            this.pnlPhone.Size = new System.Drawing.Size(413, 81);
+            this.pnlPhone.TabIndex = 60;
             // 
-            // datProduce
+            // label12
             // 
-            this.datProduce.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datProduce.Location = new System.Drawing.Point(738, 140);
-            this.datProduce.Name = "datProduce";
-            this.datProduce.Size = new System.Drawing.Size(104, 21);
-            this.datProduce.TabIndex = 45;
-            this.datProduce.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(224, 41);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(50, 15);
+            this.label12.TabIndex = 62;
+            this.label12.Text = "Giá bán";
             // 
-            // txtDescription
+            // label9
             // 
-            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(738, 244);
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(259, 140);
-            this.txtDescription.TabIndex = 44;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 3);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(32, 15);
+            this.label9.TabIndex = 56;
+            this.label9.Text = "Màu";
             // 
-            // label7
+            // txtSalePrice
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(643, 143);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(83, 15);
-            this.label7.TabIndex = 42;
-            this.label7.Text = "Năm sản xuất";
+            this.txtSalePrice.Location = new System.Drawing.Point(287, 38);
+            this.txtSalePrice.Name = "txtSalePrice";
+            this.txtSalePrice.Size = new System.Drawing.Size(124, 21);
+            this.txtSalePrice.TabIndex = 63;
+            this.txtSalePrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.infoHandle_KeyPress);
             // 
-            // label6
+            // cbbColor
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(643, 247);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 15);
-            this.label6.TabIndex = 40;
-            this.label6.Text = "Mô tả";
+            this.cbbColor.FormattingEnabled = true;
+            this.cbbColor.Location = new System.Drawing.Point(81, 0);
+            this.cbbColor.Name = "cbbColor";
+            this.cbbColor.Size = new System.Drawing.Size(86, 23);
+            this.cbbColor.TabIndex = 57;
+            this.cbbColor.SelectedIndexChanged += new System.EventHandler(this.cbbColor_SelectedIndexChanged);
+            this.cbbColor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.infoHandle_KeyPress);
             // 
-            // txtPromotion
+            // label11
             // 
-            this.txtPromotion.Location = new System.Drawing.Point(738, 182);
-            this.txtPromotion.Multiline = true;
-            this.txtPromotion.Name = "txtPromotion";
-            this.txtPromotion.Size = new System.Drawing.Size(222, 40);
-            this.txtPromotion.TabIndex = 39;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(3, 44);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(57, 15);
+            this.label11.TabIndex = 60;
+            this.label11.Text = "Giá nhập";
             // 
-            // label5
+            // txtNumber
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(643, 185);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 15);
-            this.label5.TabIndex = 38;
-            this.label5.Text = "Khuyến mãi";
+            this.txtNumber.Enabled = false;
+            this.txtNumber.Location = new System.Drawing.Point(288, 0);
+            this.txtNumber.Name = "txtNumber";
+            this.txtNumber.Size = new System.Drawing.Size(34, 21);
+            this.txtNumber.TabIndex = 59;
             // 
-            // txtPhoneSample
+            // txtEntryPrice
             // 
-            this.txtPhoneSample.Location = new System.Drawing.Point(738, 101);
-            this.txtPhoneSample.Name = "txtPhoneSample";
-            this.txtPhoneSample.Size = new System.Drawing.Size(200, 21);
-            this.txtPhoneSample.TabIndex = 37;
+            this.txtEntryPrice.Location = new System.Drawing.Point(81, 41);
+            this.txtEntryPrice.Name = "txtEntryPrice";
+            this.txtEntryPrice.Size = new System.Drawing.Size(124, 21);
+            this.txtEntryPrice.TabIndex = 61;
+            this.txtEntryPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.infoHandle_KeyPress);
             // 
-            // label3
+            // label10
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(643, 104);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 15);
-            this.label3.TabIndex = 36;
-            this.label3.Text = "Mẫu điện thoại";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(226, 3);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(56, 15);
+            this.label10.TabIndex = 58;
+            this.label10.Text = "Số lượng";
             // 
-            // txtBrand
+            // cbbEditBrand
             // 
-            this.txtBrand.Location = new System.Drawing.Point(738, 61);
-            this.txtBrand.Name = "txtBrand";
-            this.txtBrand.Size = new System.Drawing.Size(100, 21);
-            this.txtBrand.TabIndex = 35;
+            this.cbbEditBrand.Enabled = false;
+            this.cbbEditBrand.FormattingEnabled = true;
+            this.cbbEditBrand.Location = new System.Drawing.Point(694, 54);
+            this.cbbEditBrand.Name = "cbbEditBrand";
+            this.cbbEditBrand.Size = new System.Drawing.Size(86, 23);
+            this.cbbEditBrand.TabIndex = 55;
+            this.cbbEditBrand.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.infoHandle_KeyPress);
+            // 
+            // radPhoneMode
+            // 
+            this.radPhoneMode.AutoSize = true;
+            this.radPhoneMode.Location = new System.Drawing.Point(900, 20);
+            this.radPhoneMode.Name = "radPhoneMode";
+            this.radPhoneMode.Size = new System.Drawing.Size(81, 19);
+            this.radPhoneMode.TabIndex = 59;
+            this.radPhoneMode.TabStop = true;
+            this.radPhoneMode.Text = "Điện thoại";
+            this.radPhoneMode.UseVisualStyleBackColor = true;
+            this.radPhoneMode.CheckedChanged += new System.EventHandler(this.radHandle_CheckedChange);
+            // 
+            // radPhoneSampleMode
+            // 
+            this.radPhoneSampleMode.AutoSize = true;
+            this.radPhoneSampleMode.Location = new System.Drawing.Point(758, 20);
+            this.radPhoneSampleMode.Name = "radPhoneSampleMode";
+            this.radPhoneSampleMode.Size = new System.Drawing.Size(106, 19);
+            this.radPhoneSampleMode.TabIndex = 58;
+            this.radPhoneSampleMode.TabStop = true;
+            this.radPhoneSampleMode.Text = "Loại điện thoại";
+            this.radPhoneSampleMode.UseVisualStyleBackColor = true;
+            this.radPhoneSampleMode.CheckedChanged += new System.EventHandler(this.radHandle_CheckedChange);
+            // 
+            // radBrandMode
+            // 
+            this.radBrandMode.AutoSize = true;
+            this.radBrandMode.Location = new System.Drawing.Point(619, 20);
+            this.radBrandMode.Name = "radBrandMode";
+            this.radBrandMode.Size = new System.Drawing.Size(55, 19);
+            this.radBrandMode.TabIndex = 57;
+            this.radBrandMode.TabStop = true;
+            this.radBrandMode.Text = "Hãng";
+            this.radBrandMode.UseVisualStyleBackColor = true;
+            this.radBrandMode.CheckedChanged += new System.EventHandler(this.radHandle_CheckedChange);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(643, 64);
+            this.label4.Location = new System.Drawing.Point(616, 57);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 15);
             this.label4.TabIndex = 34;
             this.label4.Text = "Hãng";
             // 
+            // pnlPhoneSample
+            // 
+            this.pnlPhoneSample.Controls.Add(this.label3);
+            this.pnlPhoneSample.Controls.Add(this.label6);
+            this.pnlPhoneSample.Controls.Add(this.label8);
+            this.pnlPhoneSample.Controls.Add(this.label7);
+            this.pnlPhoneSample.Controls.Add(this.txtPhoneSampleID);
+            this.pnlPhoneSample.Controls.Add(this.txtPhoneSample);
+            this.pnlPhoneSample.Controls.Add(this.txtPromotion);
+            this.pnlPhoneSample.Controls.Add(this.datManufacturing);
+            this.pnlPhoneSample.Controls.Add(this.txtDescription);
+            this.pnlPhoneSample.Controls.Add(this.label5);
+            this.pnlPhoneSample.Enabled = false;
+            this.pnlPhoneSample.Location = new System.Drawing.Point(613, 95);
+            this.pnlPhoneSample.Name = "pnlPhoneSample";
+            this.pnlPhoneSample.Size = new System.Drawing.Size(413, 244);
+            this.pnlPhoneSample.TabIndex = 55;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 15);
+            this.label3.TabIndex = 36;
+            this.label3.Text = "Điện thoại";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 117);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(38, 15);
+            this.label6.TabIndex = 40;
+            this.label6.Text = "Mô tả";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(226, 41);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(55, 15);
+            this.label8.TabIndex = 46;
+            this.label8.Text = "Mã MDT";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 41);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(52, 15);
+            this.label7.TabIndex = 42;
+            this.label7.Text = "Năm s.x";
+            // 
+            // txtPhoneSampleID
+            // 
+            this.txtPhoneSampleID.Enabled = false;
+            this.txtPhoneSampleID.Location = new System.Drawing.Point(287, 38);
+            this.txtPhoneSampleID.Name = "txtPhoneSampleID";
+            this.txtPhoneSampleID.Size = new System.Drawing.Size(74, 21);
+            this.txtPhoneSampleID.TabIndex = 47;
+            // 
+            // txtPhoneSample
+            // 
+            this.txtPhoneSample.Location = new System.Drawing.Point(81, 0);
+            this.txtPhoneSample.Name = "txtPhoneSample";
+            this.txtPhoneSample.Size = new System.Drawing.Size(224, 21);
+            this.txtPhoneSample.TabIndex = 37;
+            this.txtPhoneSample.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.infoHandle_KeyPress);
+            // 
+            // txtPromotion
+            // 
+            this.txtPromotion.Location = new System.Drawing.Point(81, 80);
+            this.txtPromotion.Name = "txtPromotion";
+            this.txtPromotion.Size = new System.Drawing.Size(327, 21);
+            this.txtPromotion.TabIndex = 39;
+            this.txtPromotion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.infoHandle_KeyPress);
+            // 
+            // datManufacturing
+            // 
+            this.datManufacturing.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datManufacturing.Location = new System.Drawing.Point(81, 38);
+            this.datManufacturing.Name = "datManufacturing";
+            this.datManufacturing.Size = new System.Drawing.Size(104, 21);
+            this.datManufacturing.TabIndex = 45;
+            this.datManufacturing.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.datManufacturing.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.infoHandle_KeyPress);
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(81, 120);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(325, 120);
+            this.txtDescription.TabIndex = 44;
+            this.txtDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.infoHandle_KeyPress);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 83);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(72, 15);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "Khuyến mãi";
+            // 
+            // dgvPhoneSamples
+            // 
+            this.dgvPhoneSamples.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvPhoneSamples.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvPhoneSamples.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPhoneSamples.Location = new System.Drawing.Point(3, 54);
+            this.dgvPhoneSamples.Name = "dgvPhoneSamples";
+            this.dgvPhoneSamples.Size = new System.Drawing.Size(605, 428);
+            this.dgvPhoneSamples.TabIndex = 53;
+            this.dgvPhoneSamples.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhoneSamples_CellClick);
+            // 
+            // btnClean
+            // 
+            this.btnClean.Enabled = false;
+            this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClean.Location = new System.Drawing.Point(619, 443);
+            this.btnClean.Name = "btnClean";
+            this.btnClean.Size = new System.Drawing.Size(88, 34);
+            this.btnClean.TabIndex = 54;
+            this.btnClean.Text = "Tẩy";
+            this.btnClean.UseVisualStyleBackColor = true;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(10, 24);
+            this.label2.Location = new System.Drawing.Point(10, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 15);
-            this.label2.TabIndex = 31;
+            this.label2.TabIndex = 51;
             this.label2.Text = "Hãng";
             // 
-            // cbbBrand
+            // cbbBrandFilter
             // 
-            this.cbbBrand.FormattingEnabled = true;
-            this.cbbBrand.Location = new System.Drawing.Point(53, 21);
-            this.cbbBrand.Name = "cbbBrand";
-            this.cbbBrand.Size = new System.Drawing.Size(86, 23);
-            this.cbbBrand.TabIndex = 2;
-            this.cbbBrand.SelectedIndexChanged += new System.EventHandler(this.cbbBrand_SelectedIndexChanged);
+            this.cbbBrandFilter.FormattingEnabled = true;
+            this.cbbBrandFilter.Location = new System.Drawing.Point(53, 17);
+            this.cbbBrandFilter.Name = "cbbBrandFilter";
+            this.cbbBrandFilter.Size = new System.Drawing.Size(86, 23);
+            this.cbbBrandFilter.TabIndex = 50;
+            this.cbbBrandFilter.SelectedIndexChanged += new System.EventHandler(this.cbbBrand_SelectedIndexChanged);
+            this.cbbBrandFilter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.infoHandle_KeyPress);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Enabled = false;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(938, 443);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(88, 34);
+            this.btnSave.TabIndex = 52;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pnlToolMenu
             // 
-            this.pnlToolMenu.Controls.Add(this.button3);
-            this.pnlToolMenu.Controls.Add(this.button2);
+            this.pnlToolMenu.Controls.Add(this.btnDelete);
+            this.pnlToolMenu.Controls.Add(this.btnEdit);
             this.pnlToolMenu.Controls.Add(this.btnAddOrder);
             this.pnlToolMenu.Location = new System.Drawing.Point(3, 37);
             this.pnlToolMenu.Name = "pnlToolMenu";
             this.pnlToolMenu.Size = new System.Drawing.Size(1032, 40);
             this.pnlToolMenu.TabIndex = 2;
             // 
-            // button3
+            // btnDelete
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(101, 4);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(40, 32);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Del";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(101, 4);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(40, 32);
+            this.btnDelete.TabIndex = 2;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // button2
+            // btnEdit
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(55, 4);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(40, 32);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Edit";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(55, 4);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(40, 32);
+            this.btnEdit.TabIndex = 1;
+            this.btnEdit.Text = "Sửa";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAddOrder
             // 
@@ -259,6 +464,7 @@
             this.btnAddOrder.TabIndex = 0;
             this.btnAddOrder.Text = "Add";
             this.btnAddOrder.UseVisualStyleBackColor = true;
+            this.btnAddOrder.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label1
             // 
@@ -269,17 +475,6 @@
             this.label1.Size = new System.Drawing.Size(186, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Quản lý điện thoại";
-            // 
-            // dgvPhoneSamples
-            // 
-            this.dgvPhoneSamples.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvPhoneSamples.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgvPhoneSamples.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPhoneSamples.Location = new System.Drawing.Point(3, 54);
-            this.dgvPhoneSamples.Name = "dgvPhoneSamples";
-            this.dgvPhoneSamples.Size = new System.Drawing.Size(602, 428);
-            this.dgvPhoneSamples.TabIndex = 47;
-            this.dgvPhoneSamples.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhoneSamples_CellClick);
             // 
             // ManagePhones
             // 
@@ -292,11 +487,15 @@
             this.Text = "ManagePhones";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.tabMainBill.ResumeLayout(false);
-            this.tabMP.ResumeLayout(false);
-            this.tabMP.PerformLayout();
-            this.pnlToolMenu.ResumeLayout(false);
+            this.tabMain.ResumeLayout(false);
+            this.tab2.ResumeLayout(false);
+            this.tab2.PerformLayout();
+            this.pnlPhone.ResumeLayout(false);
+            this.pnlPhone.PerformLayout();
+            this.pnlPhoneSample.ResumeLayout(false);
+            this.pnlPhoneSample.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhoneSamples)).EndInit();
+            this.pnlToolMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -306,24 +505,40 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlToolMenu;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAddOrder;
-        private System.Windows.Forms.TabControl tabMainBill;
-        private System.Windows.Forms.TabPage tabMP;
-        private System.Windows.Forms.ComboBox cbbBrand;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TabControl tabMain;
+        private System.Windows.Forms.TabPage tab2;
+        private System.Windows.Forms.Panel pnlPhoneSample;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtPhoneSampleID;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtPhoneSample;
+        private System.Windows.Forms.DateTimePicker datManufacturing;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.TextBox txtPromotion;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtPromotion;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtPhoneSample;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtBrand;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.DateTimePicker datProduce;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnClean;
         private System.Windows.Forms.DataGridView dgvPhoneSamples;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbbBrandFilter;
+        private System.Windows.Forms.ComboBox cbbEditBrand;
+        private System.Windows.Forms.ComboBox cbbColor;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtEntryPrice;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtNumber;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtSalePrice;
+        private System.Windows.Forms.RadioButton radPhoneMode;
+        private System.Windows.Forms.RadioButton radPhoneSampleMode;
+        private System.Windows.Forms.RadioButton radBrandMode;
+        private System.Windows.Forms.Panel pnlPhone;
     }
 }

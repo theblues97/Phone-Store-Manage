@@ -76,7 +76,6 @@ namespace PhoneStore
             }
             else
                 ActiveChildForm("Bills");
-
         }
 
         private void hoaĐơnSuaChuaToolStripMenuItem_Click(object sender, EventArgs e)
