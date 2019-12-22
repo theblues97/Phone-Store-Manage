@@ -28,17 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageCustomer));
             this.pnl1 = new System.Windows.Forms.Panel();
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tab1 = new System.Windows.Forms.TabPage();
-            this.pnlArea = new System.Windows.Forms.Panel();
-            this.txtCusID = new System.Windows.Forms.TextBox();
+            this.btnPhoneSearch = new System.Windows.Forms.Button();
+            this.txtSearchCus = new System.Windows.Forms.TextBox();
+            this.pnlInfor = new System.Windows.Forms.Panel();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtCus = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.txtAdress = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -55,12 +58,10 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnPhoneNumFill = new System.Windows.Forms.Button();
-            this.txtSearchCus = new System.Windows.Forms.TextBox();
             this.pnl1.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tab1.SuspendLayout();
-            this.pnlArea.SuspendLayout();
+            this.pnlInfor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMC)).BeginInit();
             this.pnlToolMenu.SuspendLayout();
             this.SuspendLayout();
@@ -89,9 +90,9 @@
             // 
             // tab1
             // 
-            this.tab1.Controls.Add(this.btnPhoneNumFill);
+            this.tab1.Controls.Add(this.btnPhoneSearch);
             this.tab1.Controls.Add(this.txtSearchCus);
-            this.tab1.Controls.Add(this.pnlArea);
+            this.tab1.Controls.Add(this.pnlInfor);
             this.tab1.Controls.Add(this.dgvMC);
             this.tab1.Location = new System.Drawing.Point(4, 24);
             this.tab1.Name = "tab1";
@@ -101,37 +102,60 @@
             this.tab1.Text = "Danh sách khách hàng";
             this.tab1.UseVisualStyleBackColor = true;
             // 
-            // pnlArea
+            // btnPhoneSearch
             // 
-            this.pnlArea.Controls.Add(this.txtCusID);
-            this.pnlArea.Controls.Add(this.label15);
-            this.pnlArea.Controls.Add(this.txtPhone);
-            this.pnlArea.Controls.Add(this.label2);
-            this.pnlArea.Controls.Add(this.btnSave);
-            this.pnlArea.Controls.Add(this.label13);
-            this.pnlArea.Controls.Add(this.txtCus);
-            this.pnlArea.Controls.Add(this.txtAdress);
-            this.pnlArea.Controls.Add(this.label9);
-            this.pnlArea.Controls.Add(this.label10);
-            this.pnlArea.Controls.Add(this.txtEmail);
-            this.pnlArea.Controls.Add(this.label11);
-            this.pnlArea.Controls.Add(this.label12);
-            this.pnlArea.Controls.Add(this.datBirth);
-            this.pnlArea.Controls.Add(this.radMale);
-            this.pnlArea.Controls.Add(this.radFemale);
-            this.pnlArea.Location = new System.Drawing.Point(613, 3);
-            this.pnlArea.Name = "pnlArea";
-            this.pnlArea.Size = new System.Drawing.Size(413, 480);
-            this.pnlArea.TabIndex = 17;
+            this.btnPhoneSearch.BackColor = System.Drawing.SystemColors.Control;
+            this.btnPhoneSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPhoneSearch.BackgroundImage")));
+            this.btnPhoneSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPhoneSearch.Location = new System.Drawing.Point(557, 10);
+            this.btnPhoneSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPhoneSearch.Name = "btnPhoneSearch";
+            this.btnPhoneSearch.Size = new System.Drawing.Size(32, 32);
+            this.btnPhoneSearch.TabIndex = 19;
+            this.btnPhoneSearch.UseVisualStyleBackColor = false;
+            this.btnPhoneSearch.Click += new System.EventHandler(this.btnPhoneSearch_Click);
             // 
-            // txtCusID
+            // txtSearchCus
             // 
-            this.txtCusID.Enabled = false;
-            this.txtCusID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusID.Location = new System.Drawing.Point(93, 46);
-            this.txtCusID.Name = "txtCusID";
-            this.txtCusID.Size = new System.Drawing.Size(80, 21);
-            this.txtCusID.TabIndex = 41;
+            this.txtSearchCus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchCus.Location = new System.Drawing.Point(358, 16);
+            this.txtSearchCus.Name = "txtSearchCus";
+            this.txtSearchCus.Size = new System.Drawing.Size(175, 21);
+            this.txtSearchCus.TabIndex = 18;
+            this.txtSearchCus.TextChanged += new System.EventHandler(this.txtSearchCus_TextChanged);
+            // 
+            // pnlInfor
+            // 
+            this.pnlInfor.Controls.Add(this.txtID);
+            this.pnlInfor.Controls.Add(this.label15);
+            this.pnlInfor.Controls.Add(this.txtPhone);
+            this.pnlInfor.Controls.Add(this.label2);
+            this.pnlInfor.Controls.Add(this.btnSave);
+            this.pnlInfor.Controls.Add(this.label13);
+            this.pnlInfor.Controls.Add(this.txtName);
+            this.pnlInfor.Controls.Add(this.txtAdress);
+            this.pnlInfor.Controls.Add(this.label9);
+            this.pnlInfor.Controls.Add(this.label10);
+            this.pnlInfor.Controls.Add(this.txtEmail);
+            this.pnlInfor.Controls.Add(this.label11);
+            this.pnlInfor.Controls.Add(this.label12);
+            this.pnlInfor.Controls.Add(this.datBirth);
+            this.pnlInfor.Controls.Add(this.radMale);
+            this.pnlInfor.Controls.Add(this.radFemale);
+            this.pnlInfor.Enabled = false;
+            this.pnlInfor.Location = new System.Drawing.Point(613, 3);
+            this.pnlInfor.Name = "pnlInfor";
+            this.pnlInfor.Size = new System.Drawing.Size(413, 480);
+            this.pnlInfor.TabIndex = 17;
+            // 
+            // txtID
+            // 
+            this.txtID.Enabled = false;
+            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(93, 46);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(80, 21);
+            this.txtID.TabIndex = 41;
             // 
             // label15
             // 
@@ -181,13 +205,13 @@
             this.label13.TabIndex = 22;
             this.label13.Text = "Khách hàng";
             // 
-            // txtCus
+            // txtName
             // 
-            this.txtCus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCus.Location = new System.Drawing.Point(93, 86);
-            this.txtCus.Name = "txtCus";
-            this.txtCus.Size = new System.Drawing.Size(160, 21);
-            this.txtCus.TabIndex = 10;
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(93, 86);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(160, 21);
+            this.txtName.TabIndex = 10;
             // 
             // txtAdress
             // 
@@ -307,36 +331,46 @@
             // 
             // btnDel
             // 
+            this.btnDel.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDel.BackgroundImage = global::PhoneStore.Properties.Resources.delete;
+            this.btnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDel.Location = new System.Drawing.Point(101, 4);
+            this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDel.Location = new System.Drawing.Point(85, 4);
             this.btnDel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(40, 32);
-            this.btnDel.TabIndex = 2;
-            this.btnDel.Text = "Xóa";
-            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Size = new System.Drawing.Size(32, 32);
+            this.btnDel.TabIndex = 5;
+            this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnEdit
             // 
+            this.btnEdit.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEdit.BackgroundImage = global::PhoneStore.Properties.Resources.edit;
+            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(55, 4);
+            this.btnEdit.Location = new System.Drawing.Point(47, 4);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(40, 32);
-            this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "Sửa";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Size = new System.Drawing.Size(32, 32);
+            this.btnEdit.TabIndex = 4;
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
+            this.btnAdd.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAdd.BackgroundImage = global::PhoneStore.Properties.Resources.add;
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(9, 4);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(40, 32);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Size = new System.Drawing.Size(32, 32);
+            this.btnAdd.TabIndex = 3;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label1
             // 
@@ -347,24 +381,6 @@
             this.label1.Size = new System.Drawing.Size(233, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Danh sách khách hàng";
-            // 
-            // btnPhoneNumFill
-            // 
-            this.btnPhoneNumFill.Location = new System.Drawing.Point(557, 10);
-            this.btnPhoneNumFill.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnPhoneNumFill.Name = "btnPhoneNumFill";
-            this.btnPhoneNumFill.Size = new System.Drawing.Size(40, 32);
-            this.btnPhoneNumFill.TabIndex = 19;
-            this.btnPhoneNumFill.Text = "Tìm";
-            this.btnPhoneNumFill.UseVisualStyleBackColor = true;
-            // 
-            // txtSearchCus
-            // 
-            this.txtSearchCus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchCus.Location = new System.Drawing.Point(358, 16);
-            this.txtSearchCus.Name = "txtSearchCus";
-            this.txtSearchCus.Size = new System.Drawing.Size(175, 21);
-            this.txtSearchCus.TabIndex = 18;
             // 
             // ManageCustomer
             // 
@@ -380,8 +396,8 @@
             this.tabMain.ResumeLayout(false);
             this.tab1.ResumeLayout(false);
             this.tab1.PerformLayout();
-            this.pnlArea.ResumeLayout(false);
-            this.pnlArea.PerformLayout();
+            this.pnlInfor.ResumeLayout(false);
+            this.pnlInfor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMC)).EndInit();
             this.pnlToolMenu.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -395,19 +411,16 @@
         private System.Windows.Forms.TabPage tab1;
         private System.Windows.Forms.Panel pnlBillListMain;
         private System.Windows.Forms.Panel pnlToolMenu;
-        private System.Windows.Forms.Button btnDel;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvMC;
-        private System.Windows.Forms.Panel pnlArea;
-        private System.Windows.Forms.TextBox txtCusID;
+        private System.Windows.Forms.Panel pnlInfor;
+        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtCus;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtAdress;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -417,7 +430,10 @@
         private System.Windows.Forms.DateTimePicker datBirth;
         private System.Windows.Forms.RadioButton radMale;
         private System.Windows.Forms.RadioButton radFemale;
-        private System.Windows.Forms.Button btnPhoneNumFill;
+        private System.Windows.Forms.Button btnPhoneSearch;
         private System.Windows.Forms.TextBox txtSearchCus;
+        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

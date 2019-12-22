@@ -117,6 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnWaPhoneNumFill.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAANeSURBVFhH7ZdLaBNRFIarKIKi6MK9C1240E1RFy6MJpNmXmnM5ObRVmgVivgWEQQRiy506wuL
+        tlqffbeaan1UqRQUlL6tQSy6sFpqowhqpTXTOd4zOQUpts6kDxT8YCDJ3Puff865c+5N2n/+GdzuTfNc
+        SsDhVALZgsQ2OSUmOHy+hXR76nDLLN2tBqMZ3mDCJQfg14v/PuzJDDc6Zf96Gj55OByOWYISOCEoDLRI
+        HhSeL4Hm1nZ42/MOet71QsfzF1BytQxyNm8zzWSowXJVVefS9ImBwT2ZobsofLqwGAYGvsNYJBIJqKyJ
+        Ah8P4sZIx1qvdz7JpA4PfBKD36i7Q2HG58PwV6hobQTRF8GyRLnEjKRSCjhV/ypM+6mzRST/Zz4aA9Ch
+        90L9vYdmOQQ5wEjOPhneUL0/nDdu2sfCMAzYsfcAz0S4m+TsIYrZC3gK9cKiSyRpj0EjAdEHySy45NBy
+        krUOvts4uaWtgyTt0a6/h+r+lmQZFG0ryVqHN5hcnPy+t48k7RHT+6Bm6DlIG7MM3rSOkqx1nDLbggb6
+        PvSTpD1e6v1QPdQJqpbDDWjHSNY6LpnJaKAr9pIk7dGS6IHaz21mCZyStotkrSOKbDGfbFwtrSJJ6wyD
+        Abd+xOBC0y3TwAaFrSZZe3h8kae5+TtB13WStka3HjfTv//wERAzw/GCgoKZJGkPvnolfAKrXRCJG9+g
+        li++y833U0//r7hVVsd3OaOzK0Yhfg+mHZ/8Bg9e/vYJ+CO5fE8Id4miOIekUgMbkuSLvOKXca+h0exw
+        I3wxBs3VjgvuNq85pr3k2V0KHvrk8YSXkMzEkOWsRbwtN2BKt+85AGgk/vETdPKej0Er4s1Q/CgK+w4V
+        mGnHJ8fggqwV8bfpYIaXLeXlXEZyqYELCU9Aki/8BoNQIGw05mf6Hseaj6Qd3/+Re3gJMruI27spOBFc
+        ElvhlAPbsMNx4eN8x9ztlrQ1o1e706utxMAnzpwD3FNME2qwYlJMWAGNYlA8LSHXK2qm34SgBEvxTFFz
+        8/YoE4HrNGRqSU/Pny2orBpNVNXWmSZKrpTRutBcNGxqMU0orBKDXiurhkdNj5MGJJZFQ6YerLlbYdeS
+        T47H+NBr7DF0e/rg5ViH50T8c0M//edvIS3tJ3rsOWwDeReaAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>

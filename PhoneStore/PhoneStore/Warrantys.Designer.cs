@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Warrantys));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -70,7 +71,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnlToolMenu = new System.Windows.Forms.Panel();
             this.btnDel = new System.Windows.Forms.Button();
-            this.btnModify = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -302,14 +303,16 @@
             // 
             // btnWaPhoneNumFill
             // 
+            this.btnWaPhoneNumFill.BackColor = System.Drawing.SystemColors.Control;
+            this.btnWaPhoneNumFill.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnWaPhoneNumFill.BackgroundImage")));
+            this.btnWaPhoneNumFill.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnWaPhoneNumFill.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWaPhoneNumFill.Location = new System.Drawing.Point(313, 2);
             this.btnWaPhoneNumFill.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnWaPhoneNumFill.Name = "btnWaPhoneNumFill";
-            this.btnWaPhoneNumFill.Size = new System.Drawing.Size(40, 32);
+            this.btnWaPhoneNumFill.Size = new System.Drawing.Size(32, 32);
             this.btnWaPhoneNumFill.TabIndex = 11;
-            this.btnWaPhoneNumFill.Text = "Tìm";
-            this.btnWaPhoneNumFill.UseVisualStyleBackColor = true;
+            this.btnWaPhoneNumFill.UseVisualStyleBackColor = false;
             this.btnWaPhoneNumFill.Click += new System.EventHandler(this.btnWaPhoneNumFill_Click);
             // 
             // label13
@@ -512,7 +515,7 @@
             // pnlToolMenu
             // 
             this.pnlToolMenu.Controls.Add(this.btnDel);
-            this.pnlToolMenu.Controls.Add(this.btnModify);
+            this.pnlToolMenu.Controls.Add(this.btnEdit);
             this.pnlToolMenu.Controls.Add(this.btnAdd);
             this.pnlToolMenu.Location = new System.Drawing.Point(3, 37);
             this.pnlToolMenu.Name = "pnlToolMenu";
@@ -521,38 +524,45 @@
             // 
             // btnDel
             // 
+            this.btnDel.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDel.BackgroundImage = global::PhoneStore.Properties.Resources.delete;
+            this.btnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDel.Enabled = false;
             this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDel.Location = new System.Drawing.Point(101, 4);
+            this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDel.Location = new System.Drawing.Point(85, 4);
             this.btnDel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(40, 32);
-            this.btnDel.TabIndex = 2;
-            this.btnDel.Text = "Xóa";
-            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Size = new System.Drawing.Size(32, 32);
+            this.btnDel.TabIndex = 5;
+            this.btnDel.UseVisualStyleBackColor = false;
             // 
-            // btnModify
+            // btnEdit
             // 
-            this.btnModify.Enabled = false;
-            this.btnModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModify.Location = new System.Drawing.Point(55, 4);
-            this.btnModify.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(40, 32);
-            this.btnModify.TabIndex = 1;
-            this.btnModify.Text = "Sửa";
-            this.btnModify.UseVisualStyleBackColor = true;
+            this.btnEdit.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEdit.BackgroundImage = global::PhoneStore.Properties.Resources.edit;
+            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEdit.Enabled = false;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(47, 4);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(32, 32);
+            this.btnEdit.TabIndex = 4;
+            this.btnEdit.UseVisualStyleBackColor = false;
             // 
             // btnAdd
             // 
+            this.btnAdd.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAdd.BackgroundImage = global::PhoneStore.Properties.Resources.add;
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(9, 4);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(40, 32);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Size = new System.Drawing.Size(32, 32);
+            this.btnAdd.TabIndex = 3;
+            this.btnAdd.UseVisualStyleBackColor = false;
             // 
             // Warrantys
             // 
@@ -618,7 +628,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlToolMenu;
         private System.Windows.Forms.Button btnDel;
-        private System.Windows.Forms.Button btnModify;
+        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
     }
 }

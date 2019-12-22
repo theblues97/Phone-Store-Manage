@@ -19,6 +19,8 @@ namespace PhoneStore
         public Bills()
         {
             InitializeComponent();
+
+            //this.FormClosing += Bills_Closing;
         }
 
         public Bills(string Username) : this()
@@ -137,20 +139,9 @@ namespace PhoneStore
                                  q.KhuyenMai
                              };
 
-                dgvPhones.DataSource = result.ToList();
-                dgvPhones.Columns[0].Visible = false;
-                dgvPhones.Columns[5].Visible = false;
-                dgvPhones.Columns[1].HeaderText = "Tên điện thoại";
-                dgvPhones.Columns[2].HeaderText = "Màu";
-                dgvPhones.Columns[3].HeaderText = "Số lượng";
-                dgvPhones.Columns[4].HeaderText = "Giá";
-                dgvPhones.Columns[1].FillWeight = 150;
-                dgvPhones.Columns[2].FillWeight = 50;
-                dgvPhones.Columns[3].FillWeight = 70;
-                dgvPhones.Columns[4].FillWeight = 70;
-                dgvPhones.Refresh();
-
-                if (txtSearchPhone.Text != "")
+                if (txtSearchPhone.Text == "")
+                    dgvPhones.DataSource = result.ToList();
+                else
                 {
                     var proc = ctx.pro_SearchPhones(txtSearchPhone.Text);
                     var res = from pr in proc
@@ -166,10 +157,19 @@ namespace PhoneStore
                               };
 
                     dgvPhones.DataSource = res.ToList();
-                    dgvPhones.Columns[0].Visible = false;
-                    dgvPhones.Columns[5].Visible = false;
-                    dgvPhones.Refresh();
                 }
+
+                dgvPhones.Columns[0].Visible = false;
+                dgvPhones.Columns[5].Visible = false;
+                dgvPhones.Columns[1].HeaderText = "Tên điện thoại";
+                dgvPhones.Columns[2].HeaderText = "Màu";
+                dgvPhones.Columns[3].HeaderText = "Số lượng";
+                dgvPhones.Columns[4].HeaderText = "Giá";
+                dgvPhones.Columns[1].FillWeight = 150;
+                dgvPhones.Columns[2].FillWeight = 50;
+                dgvPhones.Columns[3].FillWeight = 70;
+                dgvPhones.Columns[4].FillWeight = 70;
+                dgvPhones.Refresh();
             }
         }
 
@@ -420,6 +420,11 @@ namespace PhoneStore
             LoadPhones();
         }
 
+        private void txtSearchPhone_TextChanged(object sender, EventArgs e)
+        {
+            LoadPhones();
+        }
+
         private void btnPhoneSearch_Click(object sender, EventArgs e)
         {
             LoadPhones();
@@ -434,18 +439,20 @@ namespace PhoneStore
         {
             ChoosePhones();
         }
-        #endregion
 
         private void pnlSalebills_Leave(object sender, EventArgs e)
         {
-            if(!createdBill && tabMainBill.SelectedTab == tab2)
+            if (!createdBill && tabMainBill.SelectedTab == tab2)
             {
-                DialogResult answer = MessageBox.Show("Các thông tin chưa được lưu bạn muốn thoát chứ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (answer == DialogResult.Yes)
-                {
-                    DeleteBill();
-                }
+                MessageBox.Show("Các thông tin thay đổi chưa được lưu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                DeleteBill();
             }
         }
+
+        private void Bills_Closing(object sender, FormClosingEventArgs e)
+        {
+        }
+        #endregion
     }
 }

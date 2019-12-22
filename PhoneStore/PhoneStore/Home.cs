@@ -22,11 +22,12 @@ namespace PhoneStore
         ManagePhones managePhones;
         ManageCustomer manageCustomer;
 
-        StatisticBills statisticBills;
+        ManageBills statisticBills;
 
         public Home()
         {
-            InitializeComponent();          
+            InitializeComponent();
+            this.FormClosing += Home_Closing;
         }
 
         public Home(string Username) : this()
@@ -37,10 +38,12 @@ namespace PhoneStore
             bills = new Bills(username);
             warrantys = new Warrantys(username);
             accounts = new Informations(username);
-            statisticBills = new StatisticBills(username);
+            statisticBills = new ManageBills(username);
             manageEmployees = new ManageEmployees(username);
             managePhones = new ManagePhones(username);
             manageCustomer = new ManageCustomer(username);
+
+            hoaĐơnBanHangToolStripMenuItem.PerformClick();
         }
 
         private bool CheckExistForm(string name)
@@ -138,7 +141,7 @@ namespace PhoneStore
                 ActiveChildForm("ManageCustomer");
         }
 
-        private void thongKeHoaĐơnBanHangToolStripMenuItem_Click(object sender, EventArgs e)
+        private void quanLyHoaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!CheckExistForm("StatisticBills"))
             {
@@ -149,8 +152,31 @@ namespace PhoneStore
             else
                 ActiveChildForm("StatisticBills");
         }
+
+        private void thongKeHoaĐơnBanHangToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void Home_Closing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
+
+            if (this.DialogResult == DialogResult.Cancel)
+            {
+
+                switch (MessageBox.Show(this, "Bạn muốn thoát thật không?", "Quetion?", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                {
+                    case DialogResult.No:
+                        e.Cancel = true;
+                        break;
+                    default:
+                        bills.Close();
+                        break;
+                }
+            }
+        }
+
         #endregion
-
-
     }
 }

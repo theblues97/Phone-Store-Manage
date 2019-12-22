@@ -28,10 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnDel = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtSalary = new System.Windows.Forms.TextBox();
             this.pnlCustomerArea = new System.Windows.Forms.Panel();
@@ -75,6 +72,9 @@
             this.label17 = new System.Windows.Forms.Label();
             this.datStarted = new System.Windows.Forms.DateTimePicker();
             this.pnlToolMenu = new System.Windows.Forms.Panel();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.btnRefesh = new System.Windows.Forms.Button();
             this.pnlCustomerArea.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -85,30 +85,6 @@
             this.pnlToolMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnDel
-            // 
-            this.btnDel.Enabled = false;
-            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDel.Location = new System.Drawing.Point(101, 4);
-            this.btnDel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(40, 32);
-            this.btnDel.TabIndex = 2;
-            this.btnDel.Text = "Xóa";
-            this.btnDel.UseVisualStyleBackColor = true;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Enabled = false;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(9, 4);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(40, 32);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -118,17 +94,6 @@
             this.label1.Size = new System.Drawing.Size(196, 25);
             this.label1.TabIndex = 5;
             this.label1.Text = "Thông tin tài khoản";
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(55, 4);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(40, 32);
-            this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "Sửa";
-            this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -592,25 +557,69 @@
             // 
             // pnlToolMenu
             // 
-            this.pnlToolMenu.Controls.Add(this.btnRefesh);
             this.pnlToolMenu.Controls.Add(this.btnDel);
             this.pnlToolMenu.Controls.Add(this.btnEdit);
             this.pnlToolMenu.Controls.Add(this.btnAdd);
+            this.pnlToolMenu.Controls.Add(this.btnRefesh);
             this.pnlToolMenu.Location = new System.Drawing.Point(3, 37);
             this.pnlToolMenu.Name = "pnlToolMenu";
             this.pnlToolMenu.Size = new System.Drawing.Size(1032, 40);
             this.pnlToolMenu.TabIndex = 2;
             // 
+            // btnDel
+            // 
+            this.btnDel.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDel.BackgroundImage = global::PhoneStore.Properties.Resources.delete;
+            this.btnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDel.Enabled = false;
+            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDel.Location = new System.Drawing.Point(85, 4);
+            this.btnDel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(32, 32);
+            this.btnDel.TabIndex = 6;
+            this.btnDel.UseVisualStyleBackColor = false;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEdit.BackgroundImage = global::PhoneStore.Properties.Resources.edit;
+            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEdit.Enabled = false;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(47, 4);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(32, 32);
+            this.btnEdit.TabIndex = 5;
+            this.btnEdit.UseVisualStyleBackColor = false;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAdd.BackgroundImage = global::PhoneStore.Properties.Resources.add;
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(9, 4);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(32, 32);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            // 
             // btnRefesh
             // 
+            this.btnRefesh.BackColor = System.Drawing.SystemColors.Control;
+            this.btnRefesh.BackgroundImage = global::PhoneStore.Properties.Resources.update;
+            this.btnRefesh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRefesh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefesh.Location = new System.Drawing.Point(147, 4);
+            this.btnRefesh.Location = new System.Drawing.Point(123, 4);
             this.btnRefesh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRefesh.Name = "btnRefesh";
-            this.btnRefesh.Size = new System.Drawing.Size(40, 32);
+            this.btnRefesh.Size = new System.Drawing.Size(32, 32);
             this.btnRefesh.TabIndex = 3;
-            this.btnRefesh.Text = "Mới";
-            this.btnRefesh.UseVisualStyleBackColor = true;
+            this.btnRefesh.UseVisualStyleBackColor = false;
             this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
             // 
             // Informations
@@ -638,10 +647,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnDel;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtSalary;
         private System.Windows.Forms.Panel pnlCustomerArea;
@@ -686,5 +692,8 @@
         private System.Windows.Forms.Button btnChangePass;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnRefesh;
+        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

@@ -44,6 +44,7 @@
             this.quanLyKhachHangToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label16 = new System.Windows.Forms.Label();
             this.lblUsernames = new System.Windows.Forms.Label();
+            this.quanLyHoaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,7 +133,8 @@
             this.quanLyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.quanLyĐiênThoaiToolStripMenuItem1,
             this.quanLyNhânViênToolStripMenuItem1,
-            this.quanLyKhachHangToolStripMenuItem1});
+            this.quanLyKhachHangToolStripMenuItem1,
+            this.quanLyHoaĐơnToolStripMenuItem});
             this.quanLyToolStripMenuItem.Name = "quanLyToolStripMenuItem";
             this.quanLyToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.quanLyToolStripMenuItem.Text = "Quản lý";
@@ -180,10 +182,18 @@
             this.lblUsernames.TabIndex = 46;
             this.lblUsernames.Text = "Admin";
             // 
+            // quanLyHoaĐơnToolStripMenuItem
+            // 
+            this.quanLyHoaĐơnToolStripMenuItem.Name = "quanLyHoaĐơnToolStripMenuItem";
+            this.quanLyHoaĐơnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quanLyHoaĐơnToolStripMenuItem.Text = "Quản lý hóa đơn";
+            this.quanLyHoaĐơnToolStripMenuItem.Click += new System.EventHandler(this.quanLyHoaĐơnToolStripMenuItem_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1042, 621);
             this.Controls.Add(this.lblUsernames);
             this.Controls.Add(this.label16);
@@ -217,5 +227,6 @@
         private System.Windows.Forms.ToolStripMenuItem quanLyNhânViênToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem quanLyKhachHangToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem thôngKêBanHangToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quanLyHoaĐơnToolStripMenuItem;
     }
 }

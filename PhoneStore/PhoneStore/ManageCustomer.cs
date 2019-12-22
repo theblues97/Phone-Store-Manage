@@ -13,15 +13,16 @@ namespace PhoneStore
     public partial class ManageCustomer : Form
     {
         public string username;
+        private bool addFlag;
         public ManageCustomer()
         {
             InitializeComponent();
         }
         public ManageCustomer(string Username) : this()
         {
-            username = Username;
-
+            username = Username;          
             LoadCustomers();
+            addFlag = false;
         }
 
         private void LoadCustomers()
@@ -39,13 +40,22 @@ namespace PhoneStore
                                 q.Email,
                                 q.DiaChi
                             };
+               
+                if (txtSearchCus.Text == "")
+                    dgvMC.DataSource = query.ToList();
+                else
+                {
+                    var proc = ctx.pro_SearchCustomers(txtSearchCus.Text);
+                    var result = from pr in proc
+                                 join q in query on pr.MaKH equals q.MaKH
+                                 select pr;
+                    dgvMC.DataSource = result.ToList();
+                }
 
-                dgvMC.DataSource = query.ToList();
                 dgvMC.Columns[2].Visible = false;
                 dgvMC.Columns[6].Visible = false;
                 dgvMC.Columns[0].HeaderText = "Mã KH";
                 dgvMC.Columns[1].HeaderText = "Khách hàng";
-                //dgvMC.Columns[2].HeaderText = "Giới tính";
                 dgvMC.Columns[3].HeaderText = "Ngày sinh";
                 dgvMC.Columns[4].HeaderText = "Số đ.thoại";
                 dgvMC.Columns[5].HeaderText = "Email";
@@ -59,8 +69,8 @@ namespace PhoneStore
             {
                 dgvMC.CurrentRow.Selected = true;
 
-                txtCusID.Text = dgvMC.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
-                txtCus.Text = dgvMC.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
+                txtID.Text = dgvMC.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
+                txtName.Text = dgvMC.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
                 if (dgvMC.Rows[e.RowIndex].Cells[2].FormattedValue.ToString() == "Nam")
                     radMale.Checked = true;
                 else
@@ -72,9 +82,112 @@ namespace PhoneStore
             }
         }
 
+        private void Clear()
+        {
+            txtID.Text = "";
+            txtName.Text = "";
+            txtPhone.Text = "";
+            datBirth.Value = new DateTime(2000, 1, 1);
+            radFemale.Checked = false;
+            radMale.Checked = false;
+            txtEmail.Text = "";
+            txtAdress.Text = "";
+        }
+
+        private void Modify()
+        {
+            using (var ctx = new PhoneStoreManageEntities())
+            {
+                if (addFlag)
+                {
+                    var lastCusID = (from c in ctx.KhachHangs orderby c.MaKH descending select c.MaKH).FirstOrDefault();
+
+                    var newCus = new KhachHang
+                    {
+                        MaKH = lastCusID + 1,
+                        TenKH = txtName.Text,
+                        NgaySinh = datBirth.Value,
+                        GioiTinh = radMale.Checked ? "Nam" : "Nữ",
+                        SoDienThoai = txtPhone.Text,
+                        Email = txtEmail.Text,
+                        DiaChi = txtAdress.Text
+                    };
+                    ctx.KhachHangs.Add(newCus);
+                }
+                else
+                {
+                    var cusID = Convert.ToInt32(txtID.Text);
+                    var cus = (from c in ctx.KhachHangs where c.MaKH == cusID select c).FirstOrDefault();
+
+                    cus.TenKH = txtName.Text;
+                    cus.NgaySinh = datBirth.Value;
+                    cus.GioiTinh = radMale.Checked ? "Nam" : "Nữ";
+                    cus.SoDienThoai = txtPhone.Text;
+                    cus.Email = txtEmail.Text;
+                    cus.DiaChi = txtAdress.Text;
+                }
+                ctx.SaveChanges();
+            }
+        }
+
+        private void Delete()
+        {
+            using (var ctx = new PhoneStoreManageEntities())
+            {
+                DialogResult answer = MessageBox.Show("Bạn chắc chắn muốn xóa khách hàng chứ?", "Cảnh báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(answer == DialogResult.Yes)
+                {
+                    var cusID = Convert.ToInt32(txtID.Text);
+                    
+                    var bill = (from b in ctx.HoaDons where b.MaKH == cusID select b).FirstOrDefault();
+                    var warr = (from w in ctx.SuaChuas where w.MaNV == cusID select w).FirstOrDefault();
+                    if (bill == null && warr == null)
+                    {
+                        var cus = (from c in ctx.KhachHangs where c.MaKH == cusID select c).FirstOrDefault();
+                        ctx.KhachHangs.Remove(cus);
+                        ctx.SaveChanges();
+                    }
+                    else
+                        MessageBox.Show("Không thể xóa khách hàng tồn tại trong hóa đơn", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
         private void dgvMC_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             FillInfor(e);
+        }
+
+        private void btnPhoneSearch_Click(object sender, EventArgs e)
+        {
+            LoadCustomers();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            addFlag = true;
+            Clear();
+            pnlInfor.Enabled = true;
+            btnSave.Enabled = true;
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            pnlInfor.Enabled = true;
+            btnSave.Enabled = true;
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            Delete();
+            LoadCustomers();
+            Clear();
+            btnSave.Enabled = false;
+        }
+
+        private void txtSearchCus_TextChanged(object sender, EventArgs e)
+        {
+            LoadCustomers();
         }
     }
 }

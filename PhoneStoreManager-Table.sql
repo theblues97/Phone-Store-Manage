@@ -161,6 +161,7 @@ drop trigger if exists trg_UpdatePhones;
 drop trigger if exists trg_UpdateBills;
 drop proc if exists pro_SearchPhones;
 drop proc if exists pro_CreateWarrantys;
+drop proc if exists pro_SearchCustomers;
 go
 
 create trigger trg_UpdatePhones
@@ -213,5 +214,13 @@ as
 begin
 	select @MaKH = hd.MaKH, @MaNV = hd.MaNV from HoaDon hd where hd.MaHD = @MaHD
 	insert into SuaChua values(@MaSC, @TenDienThoai, @NgayNhan, @PhiSC, @PTThanhToan, @NoiDung, @MaKH, @MaNV, @MaHD)
+end
+go
+
+create proc pro_SearchCustomers
+@key nvarchar(50)
+as
+begin
+	select * from KhachHang where CHARINDEX(@key,KhachHang.SoDienThoai) != 0;
 end
 go

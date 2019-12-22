@@ -62,9 +62,9 @@
             this.cbbBrandFilter = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.pnlToolMenu = new System.Windows.Forms.Panel();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.btnAddOrder = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabMain.SuspendLayout();
@@ -217,7 +217,7 @@
             // radPhoneMode
             // 
             this.radPhoneMode.AutoSize = true;
-            this.radPhoneMode.Location = new System.Drawing.Point(900, 20);
+            this.radPhoneMode.Location = new System.Drawing.Point(929, 20);
             this.radPhoneMode.Name = "radPhoneMode";
             this.radPhoneMode.Size = new System.Drawing.Size(81, 19);
             this.radPhoneMode.TabIndex = 59;
@@ -229,7 +229,7 @@
             // radPhoneSampleMode
             // 
             this.radPhoneSampleMode.AutoSize = true;
-            this.radPhoneSampleMode.Location = new System.Drawing.Point(758, 20);
+            this.radPhoneSampleMode.Location = new System.Drawing.Point(772, 20);
             this.radPhoneSampleMode.Name = "radPhoneSampleMode";
             this.radPhoneSampleMode.Size = new System.Drawing.Size(106, 19);
             this.radPhoneSampleMode.TabIndex = 58;
@@ -422,49 +422,56 @@
             // 
             // pnlToolMenu
             // 
-            this.pnlToolMenu.Controls.Add(this.btnDelete);
+            this.pnlToolMenu.Controls.Add(this.btnDel);
             this.pnlToolMenu.Controls.Add(this.btnEdit);
-            this.pnlToolMenu.Controls.Add(this.btnAddOrder);
+            this.pnlToolMenu.Controls.Add(this.btnAdd);
             this.pnlToolMenu.Location = new System.Drawing.Point(3, 37);
             this.pnlToolMenu.Name = "pnlToolMenu";
             this.pnlToolMenu.Size = new System.Drawing.Size(1032, 40);
             this.pnlToolMenu.TabIndex = 2;
             // 
-            // btnDelete
+            // btnDel
             // 
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(101, 4);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(40, 32);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDel.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDel.BackgroundImage = global::PhoneStore.Properties.Resources.delete;
+            this.btnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDel.Location = new System.Drawing.Point(85, 4);
+            this.btnDel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(32, 32);
+            this.btnDel.TabIndex = 5;
+            this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
+            this.btnEdit.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEdit.BackgroundImage = global::PhoneStore.Properties.Resources.edit;
+            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(55, 4);
+            this.btnEdit.Location = new System.Drawing.Point(47, 4);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(40, 32);
-            this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "Sửa";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Size = new System.Drawing.Size(32, 32);
+            this.btnEdit.TabIndex = 4;
+            this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // btnAddOrder
+            // btnAdd
             // 
-            this.btnAddOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddOrder.Location = new System.Drawing.Point(9, 4);
-            this.btnAddOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnAddOrder.Name = "btnAddOrder";
-            this.btnAddOrder.Size = new System.Drawing.Size(40, 32);
-            this.btnAddOrder.TabIndex = 0;
-            this.btnAddOrder.Text = "Add";
-            this.btnAddOrder.UseVisualStyleBackColor = true;
-            this.btnAddOrder.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnAdd.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAdd.BackgroundImage = global::PhoneStore.Properties.Resources.add;
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(9, 4);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(32, 32);
+            this.btnAdd.TabIndex = 3;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label1
             // 
@@ -503,42 +510,42 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel pnlToolMenu;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnAddOrder;
         private System.Windows.Forms.TabControl tabMain;
         private System.Windows.Forms.TabPage tab2;
-        private System.Windows.Forms.Panel pnlPhoneSample;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtPhoneSampleID;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtPhoneSample;
-        private System.Windows.Forms.DateTimePicker datManufacturing;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.TextBox txtPromotion;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnClean;
-        private System.Windows.Forms.DataGridView dgvPhoneSamples;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbbBrandFilter;
-        private System.Windows.Forms.ComboBox cbbEditBrand;
-        private System.Windows.Forms.ComboBox cbbColor;
+        private System.Windows.Forms.Panel pnlPhone;
+        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtSalePrice;
+        private System.Windows.Forms.ComboBox cbbColor;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtNumber;
         private System.Windows.Forms.TextBox txtEntryPrice;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtNumber;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtSalePrice;
+        private System.Windows.Forms.ComboBox cbbEditBrand;
         private System.Windows.Forms.RadioButton radPhoneMode;
         private System.Windows.Forms.RadioButton radPhoneSampleMode;
         private System.Windows.Forms.RadioButton radBrandMode;
-        private System.Windows.Forms.Panel pnlPhone;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel pnlPhoneSample;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtPhoneSampleID;
+        private System.Windows.Forms.TextBox txtPhoneSample;
+        private System.Windows.Forms.TextBox txtPromotion;
+        private System.Windows.Forms.DateTimePicker datManufacturing;
+        private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dgvPhoneSamples;
+        private System.Windows.Forms.Button btnClean;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbbBrandFilter;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Panel pnlToolMenu;
+        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bills));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlSalebills = new System.Windows.Forms.Panel();
             this.tabMainBill = new System.Windows.Forms.TabControl();
             this.tab1 = new System.Windows.Forms.TabPage();
@@ -319,13 +320,15 @@
             // 
             // btnPhoneNumFill
             // 
+            this.btnPhoneNumFill.BackColor = System.Drawing.SystemColors.Control;
+            this.btnPhoneNumFill.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPhoneNumFill.BackgroundImage")));
+            this.btnPhoneNumFill.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPhoneNumFill.Location = new System.Drawing.Point(352, 36);
             this.btnPhoneNumFill.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnPhoneNumFill.Name = "btnPhoneNumFill";
-            this.btnPhoneNumFill.Size = new System.Drawing.Size(40, 32);
+            this.btnPhoneNumFill.Size = new System.Drawing.Size(32, 32);
             this.btnPhoneNumFill.TabIndex = 11;
-            this.btnPhoneNumFill.Text = "Tìm";
-            this.btnPhoneNumFill.UseVisualStyleBackColor = true;
+            this.btnPhoneNumFill.UseVisualStyleBackColor = false;
             this.btnPhoneNumFill.Click += new System.EventHandler(this.btnPhoneNumFill_Click);
             // 
             // label13
@@ -660,34 +663,34 @@
             this.dgvPhones.AllowUserToResizeColumns = false;
             this.dgvPhones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPhones.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPhones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPhones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPhones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPhones.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPhones.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvPhones.Location = new System.Drawing.Point(3, 46);
             this.dgvPhones.Name = "dgvPhones";
             this.dgvPhones.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPhones.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPhones.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvPhones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPhones.Size = new System.Drawing.Size(606, 378);
             this.dgvPhones.TabIndex = 0;
@@ -748,14 +751,16 @@
             // 
             // btnPhoneSearch
             // 
+            this.btnPhoneSearch.BackColor = System.Drawing.SystemColors.Control;
+            this.btnPhoneSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPhoneSearch.BackgroundImage")));
+            this.btnPhoneSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPhoneSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPhoneSearch.Location = new System.Drawing.Point(547, 10);
             this.btnPhoneSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnPhoneSearch.Name = "btnPhoneSearch";
-            this.btnPhoneSearch.Size = new System.Drawing.Size(40, 32);
+            this.btnPhoneSearch.Size = new System.Drawing.Size(32, 32);
             this.btnPhoneSearch.TabIndex = 6;
-            this.btnPhoneSearch.Text = "Tìm";
-            this.btnPhoneSearch.UseVisualStyleBackColor = true;
+            this.btnPhoneSearch.UseVisualStyleBackColor = false;
             this.btnPhoneSearch.Click += new System.EventHandler(this.btnPhoneSearch_Click);
             // 
             // txtSearchPhone
@@ -765,6 +770,7 @@
             this.txtSearchPhone.Name = "txtSearchPhone";
             this.txtSearchPhone.Size = new System.Drawing.Size(143, 21);
             this.txtSearchPhone.TabIndex = 5;
+            this.txtSearchPhone.TextChanged += new System.EventHandler(this.txtSearchPhone_TextChanged);
             // 
             // pnlBillListMain
             // 
@@ -785,43 +791,46 @@
             // 
             // btnDel
             // 
+            this.btnDel.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDel.BackgroundImage = global::PhoneStore.Properties.Resources.delete;
             this.btnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDel.Enabled = false;
             this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDel.Location = new System.Drawing.Point(101, 4);
+            this.btnDel.Location = new System.Drawing.Point(85, 4);
             this.btnDel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(40, 32);
+            this.btnDel.Size = new System.Drawing.Size(32, 32);
             this.btnDel.TabIndex = 2;
-            this.btnDel.Text = "Xóa";
-            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.UseVisualStyleBackColor = false;
             this.btnDel.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
+            this.btnEdit.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEdit.BackgroundImage = global::PhoneStore.Properties.Resources.edit;
+            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEdit.Enabled = false;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(55, 4);
+            this.btnEdit.Location = new System.Drawing.Point(47, 4);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(40, 32);
+            this.btnEdit.Size = new System.Drawing.Size(32, 32);
             this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "Sửa";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.UseVisualStyleBackColor = false;
             // 
             // btnAdd
             // 
+            this.btnAdd.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAdd.BackgroundImage = global::PhoneStore.Properties.Resources.add;
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(9, 4);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(40, 32);
+            this.btnAdd.Size = new System.Drawing.Size(32, 32);
             this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAddBill_Click);
             // 
             // label1
