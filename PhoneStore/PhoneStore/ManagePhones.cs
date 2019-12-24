@@ -16,6 +16,9 @@ namespace PhoneStore
         private bool addFlag;
         private int phoneSampleID;
 
+        private string nameBrand;
+        private string nameColor;
+
         public ManagePhones()
         {
             InitializeComponent();
@@ -77,6 +80,25 @@ namespace PhoneStore
             }
         }
 
+        private void LoadcbbColor()
+        {
+            using (var ctx = new PhoneStoreManageEntities())
+            {
+                cbbColor.Items.Clear();
+                cbbColor.Text = "";
+                txtNumber.Text = "";
+                txtEntryPrice.Text = "";
+                txtSalePrice.Text = "";
+                try
+                {
+                    var colors = from c in ctx.DienThoais where c.MaMDT == phoneSampleID group c by c.Mau into sc select sc.Key;
+                    cbbColor.Items.AddRange(colors.ToArray());
+                    cbbColor.SelectedIndex = 0;
+                }
+                catch { }
+            }
+        }
+
         private void FillPhoneSamples(DataGridViewCellEventArgs e)
         {
             if (e.RowIndex > -1)
@@ -91,17 +113,7 @@ namespace PhoneStore
                 txtPromotion.Text = dgvPhoneSamples.Rows[e.RowIndex].Cells[4].FormattedValue.ToString();
                 txtDescription.Text  = dgvPhoneSamples.Rows[e.RowIndex].Cells[5].FormattedValue.ToString();
 
-                using (var ctx = new PhoneStoreManageEntities())
-                {
-                    cbbColor.Items.Clear();
-                    try
-                    {
-                        var colors = from c in ctx.DienThoais where c.MaMDT == phoneSampleID group c by c.Mau into sc select sc.Key;
-                        cbbColor.Items.AddRange(colors.ToArray());
-                        cbbColor.SelectedIndex = 0;
-                    }
-                    catch { }
-                }                                    
+                LoadcbbColor();                   
             }
         }
 
@@ -113,83 +125,143 @@ namespace PhoneStore
             datManufacturing.Value = new DateTime(2000, 1, 1);
             txtPromotion.Text = "";
             txtDescription.Text = "";
+
+            //cbbColor.SelectedIndex = -1;
+            cbbColor.Items.Clear();
+            cbbColor.Text = "";
+            txtNumber.Text = "";
+            txtEntryPrice.Text = "";
+            txtSalePrice.Text = "";
         }
 
         private void Modify()
         {
             using (var ctx = new PhoneStoreManageEntities())
             {
-                if(addFlag) //add
+                if (addFlag) //add
                 {
-                    
+
                     if (radBrandMode.Checked) //brand
                     {
-                        var lastbrandID = (from b in ctx.HangDienThoais orderby b.MaHDT descending select b.MaHDT).FirstOrDefault();
-                        var brand = new HangDienThoai
+                        try
                         {
-                            MaHDT = lastbrandID + 1,
-                            TenHDT = cbbEditBrand.Text
-                        };
-                        ctx.HangDienThoais.Add(brand);
+                            var lastbrandID = (from b in ctx.HangDienThoais orderby b.MaHDT descending select b.MaHDT).FirstOrDefault();
+                            var brand = new HangDienThoai
+                            {
+                                MaHDT = lastbrandID + 1,
+                                TenHDT = cbbEditBrand.Text
+                            };
+                            ctx.HangDienThoais.Add(brand);
+
+                            MessageBox.Show("Thao tác thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Thông tin nhập chưa đúng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
                     }
-                    else if(radPhoneSampleMode.Checked) //sample phone
+                    else if (radPhoneSampleMode.Checked) //sample phone
                     {
-                        var brand = (from b in ctx.HangDienThoais where b.TenHDT == cbbEditBrand.SelectedItem.ToString() select b).FirstOrDefault();
-                        var lastID = (from sp in ctx.MauDienThoais orderby sp.MaMDT descending select sp.MaMDT).FirstOrDefault();
-                        var newsPhone = new MauDienThoai
+                        try
                         {
-                            MaMDT = lastID + 1,
-                            TenDT = txtPhoneSample.Text,
-                            NamSX = datManufacturing.Value,
-                            KM = txtPromotion.Text,
-                            MoTa = txtDescription.Text,
-                            MaHDT = brand.MaHDT
-                        };
-                        ctx.MauDienThoais.Add(newsPhone);
+                            var brand = (from b in ctx.HangDienThoais where b.TenHDT == cbbEditBrand.SelectedItem.ToString() select b).FirstOrDefault();
+                            var lastID = (from sp in ctx.MauDienThoais orderby sp.MaMDT descending select sp.MaMDT).FirstOrDefault();
+                            var newsPhone = new MauDienThoai
+                            {
+                                MaMDT = lastID + 1,
+                                TenDT = txtPhoneSample.Text,
+                                NamSX = datManufacturing.Value,
+                                KM = txtPromotion.Text,
+                                MoTa = txtDescription.Text,
+                                MaHDT = brand.MaHDT
+                            };
+                            ctx.MauDienThoais.Add(newsPhone);
+
+                            MessageBox.Show("Thao tác thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Thông tin nhập chưa đúng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else //phone
                     {
-                        var lastID = (from p in ctx.DienThoais orderby p.MaDT descending select p.MaDT).FirstOrDefault();
-                        var newPhone = new DienThoai
+                        try
                         {
-                            MaDT = lastID + 1,
-                            MaMDT = Convert.ToInt32(txtPhoneSampleID.Text),
-                            Mau = cbbColor.Text,
-                            GiaNhap = Convert.ToInt32(txtEntryPrice.Text),
-                            GiaBan = Convert.ToInt32(txtSalePrice.Text),
-                            SoLuong = 0
-                        };
-                        ctx.DienThoais.Add(newPhone);
+                            var lastID = (from p in ctx.DienThoais orderby p.MaDT descending select p.MaDT).FirstOrDefault();
+                            var newPhone = new DienThoai
+                            {
+                                MaDT = lastID + 1,
+                                MaMDT = Convert.ToInt32(txtPhoneSampleID.Text),
+                                Mau = cbbColor.Text,
+                                GiaNhap = Convert.ToInt32(txtEntryPrice.Text),
+                                GiaBan = Convert.ToInt32(txtSalePrice.Text),
+                                SoLuong = 0
+                            };
+                            ctx.DienThoais.Add(newPhone);
+
+                            MessageBox.Show("Thao tác thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Thông tin nhập chưa đúng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
                 else //edit
                 {
-                    if(radBrandMode.Checked) //brand
+                    if (radBrandMode.Checked) //brand
                     {
-                        var nameBrand = cbbBrandFilter.SelectedItem.ToString();
-                        var brand = (from b in ctx.HangDienThoais where b.TenHDT == nameBrand select b).FirstOrDefault();
-                        brand.TenHDT = cbbEditBrand.Text;
-                    }
-                    else if(radPhoneSampleMode.Checked) //sample phone
-                    {
-                        var phoneID = Int32.Parse(txtPhoneSampleID.Text);
-                        var phone = (from p in ctx.MauDienThoais where p.MaMDT == phoneID select p).FirstOrDefault();
+                        try
+                        {
+                            var brand = (from b in ctx.HangDienThoais where b.TenHDT == nameBrand select b).FirstOrDefault();
+                            brand.TenHDT = cbbEditBrand.Text;
 
-                        phone.TenDT = txtPhoneSample.Text;
-                        phone.NamSX = datManufacturing.Value;
-                        phone.KM = txtPromotion.Text;
-                        phone.MoTa = txtDescription.Text;
+                            MessageBox.Show("Thao tác thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Bạn chưa chọn hãng, hãy chọn hãng cần sửa trước khi thực hiện thao tác!", "Thống báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                    }
+                    else if (radPhoneSampleMode.Checked) //sample phone
+                    {
+                        try
+                        {
+                            var phoneID = Int32.Parse(txtPhoneSampleID.Text);
+                            var phone = (from p in ctx.MauDienThoais where p.MaMDT == phoneID select p).FirstOrDefault();
+
+                            phone.TenDT = txtPhoneSample.Text;
+                            phone.NamSX = datManufacturing.Value;
+                            phone.KM = txtPromotion.Text;
+                            phone.MoTa = txtDescription.Text;
+
+                            MessageBox.Show("Thao tác thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Bạn chưa chọn mẫu điện thoại, hãy chọn mẫu điện thoại cần sửa trước khi thực hiện thao tác!", "Thống báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else //phone
-                    {                    
+                    {
                         try
                         {
                             var phone = (from p in ctx.DienThoais where p.MaMDT == phoneSampleID && p.Mau == cbbColor.SelectedItem.ToString() select p).FirstOrDefault();
                             phone.Mau = cbbColor.Text;
+                            phone.SoLuong = Convert.ToInt32(txtNumber.Text);
                             phone.GiaNhap = Convert.ToInt32(txtEntryPrice.Text);
                             phone.GiaBan = Convert.ToInt32(txtSalePrice.Text);
+
+                            MessageBox.Show("Thao tác thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                        catch { }                       
+                        catch
+                        {
+                            MessageBox.Show("Bạn chưa chọn điện thoại, hãy chọn điện thoại cần sửa trước khi thực hiện thao tác!", "Thống báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
                 ctx.SaveChanges();      
@@ -211,31 +283,104 @@ namespace PhoneStore
         {
             using (var ctx = new PhoneStoreManageEntities())
             {
-                if(radBrandMode.Checked)
+                if (radBrandMode.Checked)
                 {
-                    DialogResult answer = MessageBox.Show("Tất cả điện thoại cũng sẽ bị xóa\nBạn muốn xóa hãng điện thoại thật không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    if(answer == DialogResult.Yes)
+                        DialogResult answer = MessageBox.Show("Tất cả mẫu điện thoại cũng sẽ bị xóa\nBạn muốn xóa hãng điện thoại thật không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (answer == DialogResult.Yes)
                     {
-                        var nameBrand = cbbEditBrand.SelectedItem.ToString();                
-
-                        var dB = (from db in ctx.ChiTietHoadons where db.DienThoai.MauDienThoai.HangDienThoai.TenHDT == nameBrand select db).FirstOrDefault();
-                        if (dB == null)
+                        if (nameBrand != null)
                         {
-                            var phone = (from p in ctx.DienThoais where p.MauDienThoai.HangDienThoai.TenHDT == nameBrand select p).FirstOrDefault();
-                            if (phone == null)
+                            var dBill = (from db in ctx.ChiTietHoadons where db.DienThoai.MauDienThoai.HangDienThoai.TenHDT == nameBrand select db).FirstOrDefault();
+                            if (dBill == null)
                             {
-                                var brand = (from b in ctx.HangDienThoais where b.TenHDT == nameBrand select b).FirstOrDefault();
-                                var sphones = (from p in ctx.MauDienThoais where p.MaHDT == brand.MaHDT select p).ToList();
+                                var phone = (from p in ctx.DienThoais where p.MauDienThoai.HangDienThoai.TenHDT == nameBrand select p).FirstOrDefault();
+                                if (phone == null)
+                                {
+                                    var brand = (from b in ctx.HangDienThoais where b.TenHDT == nameBrand select b).FirstOrDefault();
+                                    var sphones = (from p in ctx.MauDienThoais where p.MaHDT == brand.MaHDT select p).ToList();
 
-                                ctx.MauDienThoais.RemoveRange(sphones);
-                                ctx.HangDienThoais.Remove(brand);
-                                ctx.SaveChanges();
+                                    ctx.MauDienThoais.RemoveRange(sphones);
+                                    ctx.HangDienThoais.Remove(brand);
+                                    ctx.SaveChanges();
+
+                                    cbbEditBrand.Text = "";
+
+                                    MessageBox.Show("Thao tác thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                else
+                                    MessageBox.Show("Không thể xóa hãng do điện thoại của hãng còn trong hệ thống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             else
-                                MessageBox.Show("Không thể xóa hãng do điện thoại của hãng còn trong hệ thống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Không thể xóa hãng do điện thoại tồn tại trong hóa đơn", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else
-                            MessageBox.Show("Không thể xóa hãng do điện thoại tồn tại trong hóa đơn", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Bạn chưa chọn hãng, hãy chọn hãng cần xóa trước khi thực hiện thao tác!", "Thống báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+                else if (radPhoneSampleMode.Checked)
+                {
+                    DialogResult answer = MessageBox.Show("Bạn muốn xóa mẫu điện thoại thật không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (answer == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            var examphoneID = Convert.ToInt32(txtPhoneSampleID.Text);
+                            var dBill = (from db in ctx.ChiTietHoadons where db.DienThoai.MauDienThoai.MaMDT == examphoneID select db).FirstOrDefault();
+                            if (dBill == null)
+                            {
+                                var phone = (from p in ctx.DienThoais where p.MauDienThoai.MaMDT == examphoneID select p).FirstOrDefault();
+                                if (phone == null)
+                                {
+                                    var examPhone = (from xp in ctx.MauDienThoais where xp.MaMDT == examphoneID select xp).FirstOrDefault();
+
+                                    ctx.MauDienThoais.Remove(examPhone);
+                                    ctx.SaveChanges();
+
+                                    MessageBox.Show("Thao tác thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                else
+                                    MessageBox.Show("Không thể xóa mẫu điện thoại do điện thoại của mẫu còn trong hệ thống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            else
+                                MessageBox.Show("Không thể xóa mẫu điện thoại do điện thoại của mẫu tồn tại trong hóa đơn", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Bạn chưa chọn mẫu điện thoại, hãy chọn mẫu điện thoại cần xóa trước khi thực hiện thao tác!", "Thống báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                else
+                {
+                    DialogResult answer = MessageBox.Show("Tất cả mẫu điện thoại cũng sẽ bị xóa\nBạn muốn xóa điện thoại thật không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (answer == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            var examphoneID = Convert.ToInt32(txtPhoneSampleID.Text);
+                            var color = cbbColor.SelectedItem.ToString();
+                            var dBill = (from db in ctx.ChiTietHoadons where db.DienThoai.MauDienThoai.MaMDT == examphoneID && db.DienThoai.Mau == color select db).FirstOrDefault();
+                            if (dBill == null)
+                            {
+                                var phones = (from p in ctx.DienThoais where p.MauDienThoai.MaMDT == examphoneID && p.Mau == color select p).FirstOrDefault();
+                                if (phones != null)
+                                {
+                                    ctx.DienThoais.Remove(phones);
+                                    ctx.SaveChanges();
+
+                                    LoadcbbColor();
+
+                                    MessageBox.Show("Thao tác thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                            }
+                            else
+                                MessageBox.Show("Không thể xóa mẫu điện thoại do điện thoại của mẫu tồn tại trong hóa đơn", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Bạn chưa chọn điện thoại, hãy chọn điện thoại cần xóa trước khi thực hiện thao tác!", "Thống báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
             }
@@ -267,6 +412,7 @@ namespace PhoneStore
         private void btnAdd_Click(object sender, EventArgs e)
         {
             addFlag = true;
+            cbbEditBrand.Enabled = true;
             btnClean.Enabled = true;
         }
 
@@ -274,6 +420,7 @@ namespace PhoneStore
         {
             addFlag = false;
             btnClean.Enabled = true;
+            
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -286,7 +433,7 @@ namespace PhoneStore
 
         private void radHandle_CheckedChange(object sender, EventArgs e)
         {
-            cbbEditBrand.Enabled = radBrandMode.Checked;
+            cbbEditBrand.Enabled = radBrandMode.Checked || radPhoneSampleMode.Checked;
             pnlPhoneSample.Enabled = radPhoneSampleMode.Checked;
             pnlPhone.Enabled = radPhoneMode.Checked;
         }
@@ -299,6 +446,31 @@ namespace PhoneStore
         private void cbbColor_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadPrice();
+            try
+            {
+                nameColor = cbbColor.SelectedItem.ToString();
+            }
+            catch { }
+
+        }
+
+        private void btnRefesh_Click(object sender, EventArgs e)
+        {
+            LoadPhoneSample();
+        }
+
+        private void cbbEditBrand_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                nameBrand = cbbEditBrand.SelectedItem.ToString();
+            }
+            catch { }
+        }
+
+        private void btnClean_Click_1(object sender, EventArgs e)
+        {
+            Clean();
         }
     }
 }

@@ -97,6 +97,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnRefesh = new System.Windows.Forms.Button();
             this.pnlSalebills.SuspendLayout();
             this.tabMainBill.SuspendLayout();
             this.tab1.SuspendLayout();
@@ -206,6 +207,7 @@
             // 
             // btnSelect
             // 
+            this.btnSelect.Enabled = false;
             this.btnSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelect.Location = new System.Drawing.Point(411, 440);
             this.btnSelect.Name = "btnSelect";
@@ -781,6 +783,7 @@
             // 
             // pnlToolMenu
             // 
+            this.pnlToolMenu.Controls.Add(this.btnRefesh);
             this.pnlToolMenu.Controls.Add(this.btnDel);
             this.pnlToolMenu.Controls.Add(this.btnEdit);
             this.pnlToolMenu.Controls.Add(this.btnAdd);
@@ -824,6 +827,7 @@
             this.btnAdd.BackColor = System.Drawing.SystemColors.Control;
             this.btnAdd.BackgroundImage = global::PhoneStore.Properties.Resources.add;
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdd.Enabled = false;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(9, 4);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -842,6 +846,20 @@
             this.label1.Size = new System.Drawing.Size(189, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Hóa đơn bán hàng";
+            // 
+            // btnRefesh
+            // 
+            this.btnRefesh.BackColor = System.Drawing.SystemColors.Control;
+            this.btnRefesh.BackgroundImage = global::PhoneStore.Properties.Resources.update;
+            this.btnRefesh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRefesh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefesh.Location = new System.Drawing.Point(123, 4);
+            this.btnRefesh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRefesh.Name = "btnRefesh";
+            this.btnRefesh.Size = new System.Drawing.Size(32, 32);
+            this.btnRefesh.TabIndex = 4;
+            this.btnRefesh.UseVisualStyleBackColor = false;
+            this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
             // 
             // Bills
             // 
@@ -939,5 +957,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button btnRefesh;
     }
 }

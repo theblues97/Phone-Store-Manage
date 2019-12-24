@@ -39,5 +39,14 @@ namespace PhoneStore
                 }
             }
         }
+
+        public static int Permit(string username)
+        {
+            using (var ctx = new PhoneStoreManageEntities())
+            {
+                var per = (from a in ctx.Accounts where a.Username == username select a.NhanVien.ChucVu.MaCV).FirstOrDefault();
+                return per;
+            }
+        }
     }
 }

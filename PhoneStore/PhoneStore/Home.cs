@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,8 @@ namespace PhoneStore
         ManagePhones managePhones;
         ManageCustomer manageCustomer;
 
-        ManageBills statisticBills;
+        ManageBills manageBills;
+        Statistics statistics;
 
         public Home()
         {
@@ -38,10 +40,11 @@ namespace PhoneStore
             bills = new Bills(username);
             warrantys = new Warrantys(username);
             accounts = new Informations(username);
-            statisticBills = new ManageBills(username);
+            manageBills = new ManageBills(username);
             manageEmployees = new ManageEmployees(username);
             managePhones = new ManagePhones(username);
             manageCustomer = new ManageCustomer(username);
+            statistics = new Statistics(username);
 
             hoaĐơnBanHangToolStripMenuItem.PerformClick();
         }
@@ -72,13 +75,13 @@ namespace PhoneStore
         private void hoaĐơnBanHangToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!CheckExistForm("Bills"))
-            {            
+            {
                 bills.MdiParent = this;
                 bills.Show();
                 bills.Location = new Point(0, 0);
             }
             else
-                ActiveChildForm("Bills");
+                ActiveChildForm("Bills");           
         }
 
         private void hoaĐơnSuaChuaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -107,55 +110,88 @@ namespace PhoneStore
 
         private void quanLyĐiênThoaiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!CheckExistForm("ManagePhones"))
+            if (Utilities.Permit(username) < 3)
             {
-                managePhones.MdiParent = this;
-                managePhones.Show();
-                managePhones.Location = new Point(0, 0);
+                if (!CheckExistForm("ManagePhones"))
+                {
+                    managePhones.MdiParent = this;
+                    managePhones.Show();
+                    managePhones.Location = new Point(0, 0);
+                }
+                else
+                    ActiveChildForm("ManagePhones");
             }
             else
-                ActiveChildForm("ManagePhones");
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
 
         private void quanLyNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!CheckExistForm("ManageEmployees"))
+            if (Utilities.Permit(username) < 3)
             {
-                manageEmployees.MdiParent = this;
-                manageEmployees.Show();
-                manageEmployees.Location = new Point(0, 0);
+                if (!CheckExistForm("ManageEmployees"))
+                {
+                    manageEmployees.MdiParent = this;
+                    manageEmployees.Show();
+                    manageEmployees.Location = new Point(0, 0);
+                }
+                else
+                    ActiveChildForm("ManageEmployees");
             }
             else
-                ActiveChildForm("ManageEmployees");
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void quanLyKhachHangToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!CheckExistForm("ManageCustomer"))
+            if (Utilities.Permit(username) < 2)
             {
-                manageCustomer.MdiParent = this;
-                manageCustomer.Show();
-                manageCustomer.Location = new Point(0, 0);
+                if (!CheckExistForm("ManageCustomer"))
+                {
+                    manageCustomer.MdiParent = this;
+                    manageCustomer.Show();
+                    manageCustomer.Location = new Point(0, 0);
+                }
+                else
+                    ActiveChildForm("ManageCustomer");
             }
             else
-                ActiveChildForm("ManageCustomer");
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void quanLyHoaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!CheckExistForm("StatisticBills"))
+            if (Utilities.Permit(username) < 2)
             {
-                statisticBills.MdiParent = this;
-                statisticBills.Show();
-                statisticBills.Location = new Point(0, 0);
+                if (!CheckExistForm("ManageBills"))
+                {
+                    manageBills.MdiParent = this;
+                    manageBills.Show();
+                    manageBills.Location = new Point(0, 0);
+                }
+                else
+                    ActiveChildForm("ManageBills");
             }
             else
-                ActiveChildForm("StatisticBills");
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void thongKeHoaĐơnBanHangToolStripMenuItem_Click(object sender, EventArgs e)
+        private void thôngKêToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (Utilities.Permit(username) < 3)
+            {
+                if (!CheckExistForm("Statistics"))
+                {
+                    statistics.MdiParent = this;
+                    statistics.Show();
+                    statistics.Location = new Point(0, 0);
+                }
+                else
+                    ActiveChildForm("Statistics");
+            }
+            else
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void Home_Closing(object sender, FormClosingEventArgs e)
@@ -177,6 +213,14 @@ namespace PhoneStore
             }
         }
 
+        private void trơGiupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+            string filePath = string.Format("{0}Resources\\help.chm", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
+            Help.ShowHelp(this, filePath);
+        }
         #endregion
+
+
     }
 }

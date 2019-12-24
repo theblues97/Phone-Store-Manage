@@ -50,8 +50,6 @@ namespace PhoneStore
                 dgvBill.Columns[0].HeaderText = "Mã HD";
                 dgvBill.Columns[1].HeaderText = "Mã NV";
                 dgvBill.Columns[2].HeaderText = "Nhân viên";
-                //dgvBill.Columns[3].HeaderText = "Khách hàng";
-                //dgvBill.Columns[4].HeaderText = "Ngày mua";
                 dgvBill.Columns[5].HeaderText = "Bảo hành";
                 dgvBill.Columns[8].HeaderText = "Tổng tiền";
                 dgvBill.Refresh();
@@ -196,6 +194,8 @@ namespace PhoneStore
                             if (debill != null) ctx.ChiTietHoadons.RemoveRange(debill.ToArray());
                             ctx.HoaDons.Remove(bill);
                             ctx.SaveChanges();
+
+                            MessageBox.Show("Thao tác thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                             MessageBox.Show("Không thể xóa đơn tồn tại trong hóa đơn sửa chữa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -203,7 +203,7 @@ namespace PhoneStore
                 }
                 catch
                 {
-                    MessageBox.Show("Bạn chưa chọn điện thoại, hãy chọn điện thoại cần xóa trước khi thực hiện thao tác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Bạn chưa chọn hóa đơn, hãy chọn hóa đơn cần xóa trước khi thực hiện thao tác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -224,12 +224,14 @@ namespace PhoneStore
                             var wabill = (from wb in ctx.SuaChuas where wb.MaSC == wabillID select wb).FirstOrDefault();
                             ctx.SuaChuas.Remove(wabill);
                             ctx.SaveChanges();
+
+                            MessageBox.Show("Thao tác thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }
                 catch
                 {
-                    MessageBox.Show("Bạn chưa chọn điện thoại, hãy chọn điện thoại cần xóa trước khi thực hiện thao tác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Bạn chưa chọn điện thoại, hãy chọn điện thoại cần xóa trước khi thực hiện thao tác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -257,6 +259,14 @@ namespace PhoneStore
                 DeleteWaratary();
                 LoadWarranty();
             }
+        }
+
+        private void btnRefesh_Click(object sender, EventArgs e)
+        {
+            if (tabMain.SelectedTab == tab1)
+                LoadBillList();
+            else
+                LoadWarranty();
         }
     }
 }

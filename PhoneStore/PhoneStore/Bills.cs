@@ -15,12 +15,11 @@ namespace PhoneStore
         private string username;
         private int billID;
         private bool createdBill;
+        private bool cusInforChanged;
 
         public Bills()
         {
             InitializeComponent();
-
-            //this.FormClosing += Bills_Closing;
         }
 
         public Bills(string Username) : this()
@@ -32,6 +31,7 @@ namespace PhoneStore
             LoadPhones();
 
             createdBill = false;
+            cusInforChanged = false;
             cbbBuyMethod.SelectedIndex = 0;
             cbbPayMethod.SelectedIndex = 0;
             ((Control)this.tab2).Enabled = false;
@@ -41,6 +41,7 @@ namespace PhoneStore
 
         private void ClearControls()
         {
+            txtSearchCus.Text = "";
             txtCustomer.Text = "";
             datBirth.Value = new DateTime(2000, 1, 1);
             txtEmail.Text = "";
@@ -65,6 +66,7 @@ namespace PhoneStore
                         radMale.Checked = true;
                     else
                         radFemale.Checked = true;
+                    btnSelect.Enabled = true;
                 }
                 catch
                 {
@@ -77,7 +79,10 @@ namespace PhoneStore
                         var newCus = new KhachHang { MaKH = lastCusID + 1, SoDienThoai = txtSearchCus.Text };
                         ctx.KhachHangs.Add(newCus);
                         ctx.SaveChanges();
+                        btnSelect.Enabled = true;
                     }
+                    else
+                        btnSelect.Enabled = false;
                 }
             }
         }
@@ -328,6 +333,7 @@ namespace PhoneStore
                 {
                     ctx.HoaDons.Remove(bill);
                     ctx.SaveChanges();
+                    MessageBox.Show("Thao tác thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -351,19 +357,45 @@ namespace PhoneStore
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-            CreateBills();
+            if (cusInforChanged)
+            {
+                DialogResult answer = MessageBox.Show("Thông tin khách hàng đã được sửa, bạn có muốn lưu thông tin và tiếp tục không?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                if (answer == DialogResult.Yes)
+                {
+                    CreateBills();
 
-            ((Control)this.tab2).Enabled = true;
-            tabMainBill.SelectedTab = tab2;
-            btnDel.Enabled = true;
+                    ((Control)this.tab2).Enabled = true;
+                    tabMainBill.SelectedTab = tab2;
+                    btnDel.Enabled = true;
+                    btnAdd.Enabled = true;
+                }
+                else if (answer == DialogResult.No)
+                {
+                    btnRefesh.PerformClick();
+                }
+            }
+            else
+            {
+                CreateBills();
+
+                ((Control)this.tab2).Enabled = true;
+                tabMainBill.SelectedTab = tab2;
+                btnDel.Enabled = true;
+                btnAdd.Enabled = true;
+            }
         }
 
-        private void btnAddBill_Click(object sender, EventArgs e) //new bill
+        private void btnAddBill_Click(object sender, EventArgs e)
         {
-            ClearControls();
-            tabMainBill.SelectedTab = tab1;
-            ((Control)this.tab2).Enabled = false;
-            btnDel.Enabled = false;
+            DialogResult answer = MessageBox.Show("Các thông tin thay đổi chưa được lưu, bạn có muốn tiếp tục không!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (answer == DialogResult.Yes)
+            {
+                DeleteBill();
+                ClearControls();
+                tabMainBill.SelectedTab = tab1;
+                ((Control)this.tab2).Enabled = false;
+                btnDel.Enabled = false;
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -374,7 +406,8 @@ namespace PhoneStore
                 DeleteBill();
                 tabMainBill.SelectedTab = tab1;
                 ((Control)this.tab2).Enabled = false;
-                btnDel.Enabled = true;
+                btnAdd.Enabled = false;
+                btnDel.Enabled = false;
             }
         }
 
@@ -402,12 +435,18 @@ namespace PhoneStore
                 lblTotalMoney.Text = "0";
                 ((Control)this.tab2).Enabled = false;
                 btnDel.Enabled = false;
+                MessageBox.Show("Thao tác thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void btnPhoneNumFill_Click(object sender, EventArgs e)
         {
             LoadCustomers();
+
+            txtSearchCus.TextChanged += txtHeadle_KeyPress;
+            txtCustomer.TextChanged += txtHeadle_KeyPress;
+            txtEmail.TextChanged += txtHeadle_KeyPress;
+            txtAdress.TextChanged += txtHeadle_KeyPress;
         }
 
         private void cbbBrand_SelectedIndexChanged(object sender, EventArgs e)
@@ -445,13 +484,21 @@ namespace PhoneStore
             if (!createdBill && tabMainBill.SelectedTab == tab2)
             {
                 MessageBox.Show("Các thông tin thay đổi chưa được lưu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 DeleteBill();
             }
         }
 
-        private void Bills_Closing(object sender, FormClosingEventArgs e)
+        private void txtHeadle_KeyPress(object sender, EventArgs e)
         {
+            btnRefesh.Enabled = true;
+            cusInforChanged = true;
+        }
+
+        private void btnRefesh_Click(object sender, EventArgs e)
+        {
+            btnRefesh.Enabled = false;
+            cusInforChanged = false;
+            LoadCustomers();
         }
         #endregion
     }

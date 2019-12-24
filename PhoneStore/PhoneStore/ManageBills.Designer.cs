@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageBills));
             this.pnlToolMenu = new System.Windows.Forms.Panel();
+            this.btnRefesh = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -78,6 +80,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPhoneSearch = new System.Windows.Forms.Button();
+            this.txtSearchCus = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.pnlToolMenu.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tab1.SuspendLayout();
@@ -90,6 +96,7 @@
             // 
             // pnlToolMenu
             // 
+            this.pnlToolMenu.Controls.Add(this.btnRefesh);
             this.pnlToolMenu.Controls.Add(this.btnDel);
             this.pnlToolMenu.Controls.Add(this.btnEdit);
             this.pnlToolMenu.Controls.Add(this.btnAdd);
@@ -97,6 +104,20 @@
             this.pnlToolMenu.Name = "pnlToolMenu";
             this.pnlToolMenu.Size = new System.Drawing.Size(1032, 40);
             this.pnlToolMenu.TabIndex = 46;
+            // 
+            // btnRefesh
+            // 
+            this.btnRefesh.BackColor = System.Drawing.SystemColors.Control;
+            this.btnRefesh.BackgroundImage = global::PhoneStore.Properties.Resources.update;
+            this.btnRefesh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRefesh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefesh.Location = new System.Drawing.Point(123, 4);
+            this.btnRefesh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRefesh.Name = "btnRefesh";
+            this.btnRefesh.Size = new System.Drawing.Size(32, 32);
+            this.btnRefesh.TabIndex = 6;
+            this.btnRefesh.UseVisualStyleBackColor = false;
+            this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
             // 
             // btnDel
             // 
@@ -154,6 +175,8 @@
             // 
             // tab1
             // 
+            this.tab1.Controls.Add(this.btnPhoneSearch);
+            this.tab1.Controls.Add(this.txtSearchCus);
             this.tab1.Controls.Add(this.lblBiTotalMoney);
             this.tab1.Controls.Add(this.txtBillID);
             this.tab1.Controls.Add(this.label7);
@@ -351,9 +374,9 @@
             this.dgvBiDetailBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBiDetailBill.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvBiDetailBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBiDetailBill.Location = new System.Drawing.Point(590, 255);
+            this.dgvBiDetailBill.Location = new System.Drawing.Point(609, 255);
             this.dgvBiDetailBill.Name = "dgvBiDetailBill";
-            this.dgvBiDetailBill.Size = new System.Drawing.Size(437, 168);
+            this.dgvBiDetailBill.Size = new System.Drawing.Size(418, 168);
             this.dgvBiDetailBill.TabIndex = 1;
             // 
             // dgvBill
@@ -361,14 +384,16 @@
             this.dgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBill.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBill.Location = new System.Drawing.Point(3, 59);
+            this.dgvBill.Location = new System.Drawing.Point(3, 49);
             this.dgvBill.Name = "dgvBill";
-            this.dgvBill.Size = new System.Drawing.Size(585, 420);
+            this.dgvBill.Size = new System.Drawing.Size(600, 430);
             this.dgvBill.TabIndex = 0;
             this.dgvBill.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBillList_CellClick);
             // 
             // tab2
             // 
+            this.tab2.Controls.Add(this.button1);
+            this.tab2.Controls.Add(this.textBox1);
             this.tab2.Controls.Add(this.txtWaEmpID);
             this.tab2.Controls.Add(this.label12);
             this.tab2.Controls.Add(this.txtWaEmp);
@@ -502,7 +527,7 @@
             this.dgvWa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvWa.Location = new System.Drawing.Point(3, 59);
             this.dgvWa.Name = "dgvWa";
-            this.dgvWa.Size = new System.Drawing.Size(601, 420);
+            this.dgvWa.Size = new System.Drawing.Size(600, 420);
             this.dgvWa.TabIndex = 62;
             this.dgvWa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWa_CellClick);
             // 
@@ -617,6 +642,46 @@
             this.panel1.Size = new System.Drawing.Size(1038, 593);
             this.panel1.TabIndex = 49;
             // 
+            // btnPhoneSearch
+            // 
+            this.btnPhoneSearch.BackColor = System.Drawing.SystemColors.Control;
+            this.btnPhoneSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPhoneSearch.BackgroundImage")));
+            this.btnPhoneSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPhoneSearch.Location = new System.Drawing.Point(539, 10);
+            this.btnPhoneSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPhoneSearch.Name = "btnPhoneSearch";
+            this.btnPhoneSearch.Size = new System.Drawing.Size(32, 32);
+            this.btnPhoneSearch.TabIndex = 28;
+            this.btnPhoneSearch.UseVisualStyleBackColor = false;
+            // 
+            // txtSearchCus
+            // 
+            this.txtSearchCus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchCus.Location = new System.Drawing.Point(383, 16);
+            this.txtSearchCus.Name = "txtSearchCus";
+            this.txtSearchCus.Size = new System.Drawing.Size(150, 21);
+            this.txtSearchCus.TabIndex = 27;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(551, 20);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(32, 32);
+            this.button1.TabIndex = 75;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(406, 26);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(121, 21);
+            this.textBox1.TabIndex = 74;
+            // 
             // ManageBills
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -692,5 +757,10 @@
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnRefesh;
+        private System.Windows.Forms.Button btnPhoneSearch;
+        private System.Windows.Forms.TextBox txtSearchCus;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

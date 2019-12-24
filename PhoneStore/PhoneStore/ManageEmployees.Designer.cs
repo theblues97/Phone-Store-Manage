@@ -68,6 +68,7 @@
             this.dgvME = new System.Windows.Forms.DataGridView();
             this.btnSave = new System.Windows.Forms.Button();
             this.pnlToolMenu = new System.Windows.Forms.Panel();
+            this.btnRefesh = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -124,7 +125,7 @@
             this.btnEmpSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEmpSearch.BackgroundImage")));
             this.btnEmpSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEmpSearch.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnEmpSearch.Location = new System.Drawing.Point(542, 10);
+            this.btnEmpSearch.Location = new System.Drawing.Point(539, 10);
             this.btnEmpSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEmpSearch.Name = "btnEmpSearch";
             this.btnEmpSearch.Size = new System.Drawing.Size(32, 32);
@@ -135,9 +136,9 @@
             // txtSearchEmp
             // 
             this.txtSearchEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchEmp.Location = new System.Drawing.Point(361, 16);
+            this.txtSearchEmp.Location = new System.Drawing.Point(383, 16);
             this.txtSearchEmp.Name = "txtSearchEmp";
-            this.txtSearchEmp.Size = new System.Drawing.Size(175, 21);
+            this.txtSearchEmp.Size = new System.Drawing.Size(150, 21);
             this.txtSearchEmp.TabIndex = 21;
             // 
             // pnlInformation
@@ -498,6 +499,7 @@
             // 
             // pnlToolMenu
             // 
+            this.pnlToolMenu.Controls.Add(this.btnRefesh);
             this.pnlToolMenu.Controls.Add(this.btnDel);
             this.pnlToolMenu.Controls.Add(this.btnEdit);
             this.pnlToolMenu.Controls.Add(this.btnAdd);
@@ -505,6 +507,20 @@
             this.pnlToolMenu.Name = "pnlToolMenu";
             this.pnlToolMenu.Size = new System.Drawing.Size(1031, 40);
             this.pnlToolMenu.TabIndex = 1;
+            // 
+            // btnRefesh
+            // 
+            this.btnRefesh.BackColor = System.Drawing.SystemColors.Control;
+            this.btnRefesh.BackgroundImage = global::PhoneStore.Properties.Resources.update;
+            this.btnRefesh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRefesh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefesh.Location = new System.Drawing.Point(123, 4);
+            this.btnRefesh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRefesh.Name = "btnRefesh";
+            this.btnRefesh.Size = new System.Drawing.Size(32, 32);
+            this.btnRefesh.TabIndex = 9;
+            this.btnRefesh.UseVisualStyleBackColor = false;
+            this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
             // 
             // btnDel
             // 
@@ -519,7 +535,7 @@
             this.btnDel.Size = new System.Drawing.Size(32, 32);
             this.btnDel.TabIndex = 8;
             this.btnDel.UseVisualStyleBackColor = false;
-            this.btnDel.Click += new System.EventHandler(this.btnEdit_Click);
+            this.btnDel.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -627,5 +643,6 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEmpSearch;
+        private System.Windows.Forms.Button btnRefesh;
     }
 }

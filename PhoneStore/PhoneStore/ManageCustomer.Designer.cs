@@ -54,6 +54,7 @@
             this.dgvMC = new System.Windows.Forms.DataGridView();
             this.pnlBillListMain = new System.Windows.Forms.Panel();
             this.pnlToolMenu = new System.Windows.Forms.Panel();
+            this.btnRefesh = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -107,7 +108,7 @@
             this.btnPhoneSearch.BackColor = System.Drawing.SystemColors.Control;
             this.btnPhoneSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPhoneSearch.BackgroundImage")));
             this.btnPhoneSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPhoneSearch.Location = new System.Drawing.Point(557, 10);
+            this.btnPhoneSearch.Location = new System.Drawing.Point(539, 10);
             this.btnPhoneSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnPhoneSearch.Name = "btnPhoneSearch";
             this.btnPhoneSearch.Size = new System.Drawing.Size(32, 32);
@@ -118,9 +119,9 @@
             // txtSearchCus
             // 
             this.txtSearchCus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchCus.Location = new System.Drawing.Point(358, 16);
+            this.txtSearchCus.Location = new System.Drawing.Point(383, 16);
             this.txtSearchCus.Name = "txtSearchCus";
-            this.txtSearchCus.Size = new System.Drawing.Size(175, 21);
+            this.txtSearchCus.Size = new System.Drawing.Size(150, 21);
             this.txtSearchCus.TabIndex = 18;
             this.txtSearchCus.TextChanged += new System.EventHandler(this.txtSearchCus_TextChanged);
             // 
@@ -194,6 +195,7 @@
             this.btnSave.TabIndex = 20;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label13
             // 
@@ -321,6 +323,7 @@
             // 
             // pnlToolMenu
             // 
+            this.pnlToolMenu.Controls.Add(this.btnRefesh);
             this.pnlToolMenu.Controls.Add(this.btnDel);
             this.pnlToolMenu.Controls.Add(this.btnEdit);
             this.pnlToolMenu.Controls.Add(this.btnAdd);
@@ -328,6 +331,20 @@
             this.pnlToolMenu.Name = "pnlToolMenu";
             this.pnlToolMenu.Size = new System.Drawing.Size(1032, 40);
             this.pnlToolMenu.TabIndex = 1;
+            // 
+            // btnRefesh
+            // 
+            this.btnRefesh.BackColor = System.Drawing.SystemColors.Control;
+            this.btnRefesh.BackgroundImage = global::PhoneStore.Properties.Resources.update;
+            this.btnRefesh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRefesh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefesh.Location = new System.Drawing.Point(123, 4);
+            this.btnRefesh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRefesh.Name = "btnRefesh";
+            this.btnRefesh.Size = new System.Drawing.Size(32, 32);
+            this.btnRefesh.TabIndex = 6;
+            this.btnRefesh.UseVisualStyleBackColor = false;
+            this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
             // 
             // btnDel
             // 
@@ -435,5 +452,6 @@
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnRefesh;
     }
 }

@@ -57,15 +57,16 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvPhoneSamples = new System.Windows.Forms.DataGridView();
-            this.btnClean = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.cbbBrandFilter = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.pnlToolMenu = new System.Windows.Forms.Panel();
+            this.btnRefesh = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnClean = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tab2.SuspendLayout();
@@ -181,11 +182,11 @@
             // 
             // txtNumber
             // 
-            this.txtNumber.Enabled = false;
             this.txtNumber.Location = new System.Drawing.Point(288, 0);
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Size = new System.Drawing.Size(34, 21);
             this.txtNumber.TabIndex = 59;
+            this.txtNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.infoHandle_KeyPress);
             // 
             // txtEntryPrice
             // 
@@ -212,6 +213,7 @@
             this.cbbEditBrand.Name = "cbbEditBrand";
             this.cbbEditBrand.Size = new System.Drawing.Size(86, 23);
             this.cbbEditBrand.TabIndex = 55;
+            this.cbbEditBrand.SelectedIndexChanged += new System.EventHandler(this.cbbEditBrand_SelectedIndexChanged);
             this.cbbEditBrand.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.infoHandle_KeyPress);
             // 
             // radPhoneMode
@@ -377,22 +379,11 @@
             this.dgvPhoneSamples.TabIndex = 53;
             this.dgvPhoneSamples.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhoneSamples_CellClick);
             // 
-            // btnClean
-            // 
-            this.btnClean.Enabled = false;
-            this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClean.Location = new System.Drawing.Point(619, 443);
-            this.btnClean.Name = "btnClean";
-            this.btnClean.Size = new System.Drawing.Size(88, 34);
-            this.btnClean.TabIndex = 54;
-            this.btnClean.Text = "Tẩy";
-            this.btnClean.UseVisualStyleBackColor = true;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(10, 20);
+            this.label2.Location = new System.Drawing.Point(10, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 15);
             this.label2.TabIndex = 51;
@@ -401,7 +392,7 @@
             // cbbBrandFilter
             // 
             this.cbbBrandFilter.FormattingEnabled = true;
-            this.cbbBrandFilter.Location = new System.Drawing.Point(53, 17);
+            this.cbbBrandFilter.Location = new System.Drawing.Point(53, 16);
             this.cbbBrandFilter.Name = "cbbBrandFilter";
             this.cbbBrandFilter.Size = new System.Drawing.Size(86, 23);
             this.cbbBrandFilter.TabIndex = 50;
@@ -422,6 +413,7 @@
             // 
             // pnlToolMenu
             // 
+            this.pnlToolMenu.Controls.Add(this.btnRefesh);
             this.pnlToolMenu.Controls.Add(this.btnDel);
             this.pnlToolMenu.Controls.Add(this.btnEdit);
             this.pnlToolMenu.Controls.Add(this.btnAdd);
@@ -429,6 +421,20 @@
             this.pnlToolMenu.Name = "pnlToolMenu";
             this.pnlToolMenu.Size = new System.Drawing.Size(1032, 40);
             this.pnlToolMenu.TabIndex = 2;
+            // 
+            // btnRefesh
+            // 
+            this.btnRefesh.BackColor = System.Drawing.SystemColors.Control;
+            this.btnRefesh.BackgroundImage = global::PhoneStore.Properties.Resources.update;
+            this.btnRefesh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRefesh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefesh.Location = new System.Drawing.Point(123, 4);
+            this.btnRefesh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRefesh.Name = "btnRefesh";
+            this.btnRefesh.Size = new System.Drawing.Size(32, 32);
+            this.btnRefesh.TabIndex = 6;
+            this.btnRefesh.UseVisualStyleBackColor = false;
+            this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
             // 
             // btnDel
             // 
@@ -482,6 +488,18 @@
             this.label1.Size = new System.Drawing.Size(186, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Quản lý điện thoại";
+            // 
+            // btnClean
+            // 
+            this.btnClean.Enabled = false;
+            this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClean.Location = new System.Drawing.Point(619, 443);
+            this.btnClean.Name = "btnClean";
+            this.btnClean.Size = new System.Drawing.Size(88, 34);
+            this.btnClean.TabIndex = 54;
+            this.btnClean.Text = "Tẩy";
+            this.btnClean.UseVisualStyleBackColor = true;
+            this.btnClean.Click += new System.EventHandler(this.btnClean_Click_1);
             // 
             // ManagePhones
             // 
@@ -538,7 +556,6 @@
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvPhoneSamples;
-        private System.Windows.Forms.Button btnClean;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbbBrandFilter;
         private System.Windows.Forms.Button btnSave;
@@ -547,5 +564,7 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnRefesh;
+        private System.Windows.Forms.Button btnClean;
     }
 }

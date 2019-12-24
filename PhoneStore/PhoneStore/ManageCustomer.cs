@@ -100,31 +100,47 @@ namespace PhoneStore
             {
                 if (addFlag)
                 {
-                    var lastCusID = (from c in ctx.KhachHangs orderby c.MaKH descending select c.MaKH).FirstOrDefault();
-
-                    var newCus = new KhachHang
+                    try
                     {
-                        MaKH = lastCusID + 1,
-                        TenKH = txtName.Text,
-                        NgaySinh = datBirth.Value,
-                        GioiTinh = radMale.Checked ? "Nam" : "Nữ",
-                        SoDienThoai = txtPhone.Text,
-                        Email = txtEmail.Text,
-                        DiaChi = txtAdress.Text
-                    };
-                    ctx.KhachHangs.Add(newCus);
+                        var lastCusID = (from c in ctx.KhachHangs orderby c.MaKH descending select c.MaKH).FirstOrDefault();
+
+                        var newCus = new KhachHang
+                        {
+                            MaKH = lastCusID + 1,
+                            TenKH = txtName.Text,
+                            NgaySinh = datBirth.Value,
+                            GioiTinh = radMale.Checked ? "Nam" : "Nữ",
+                            SoDienThoai = txtPhone.Text,
+                            Email = txtEmail.Text,
+                            DiaChi = txtAdress.Text
+                        };
+                        ctx.KhachHangs.Add(newCus);
+                        MessageBox.Show("Thao tác thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Thông tin nhập chưa đúng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    var cusID = Convert.ToInt32(txtID.Text);
-                    var cus = (from c in ctx.KhachHangs where c.MaKH == cusID select c).FirstOrDefault();
+                    try
+                    {
+                        var cusID = Convert.ToInt32(txtID.Text);
+                        var cus = (from c in ctx.KhachHangs where c.MaKH == cusID select c).FirstOrDefault();
 
-                    cus.TenKH = txtName.Text;
-                    cus.NgaySinh = datBirth.Value;
-                    cus.GioiTinh = radMale.Checked ? "Nam" : "Nữ";
-                    cus.SoDienThoai = txtPhone.Text;
-                    cus.Email = txtEmail.Text;
-                    cus.DiaChi = txtAdress.Text;
+                        cus.TenKH = txtName.Text;
+                        cus.NgaySinh = datBirth.Value;
+                        cus.GioiTinh = radMale.Checked ? "Nam" : "Nữ";
+                        cus.SoDienThoai = txtPhone.Text;
+                        cus.Email = txtEmail.Text;
+                        cus.DiaChi = txtAdress.Text;
+                        MessageBox.Show("Thao tác thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Bạn chưa chọn khách hàng, hãy chọn khách hàng cần sửa trước khi thực hiện thao tác!", "Thống báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 ctx.SaveChanges();
             }
@@ -137,18 +153,27 @@ namespace PhoneStore
                 DialogResult answer = MessageBox.Show("Bạn chắc chắn muốn xóa khách hàng chứ?", "Cảnh báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if(answer == DialogResult.Yes)
                 {
-                    var cusID = Convert.ToInt32(txtID.Text);
-                    
-                    var bill = (from b in ctx.HoaDons where b.MaKH == cusID select b).FirstOrDefault();
-                    var warr = (from w in ctx.SuaChuas where w.MaNV == cusID select w).FirstOrDefault();
-                    if (bill == null && warr == null)
+                    try
                     {
-                        var cus = (from c in ctx.KhachHangs where c.MaKH == cusID select c).FirstOrDefault();
-                        ctx.KhachHangs.Remove(cus);
-                        ctx.SaveChanges();
+                        var cusID = Convert.ToInt32(txtID.Text);
+
+                        var bill = (from b in ctx.HoaDons where b.MaKH == cusID select b).FirstOrDefault();
+                        var warr = (from w in ctx.SuaChuas where w.MaNV == cusID select w).FirstOrDefault();
+                        if (bill == null && warr == null)
+                        {
+                            var cus = (from c in ctx.KhachHangs where c.MaKH == cusID select c).FirstOrDefault();
+                            ctx.KhachHangs.Remove(cus);
+                            ctx.SaveChanges();
+
+                            MessageBox.Show("Thao tác thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                            MessageBox.Show("Không thể xóa khách hàng tồn tại trong hóa đơn", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    else
-                        MessageBox.Show("Không thể xóa khách hàng tồn tại trong hóa đơn", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    catch
+                    {
+                        MessageBox.Show("Bạn chưa chọn khách hàng, hãy chọn khách hàng cần xóa trước khi thực hiện thao tác!", "Thống báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
@@ -187,6 +212,17 @@ namespace PhoneStore
 
         private void txtSearchCus_TextChanged(object sender, EventArgs e)
         {
+            LoadCustomers();
+        }
+
+        private void btnRefesh_Click(object sender, EventArgs e)
+        {
+            LoadCustomers();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Modify();
             LoadCustomers();
         }
     }
