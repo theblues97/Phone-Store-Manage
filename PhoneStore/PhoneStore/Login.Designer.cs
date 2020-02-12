@@ -76,6 +76,7 @@
             this.btnExit.TabIndex = 21;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // label2
             // 

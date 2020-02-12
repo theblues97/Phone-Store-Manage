@@ -197,7 +197,7 @@ namespace PhoneStore
                                 Mau = cbbColor.Text,
                                 GiaNhap = Convert.ToInt32(txtEntryPrice.Text),
                                 GiaBan = Convert.ToInt32(txtSalePrice.Text),
-                                SoLuong = 0
+                                SoLuong = Convert.ToInt32(txtNumber.Text)
                             };
                             ctx.DienThoais.Add(newPhone);
 
@@ -412,7 +412,7 @@ namespace PhoneStore
         private void btnAdd_Click(object sender, EventArgs e)
         {
             addFlag = true;
-            cbbEditBrand.Enabled = true;
+            //cbbEditBrand.Enabled = true;
             btnClean.Enabled = true;
         }
 

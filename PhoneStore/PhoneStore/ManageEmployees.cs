@@ -213,8 +213,27 @@ namespace PhoneStore
                         emp.DiaChi = txtAdress.Text;
                         emp.MaCV = cbbPosition.SelectedIndex + 1;
 
-                        acc.Username = txtUsername.Text;
-                        acc.Password = txtPassword.Text;
+                        if (acc != null)
+                        {
+                            acc.Username = txtUsername.Text;
+                            acc.Password = txtPassword.Text;
+                        }
+                        else
+                        {
+                            var acccheck = (from ac in ctx.Accounts where ac.Username == txtUsername.Text select ac).FirstOrDefault();
+                            if(acccheck == null)
+                            {
+                                var newacc = new Account
+                                {
+                                    Username = txtUsername.Text,
+                                    Password = txtPassword.Text,
+                                    MaNV = empID
+                                };
+                                ctx.Accounts.Add(newacc);
+                            }
+                            else
+                                MessageBox.Show("Thao tác không thành công, username bị trùng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
 
                         MessageBox.Show("Thao tác thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -236,24 +255,29 @@ namespace PhoneStore
                 {
                     try
                     {
-                        var empID = Convert.ToInt32(txtID.Text);
-                        var bill = (from b in ctx.HoaDons where b.MaNV == empID select b).FirstOrDefault();
-                        var warr = (from w in ctx.SuaChuas where w.MaNV == empID select w).FirstOrDefault();
-                        if (bill == null && warr == null)
+                        if (username != "Admin")
                         {
-                            var acc = (from ac in ctx.Accounts where ac.MaNV == empID select ac).FirstOrDefault();
-                            var emp = (from cu in ctx.NhanViens where cu.MaNV == empID select cu).FirstOrDefault();
-                            var con = (from co in ctx.HopDongs where co.MaHopDong == emp.MaHopDong select co).FirstOrDefault();
+                            var empID = Convert.ToInt32(txtID.Text);
+                            var bill = (from b in ctx.HoaDons where b.MaNV == empID select b).FirstOrDefault();
+                            var warr = (from w in ctx.SuaChuas where w.MaNV == empID select w).FirstOrDefault();
+                            if (bill == null && warr == null)
+                            {
+                                var acc = (from ac in ctx.Accounts where ac.MaNV == empID select ac).FirstOrDefault();
+                                var emp = (from cu in ctx.NhanViens where cu.MaNV == empID select cu).FirstOrDefault();
+                                var con = (from co in ctx.HopDongs where co.MaHopDong == emp.MaHopDong select co).FirstOrDefault();
 
-                            if (acc != null) ctx.Accounts.Remove(acc);
-                            ctx.HopDongs.Remove(con);
-                            ctx.NhanViens.Remove(emp);
-                            ctx.SaveChanges();
+                                if (acc != null) ctx.Accounts.Remove(acc);
+                                ctx.HopDongs.Remove(con);
+                                ctx.NhanViens.Remove(emp);
+                                ctx.SaveChanges();
 
-                            MessageBox.Show("Thao tác thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Thao tác thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                                MessageBox.Show("Không thể xóa nhân viên tồn tại trong hóa đơn", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else
-                            MessageBox.Show("Không thể xóa nhân viên tồn tại trong hóa đơn", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Không thể xóa nhân viên quản trị!", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     catch
                     {
